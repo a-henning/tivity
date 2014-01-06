@@ -2,7 +2,10 @@
 # 0.1.6 (2014-01-6)
 
 * made some changes to the way karma and grunt-karma do things, there were some blocking issues after the update
-
+* lost of maintenance
+* started moving the entire fetch location logic to a directive, at the benefit of ~400 lines of code and for reusability on all the categories
+* parametrized the section type inside the directive
+* started to make the footer bar also a directive, economy is the main word.
 
 
 # 0.1.5 (2014-01-5)

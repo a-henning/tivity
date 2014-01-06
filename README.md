@@ -29,9 +29,9 @@ To have everything up and running:
 * `bower install` to install vendor specific libraries (Angular, blah blah)
 * and finally to kick it off and have it rebuilt everytime you make a change start it with `grunt watch`
 * karma runs continuously and live reload makes sure it automatically refreshes your page.
-* the project is generated inside the build directory, make sure to make your vhost there if you want to.
+* the project is generated inside the build directory, make sure to point your vhost there if you want to.
 
-I also implemented beautiful links, as I will TOTALLY not support any version on IE lower or equal to 10. This is for mobile devices only, most of which already support HTML5.
+I also implemented beautiful links, as I will TOTALLY not support any version on IE lower or equal to 10 (if you choose to see it with that). This is for mobile devices only, most of which already support HTML5.
 
 To have the beautiful (normal :) ) links you have to place this in your .htaccess or in the vhost declaration:
 

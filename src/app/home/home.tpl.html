@@ -1,17 +1,25 @@
 <div ng-controller="HomeCtrl" class="location-listing">
-  <h1>Showing {{ section }} in {{ locationName }}</h1>
-  <h2>{{ coords.lat }}, {{ coords.long }}</h2>
-  <ul class="locations">
+  <h2>Showing {{ section }} in {{ locationName }}</h2>
+  <h3>{{ coords.lat }}, {{ coords.long }}</h3>
+  <!-- VVV DIRECTIVE: fetchLocations VVV -->
+  <div class="fetchLocations" section-type="food"></div>
+
+
+  <!--<ul class="locations">
     <li ng-repeat="location in locations">
       <div class="image {{ location.venue.picClass }}"><img src="{{ location.venue.photos.groups.thePhoto }}" alt=""/></div>
       <h2>{{ location.venue.name }} <span>{{ location.venue.location.distance }}m</span></h2>
     </li>
-  </ul>
+  </ul>-->
+
+
 </div>
 
 <!--<li ui-route="/home" ng-class="{active:$uiRoute}">
   <a href=cucu"/home"></a>
 </li>--> <!-- Demo Angular navigation-->
+
+<!--TODO: Make the navigation bar a directive.-->
 <nav class="bar-tab">
   <ul class="tab-inner">
     <li class="tab-item active">

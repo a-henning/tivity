@@ -15,7 +15,8 @@
 angular.module( 'tivity.home', [
   'ui.router.state',
   'foursquare',
-  'geolocation'
+  'geolocation',
+  'fetchLocations'
 ])
 
 /**
@@ -36,12 +37,8 @@ angular.module( 'tivity.home', [
     });
   })
 
-/**
- * And of course we define a controller for our route.
- */
   .controller( 'HomeCtrl', function HomeController( $scope, geolocation, foursquare ) {
-    //TODO: Make the section dynamic
-    var section = 'food';
+    /*var section = 'food';
     $scope.section = 'food';
     //var section = 'food,drinks,shops,arts,outdoors';
 
@@ -89,7 +86,7 @@ angular.module( 'tivity.home', [
         }
 
       });
-    });
+    });*/
 
   })
 

@@ -5,7 +5,8 @@ angular.module('tivity', [
   'tivity.about',
   'ui.router.state',
   'ui.route',
-  'geolocation'
+  'geolocation',
+  'fetchLocations'
 ])
 
   .config( function myAppConfig ( $stateProvider, $urlRouterProvider, $locationProvider ) {
