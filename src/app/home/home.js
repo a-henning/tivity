@@ -40,14 +40,19 @@ angular.module( 'tivity.home', [
  * And of course we define a controller for our route.
  */
   .controller( 'HomeCtrl', function HomeController( $scope, geolocation, foursquare ) {
-    //TODO: Convert this to ....
-
+    //TODO: Make the section dynamic
     var section = 'food';
     $scope.section = 'food';
     //var section = 'food,drinks,shops,arts,outdoors';
+
+    // We are asking the user for access to the location.
     geolocation.getLocation().then(function(data){
+
+      //When location data is ready, we populate the scope.
       $scope.coords = {lat:data.coords.latitude, long:data.coords.longitude};
       var location = data.coords.latitude + ',' + data.coords.longitude;
+
+      //With the location at hand, we're calling the foursquare service.
       foursquare.getAllData(location, section).then(function(data){
 
         //when the data is ready, populate the $scope variables.
