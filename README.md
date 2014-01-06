@@ -16,5 +16,3 @@ RewriteRule ^ - [L]
 # Rewrite everything else to index.html to allow html5 state links
 RewriteRule ^ index.html [L]
 ```
-
-hmm
