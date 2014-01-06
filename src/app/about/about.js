@@ -1,7 +1,6 @@
-angular.module( 'ngBoilerplate.about', [
+angular.module( 'tivity.about', [
   'ui.router.state',
-  'placeholders',
-  'ui.bootstrap'
+  'placeholders'
 ])
 
 .config(function config( $stateProvider ) {
