@@ -4,6 +4,7 @@
 * finished the fetchLocations directive, reusability awesomeness
 * finished the footer directive
 * still have to hook in the footer menu.
+* created all the categories, future task: parametrize the categories and all the paths.
 
 # 0.1.6 (2014-01-6)
 
