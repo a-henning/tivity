@@ -5,7 +5,7 @@ angular.module('fetchLocations', [])
       //scope: true, // With the scope enabled, we're actually isolating the scope to the current directive, without this we're still bleeing information to the outer scope.
       //TODO: Propagate city name and section outside of this scope in a cleaner way.
       replace: true,
-      template: '<ul class="locations"><li ng-repeat="location in locations"><div class="image {{ location.venue.picClass }}"><img src="{{ location.venue.photos.groups.thePhoto }}" alt=""/></div><h2>{{ location.venue.name }} <span>{{ location.venue.location.distance }}m</span></h2></li></ul>',
+      templateUrl: 'templates/fetchLocations.tpl.html',
       controller: ['$scope', 'geolocation', 'foursquare', function( $scope, geolocation, foursquare ) {
         //We're putting the code inside a fetch function with the LocationType argument so we can call it from the link with the custom locationType
         $scope.fetchTheFiles = function(locationType) {

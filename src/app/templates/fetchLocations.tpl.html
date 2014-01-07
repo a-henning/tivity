@@ -1,0 +1,6 @@
+<ul class="locations">
+  <li ng-repeat="location in locations">
+    <div class="image {{ location.venue.picClass }}"><img src="{{ location.venue.photos.groups.thePhoto }}" alt=""/></div>
+    <h2>{{ location.venue.name }} <span>{{ location.venue.location.distance }}m</span></h2>
+  </li>
+</ul>

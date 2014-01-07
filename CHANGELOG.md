@@ -1,4 +1,10 @@
 
+# 0.1.7 (2014-01-7)
+
+* finished the fetchLocations directive, reusability awesomeness
+* finished the footer directive
+* still have to hook in the footer menu.
+
 # 0.1.6 (2014-01-6)
 
 * made some changes to the way karma and grunt-karma do things, there were some blocking issues after the update

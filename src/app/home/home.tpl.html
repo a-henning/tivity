@@ -3,54 +3,15 @@
   <h3>{{ coords.lat }}, {{ coords.long }}</h3>
   <!-- VVV DIRECTIVE: fetchLocations VVV -->
   <div class="fetchLocations" section-type="food"></div>
-
-
-  <!--<ul class="locations">
-    <li ng-repeat="location in locations">
-      <div class="image {{ location.venue.picClass }}"><img src="{{ location.venue.photos.groups.thePhoto }}" alt=""/></div>
-      <h2>{{ location.venue.name }} <span>{{ location.venue.location.distance }}m</span></h2>
-    </li>
-  </ul>-->
-
-
 </div>
 
+<!-- VVV DIRECTIVE: footerBar VVV -->
+<div class="footerBar"></div>
+
+
+
+
 <!--<li ui-route="/home" ng-class="{active:$uiRoute}">
-  <a href=cucu"/home"></a>
+<a href=cucu"/home"></a>
 </li>--> <!-- Demo Angular navigation-->
 
-<!--TODO: Make the navigation bar a directive.-->
-<nav class="bar-tab">
-  <ul class="tab-inner">
-    <li class="tab-item active">
-      <a href="#">
-        <img class="tab-icon" src="assets/icons/icon-food.png">
-        <div class="tab-label">Food</div>
-      </a>
-    </li>
-    <li class="tab-item">
-      <a href="#">
-        <img class="tab-icon" src="assets/icons/icon-drinks.png">
-        <div class="tab-label">Drinks</div>
-      </a>
-    </li>
-    <li class="tab-item">
-      <a href="#">
-        <img class="tab-icon" src="assets/icons/icon-shops.png">
-        <div class="tab-label">Shops</div>
-      </a>
-    </li>
-    <li class="tab-item">
-      <a href="#">
-        <img class="tab-icon" src="assets/icons/icon-arts.png">
-        <div class="tab-label">Arts</div>
-      </a>
-    </li>
-    <li class="tab-item">
-      <a href="#">
-        <img class="tab-icon" src="assets/icons/icon-outdoors.png">
-        <div class="tab-label">Outdoors</div>
-      </a>
-    </li>
-  </ul>
-</nav>
