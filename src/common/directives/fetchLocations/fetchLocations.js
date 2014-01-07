@@ -29,31 +29,18 @@ angular.module('fetchLocations', [])
               console.log($scope.locations);
 
               //Check to see if the venue has a photo, if not search one of the tips, if that hasn't a photo either display a default one.
-              var nrLocations = data[0].response.groups[0].items.length -1;
+              var nrLocations = data[0].response.groups[0].items.length;
               for( var i=0 ; i < nrLocations; i++ ) {
-                var venuePhoto =  data[0].response.groups[0].items[i].venue.photos.groups[0];
-                if ( data[0].response.groups[0].items[i].tips !== undefined ) {
-                  var tipsPhoto =  data[0].response.groups[0].items[i].tips[0].photourl;
-                  if ( tipsPhoto !== undefined ) {
-                    data[0].response.groups[0].items[i].venue.photos.groups.thePhoto = tipsPhoto;
-                    data[0].response.groups[0].items[i].venue.picClass = 'picture';
-                  } else if (venuePhoto !== undefined) {
-                    data[0].response.groups[0].items[i].venue.photos.groups.thePhoto = venuePhoto;
-                    data[0].response.groups[0].items[i].venue.picClass = 'picture';
-                  } else {
-                    data[0].response.groups[0].items[i].venue.photos.groups.thePhoto = 'https://cdn2.iconfinder.com/data/icons/inverticons-stroke-vol-1/32/location_geo_gps_cursor_arrow-512.png';
-                    data[0].response.groups[0].items[i].venue.picClass = 'no-picture';
-                  }
-                } else {
-                  if (venuePhoto !== undefined) {
-                    data[0].response.groups[0].items[i].venue.photos.groups.thePhoto = venuePhoto;
-                    data[0].response.groups[0].items[i].venue.picClass = 'picture';
-                  } else {
-                    data[0].response.groups[0].items[i].venue.photos.groups.thePhoto = 'https://cdn2.iconfinder.com/data/icons/inverticons-stroke-vol-1/32/location_geo_gps_cursor_arrow-512.png';
-                    data[0].response.groups[0].items[i].venue.picClass = 'no-picture';
-                  }
-                }
 
+                if (data[0].response.groups[0].items[i].venue.photos.groups[0] !== undefined) {
+                  //console.log(venuePhoto);
+                  var venuePhoto =  data[0].response.groups[0].items[i].venue.photos.groups[0].items[0];
+                  data[0].response.groups[0].items[i].venue.photos.groups.thePhoto = venuePhoto.prefix + 'width100' + venuePhoto.suffix;
+                  data[0].response.groups[0].items[i].venue.picClass = 'picture';
+                } else {
+                  data[0].response.groups[0].items[i].venue.photos.groups.thePhoto = 'https://cdn2.iconfinder.com/data/icons/inverticons-stroke-vol-1/32/location_geo_gps_cursor_arrow-512.png';
+                  data[0].response.groups[0].items[i].venue.picClass = 'no-picture';
+                }
               }
 
             });

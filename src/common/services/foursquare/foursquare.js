@@ -7,7 +7,7 @@ angular.module('foursquare', [])
         var version = '20131219';
 
         return $q.all([
-            $http.get('https://api.foursquare.com/v2/venues/explore?client_id=' + cliendID + '&client_secret=' + clientSecret + '&v=' + version + '&ll=' + location + '&section=' + section + '&sortByDistance=1')
+            $http.get('https://api.foursquare.com/v2/venues/explore?client_id=' + cliendID + '&client_secret=' + clientSecret + '&v=' + version + '&ll=' + location + '&section=' + section + '&sortByDistance=1&venuePhotos=1')
           ]).then(function (results) {
             var aggregatedData = [];
             angular.forEach(results, function (result) {
