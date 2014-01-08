@@ -4,8 +4,8 @@
  * build process will exclude all `.spec.js` files from the build
  * automatically.
  */
-describe( 'outdoors section', function() {
-  beforeEach( module( 'tivity.outdoors' ) );
+describe( 'location detail', function() {
+  beforeEach( module( 'tivity.detail' ) );
 
   it( 'should have a dummy test', inject( function() {
     expect( true ).toBeTruthy();

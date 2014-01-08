@@ -2,11 +2,12 @@ angular.module('tivity', [
   'templates-app',
   'templates-common',
   'tivity.home',
-  'tivity.arts',
+  'tivity.section', //This should be the only listing of the sections, it's parametrized.
+  /*'tivity.arts',
   'tivity.drinks',
   'tivity.food',
   'tivity.outdoors',
-  'tivity.shops',
+  'tivity.shops',*/
   'tivity.about',
   'ui.router.state',
   'ui.route',

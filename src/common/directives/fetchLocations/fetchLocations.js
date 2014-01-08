@@ -28,12 +28,10 @@ angular.module('fetchLocations', [])
               $scope.locationName = data[0].response.headerFullLocation;
               console.log($scope.locations);
 
-              //Check to see if the venue has a photo, if not search one of the tips, if that hasn't a photo either display a default one.
+              //Check to see if the venue has a photo, if not display a default one.
               var nrLocations = data[0].response.groups[0].items.length;
               for( var i=0 ; i < nrLocations; i++ ) {
-
                 if (data[0].response.groups[0].items[i].venue.photos.groups[0] !== undefined) {
-                  //console.log(venuePhoto);
                   var venuePhoto =  data[0].response.groups[0].items[i].venue.photos.groups[0].items[0];
                   data[0].response.groups[0].items[i].venue.photos.groups.thePhoto = venuePhoto.prefix + 'width100' + venuePhoto.suffix;
                   data[0].response.groups[0].items[i].venue.picClass = 'picture';
