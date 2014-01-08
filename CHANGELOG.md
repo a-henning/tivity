@@ -3,7 +3,7 @@
 * finally parametrized all the categories routes, we have only one section template now, which loads all section types depending on the received parameter
 * trying to figure out a way to propagate the page title upwards in the config, or maybe after ... ???
 * made the detail page route with the proper information passed to it from foursquare.
-** I'm leveraging foursquare's api to get the exact image size I need for my current window size. shouldn't be a problem on mobile devices with resizing the window, maybe rotation?
+* I'm leveraging foursquare's api to get the exact image size I need for my current window size. shouldn't be a problem on mobile devices with resizing the window, maybe rotation?
 
 # 0.1.7 (2014-01-7)
 
