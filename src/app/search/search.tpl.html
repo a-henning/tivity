@@ -1,0 +1,16 @@
+<div ng-controller="SearchCtrl" class="location-listing">
+  <div class="my-super-awesome-loading-box" ng-show="loadingTracker.active()">
+    Loading...
+  </div>
+  <h2 class="top">Searching for {{ queryParam }} in {{ locations[0].location.city }}</h2>
+  <ul class="locations list">
+    <li ng-repeat="location in locations">
+      <div class="image {{ location.venue.picClass }}"><img src="{{ location.venue.photos.groups.thePhoto }}" alt=""/></div>
+      <a href="/section/{{location.categories[0].categoryName}}/{{location.id}}">
+        <h2>{{ location.name }}</h2>
+        <span class="distance">{{ location.location.distance }}m</span>
+        <span class="chevron"></span>
+      </a>
+    </li>
+  </ul>
+</div>

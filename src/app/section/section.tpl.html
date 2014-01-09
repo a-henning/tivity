@@ -1,6 +1,10 @@
+<div class="my-super-awesome-loading-box" ng-show="loadingTracker.active()">
+  Loading...
+</div>
+
 <div ng-controller="SectionCtrl" class="location-listing">
-  <h2>Showing {{ theLocationType }} in {{ locationName }}</h2>
-  <h3>{{ coords.lat }}, {{ coords.long }}</h3>
+  <h2 class="top">Listing {{ theLocationType }} in {{ locationName }}</h2>
+  <!--<h3>{{ coords.lat }}, {{ coords.long }}</h3>-->
   <!-- VVV DIRECTIVE: fetchLocations VVV -->
   <div class="fetchLocations" section-type="{{theLocationType}}"></div>
   <!--TODO: Transmit-->

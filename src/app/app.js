@@ -2,22 +2,26 @@ angular.module('tivity', [
   'templates-app',
   'templates-common',
   'tivity.home',
-  'tivity.section', //This should be the only listing of the sections, it's parametrized.
-  /*'tivity.arts',
-  'tivity.drinks',
-  'tivity.food',
-  'tivity.outdoors',
-  'tivity.shops',*/
+  'tivity.section',
+  'tivity.search',
   'tivity.about',
   'ui.router.state',
-  'ui.route',
-  'geolocation',
-  'fetchLocations'
+  'ui.route'
 ])
 
   .config( function myAppConfig ( $stateProvider, $urlRouterProvider, $locationProvider ) {
-      $locationProvider.html5Mode(true).hashPrefix('!');
-      $urlRouterProvider.otherwise( '/home' );
+    $locationProvider.html5Mode(true).hashPrefix('!');
+    $urlRouterProvider.otherwise( '/home' );
+    $stateProvider.state( 'search', {
+      url: '/search/:queryVenue',
+      views: {
+        "main": {
+          controller: 'SearchCtrl',
+          templateUrl: 'search/search.tpl.html'
+        }
+      },
+      data:{ pageTitle: 'search' }
+    });
   })
 
   .run( function run () {

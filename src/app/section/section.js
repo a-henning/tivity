@@ -5,7 +5,8 @@ angular.module( 'tivity.section', [
     'foursquare',
     'geolocation',
     'fetchLocations',
-    'footerBar'
+    'footerBar',
+    'ajoslin.promise-tracker'
 
 
   ])
@@ -33,8 +34,11 @@ angular.module( 'tivity.section', [
       });
   })
 
-  .controller( 'SectionCtrl', function SectionController( $scope, geolocation, foursquare, $stateParams) {
+  .controller( 'SectionCtrl', function SectionController( $scope, geolocation, foursquare, $stateParams, promiseTracker) {
     $scope.theLocationType = $stateParams.sectionType;
+
+    //Create / get our tracker with unique ID
+    $scope.loadingTracker = promiseTracker('loadingTracker');
   })
 
 ;

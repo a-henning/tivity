@@ -4,11 +4,15 @@ angular.module( 'tivity.detail', [
   'foursquare',
   'geolocation',
   'fetchLocations',
-  'footerBar'
+  'footerBar',
+  'ajoslin.promise-tracker'
 ])
 
-  .controller( 'DetailCtrl', function DetailController( $scope, geolocation, foursquare, $stateParams, $window ) {
+  .controller( 'DetailCtrl', function DetailController( $scope, geolocation, foursquare, $stateParams, $window, promiseTracker ) {
     $scope.name = $stateParams.venueDetail;
+
+    //Create / get our tracker with unique ID
+    $scope.loadingTracker = promiseTracker('loadingTracker');
 
     //With the location at hand, we're calling the foursquare service.
     foursquare.getVenue($stateParams.venueDetail).then(function(data){

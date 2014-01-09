@@ -4,7 +4,8 @@ angular.module( 'tivity.home', [
   'foursquare',
   'geolocation',
   'fetchLocations',
-  'footerBar'
+  'footerBar',
+  'ajoslin.promise-tracker'
 ])
 
 /**
@@ -25,7 +26,9 @@ angular.module( 'tivity.home', [
     });
   })
 
-  .controller( 'HomeCtrl', function HomeController( $scope, geolocation, foursquare ) {
+  .controller( 'HomeCtrl', function HomeController( $scope, geolocation, foursquare, promiseTracker ) {
+    //Create / get our tracker with unique ID
+    $scope.loadingTracker = promiseTracker('loadingTracker');
 
   })
 

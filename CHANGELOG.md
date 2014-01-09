@@ -4,6 +4,10 @@
 * made some icons and pictures for retina display
 * design changes, using ratchet.
 * started working on the presentation and adding a lof of optimization notes
+* added angular-promise-tracker to manage promises and show a loading animation and implemented it.
+* added implemented foursquare search functionality.
+* refactored part of the code, got rid of unnecessary directives and services calls in places where they weren't needed.
+* unfortunately the search API does not return photos, so I am putting the basis of a multiple photo requests
 
 # 0.1.8 (2014-01-8)
 
@@ -41,4 +45,36 @@
 * added ratchet mobile library
 * modified compilation files to compile the ratchet and removed all things related to bootstrap
 
+
+
+
+
+
+
+
+# TO DO
+
+********* Solve the ngShow issue of disappearing only when the service starts running.
+
+**** three flashing dots ... for listing {{food}} in ... ngShow ?
+
+*** ng-cookie, suggest the user to make a shortcut for the application for a fullscreen experience.
+*** when scrolling down, hide the top bar, only when starting to scroll up show it, like chrome does it.
+
+* the footer bar, make it with an arrow, letting the user know he can pull it, to see all the options.
+* Implement search?!
+* Left-right swipe navigation. Left-right in the sections, always right when opening a venue
+* Increase size || lower # of sections so the user can click it better-quicker
+* More details on the listing page (#of votes, thumbs up, comments, tips, popularity??)
+* Finish venue page
+* FINAL STAGES: Implement FastClick
+* do loading page animation / splash screen and make it transition automatically to the food section
+* Increase utility of the navigation bar, scrollable? more sections, about, dev information (timings, network calls etc)
+* Custom number of post listings per page (pagination maybe?)
+* Control Radius of found places?
+* Sort by rating, distance
+* Flow animation: sorting, elements appearance
+* Make carousel on the detail page
+* FUTURE: login to foursquare to comment, recommend, like/dislike, check-in.
+* FUTURE: Aggregate further data from gMaps.
 
