@@ -1315,6 +1315,9 @@ body {
   font-weight: 200;
 }
 
+a {
+  color: #157efb;
+}
 
 /* Main Listing Styles */
 
@@ -1323,47 +1326,53 @@ body {
     padding-bottom: 60px;
     li {
       display: block;
-      width: 100%;
       clear: both;
-      margin: 10px 0 10px;
-      padding-left: 20px;
-      height: 50px;
+      height: 77px;
+      position: relative;
+      overflow: hidden;
+      &:first-child {
+        border-top: 0px solid #fff;
+      }
       .image {
         overflow: hidden;
-        width: 50px;
-        height: 50px;
+        width: 70px;
+        height: 70px;
         float: left;
         border-radius: 50px;
         border: 1px solid #000;
+        margin: -8px 10px 0 0;
         img {
           width: 100px;
           height: auto !important;
           margin-left: -20px;
-          margin-top: -20px;
+          margin-top: 0px;
         }
         &.no-picture {
           img {
-            width: 56px;
+            width: 76px;
             height: auto !important;
             margin-left: -4px;
             margin-top: -4px;
           }
         }
       }
-      h2 {
-        font-weight: 100;
-        float: left;
-        font-size: 16px;
-        margin: 10px 0 0 10px;
-        span {
-          clear: left;
-          background-color: #2b2b2b;
-          padding: 3px 4px 2px 4px;
-          color: #fff;
-          font-size: 10px;
-          border-radius: 4px;
-          float: left;
+      a {
+        height: 70px;
+        h2 {
+          font-weight: 100;
+          font-size: 18px;
+          color: #157efb;
+          line-height: 20px;
         }
+      }
+      span.distance {
+        background-color: #2b2b2b;
+        padding: 1px 4px 2px 4px;
+        color: #fff;
+        font-weight: 100;
+        font-size: 12px;
+        border-radius: 4px;
+        text-shadow: 0px 0px 1px #fff;
       }
     }
   }

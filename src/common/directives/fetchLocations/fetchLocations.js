@@ -33,7 +33,7 @@ angular.module('fetchLocations', [])
               for( var i=0 ; i < nrLocations; i++ ) {
                 if (data[0].response.groups[0].items[i].venue.photos.groups[0] !== undefined) {
                   var venuePhoto =  data[0].response.groups[0].items[i].venue.photos.groups[0].items[0];
-                  data[0].response.groups[0].items[i].venue.photos.groups.thePhoto = venuePhoto.prefix + 'width100' + venuePhoto.suffix;
+                  data[0].response.groups[0].items[i].venue.photos.groups.thePhoto = venuePhoto.prefix + 'width200' + venuePhoto.suffix;
                   data[0].response.groups[0].items[i].venue.picClass = 'picture';
                 } else {
                   data[0].response.groups[0].items[i].venue.photos.groups.thePhoto = 'https://cdn2.iconfinder.com/data/icons/inverticons-stroke-vol-1/32/location_geo_gps_cursor_arrow-512.png';

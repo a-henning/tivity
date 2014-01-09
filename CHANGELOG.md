@@ -1,3 +1,10 @@
+# 0.1.9 (2014-01-9)
+
+* started testing on iPhone and made some css changes
+* made some icons and pictures for retina display
+* design changes, using ratchet.
+* started working on the presentation and adding a lof of optimization notes
+
 # 0.1.8 (2014-01-8)
 
 * finally parametrized all the categories routes, we have only one section template now, which loads all section types depending on the received parameter
