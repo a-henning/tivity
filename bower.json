@@ -2,7 +2,7 @@
   "name": "tivity",
   "version": "0.4",
   "devDependencies": {
-    "angular": "~1.2.7",
+    "angular": "~1.2.8",
     "angular-promise-tracker": "latest",
     "angular-mocks": "~1.2.4",
     "ratchet": "latest",
