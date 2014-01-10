@@ -1,3 +1,11 @@
+# 0.2.0 (2014-01-10)
+
+* added & implemented foursquare search functionality.
+* refactored part of the code, got rid of unnecessary directives and services calls in places where they weren't needed.
+* unfortunately the search API does not return photos, so I am putting the basis of a multiple photo requests
+//TODO: this will be a very COSTLY service [network req wise], need to find a better way to do this.
+
+
 # 0.1.9 (2014-01-9)
 
 * started testing on iPhone and made some css changes
@@ -5,9 +13,6 @@
 * design changes, using ratchet.
 * started working on the presentation and adding a lof of optimization notes
 * added angular-promise-tracker to manage promises and show a loading animation and implemented it.
-* added implemented foursquare search functionality.
-* refactored part of the code, got rid of unnecessary directives and services calls in places where they weren't needed.
-* unfortunately the search API does not return photos, so I am putting the basis of a multiple photo requests
 
 # 0.1.8 (2014-01-8)
 

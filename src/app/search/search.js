@@ -38,16 +38,19 @@ angular.module( 'tivity.search', [
         //Check to see if the venue has a photo, if not display a default one.
         var nrLocations = data[0].response.venues.length;
         for( var i=0 ; i < nrLocations; i++ ) {
+          //Create a category name in the scope for each venue to add it in the link
           var categoryName = data[0].response.venues[i].categories[0].shortName;
           data[0].response.venues[i].categories[0].categoryName = categoryName.toLowerCase();
-          /*if (data[0].response.groups[0].items[i].venue.photos.groups[0] !== undefined) {
-            var venuePhoto =  data[0].response.groups[0].items[i].venue.photos.groups[0].items[0];
-            data[0].response.groups[0].items[i].venue.photos.groups.thePhoto = venuePhoto.prefix + 'width200' + venuePhoto.suffix;
-            data[0].response.groups[0].items[i].venue.picClass = 'picture';
-          } else {
-            data[0].response.groups[0].items[i].venue.photos.groups.thePhoto = 'https://cdn2.iconfinder.com/data/icons/inverticons-stroke-vol-1/32/location_geo_gps_cursor_arrow-512.png';
-            data[0].response.groups[0].items[i].venue.picClass = 'no-picture';
-          }*/
+
+          //Call for each venue foursquare for the image
+          /*var venueID = data[0].response.venues[i].id;
+
+          foursquare.getImage(venueID).then(function(data){
+            console.log('image data');
+            console.log(data);
+          });*/
+          //TODO: need to rewrite this in a different way so I can fetch images for all the venues in the search result.
+
         }
 
       });
