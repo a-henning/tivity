@@ -3,6 +3,7 @@ angular.module( 'tivity.detail', [
   'ui.router.state',
   'foursquare',
   'geolocation',
+  'searchBar',
   'fetchLocations',
   'footerBar',
   'ajoslin.promise-tracker'

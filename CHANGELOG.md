@@ -4,7 +4,9 @@
 * refactored part of the code, got rid of unnecessary directives and services calls in places where they weren't needed.
 * unfortunately the search API does not return photos, so I am putting the basis of a multiple photo requests
 //TODO: this will be a very COSTLY service [network req wise], need to find a better way to do this.
-
+* some graphic updates.
+* added ngCookies module
+* removed angular cookies and added angular-local-storage
 
 # 0.1.9 (2014-01-9)
 
@@ -59,6 +61,7 @@
 
 # TO DO
 
+****************** the footer bar, make it with an arrow, letting the user know he can pull it, to see all the options.
 ********* Solve the ngShow issue of disappearing only when the service starts running.
 
 **** three flashing dots ... for listing {{food}} in ... ngShow ?
@@ -66,8 +69,11 @@
 *** ng-cookie, suggest the user to make a shortcut for the application for a fullscreen experience.
 *** when scrolling down, hide the top bar, only when starting to scroll up show it, like chrome does it.
 
-* the footer bar, make it with an arrow, letting the user know he can pull it, to see all the options.
-* Implement search?!
+!!!! On a mobile device, if a user enters directly on a link, he's redirected to 404 not found, I GUESS,
+as an idea, we can redirect him to the home page and save the parameter then pass it to
+* need to start working the TDD way.
+* implement favorites, remove from favorites
+* crate map for storing objects in localStorage
 * Left-right swipe navigation. Left-right in the sections, always right when opening a venue
 * Increase size || lower # of sections so the user can click it better-quicker
 * More details on the listing page (#of votes, thumbs up, comments, tips, popularity??)

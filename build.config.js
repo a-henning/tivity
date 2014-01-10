@@ -68,7 +68,8 @@ module.exports = {
       'vendor/placeholders/angular-placeholders-0.0.1-SNAPSHOT.min.js',
       'vendor/angular-ui-router/release/angular-ui-router.js',
       'vendor/angular-ui-utils/modules/route/route.js',
-      'vendor/angularjs-geolocation/dist/angularjs-geolocation.min.js'
+      'vendor/angularjs-geolocation/dist/angularjs-geolocation.min.js',
+      'vendor/angular-local-storage/angular-local-storage.min.js'
     ],
     css: [
       //'vendor/ratchet/dist/ratchet.css'
