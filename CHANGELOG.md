@@ -62,8 +62,9 @@
 # TO DO
 
 ****************** the footer bar, make it with an arrow, letting the user know he can pull it, to see all the options.
+****************** Investigate the cause of two or multiple digests running all the time ?
 ********* Solve the ngShow issue of disappearing only when the service starts running.
-
+********* define error handling and messages.
 **** three flashing dots ... for listing {{food}} in ... ngShow ?
 
 *** ng-cookie, suggest the user to make a shortcut for the application for a fullscreen experience.
