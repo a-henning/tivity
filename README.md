@@ -39,7 +39,7 @@ $ npm install
 $ bower install
 $ grunt watch
 ```
-* setup a vhost with the following rules:
+* after you run `grunt watch`, grunt will make a build directory, setup a vhost to that with the following rules:
 
 ```
 <VirtualHost *:80>
