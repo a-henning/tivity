@@ -1,28 +1,51 @@
-<nav class="bar-tab">
+<nav class="bar-tab" ng-class="{'drawer-closed': !drawerState, 'drawer-open': drawerState}">
   <ul class="tab-inner">
     <li class="tab-item" ui-route="/section/food" ng-class="{active:$uiRoute}">
-      <a href="section/food">
+      <a href="/section/food">
         <img class="tab-icon" src="assets/icons/icon-food.png">
         <div class="tab-label">Food</div>
       </a>
     </li>
     <li class="tab-item" ui-route="/section/drinks" ng-class="{active:$uiRoute}">
-      <a href="section/drinks">
+      <a href="/section/drinks">
         <img class="tab-icon" src="assets/icons/icon-drinks.png">
         <div class="tab-label">Drinks</div>
       </a>
     </li>
     <li class="tab-item" ui-route="/section/shops" ng-class="{active:$uiRoute}">
-      <a href="section/shops">
+      <a href="/section/shops">
         <img class="tab-icon" src="assets/icons/icon-shops.png">
         <div class="tab-label">Shops</div>
       </a>
     </li>
+    <li class="tab-item">
+      <a ng-click="drawerState = !drawerState">
+        <img class="tab-icon" src="assets/icons/icon-drawer.png">
+        <div class="tab-label">More</div>
+      </a>
+    </li>
+  </ul>
+  <ul class="tab-inner">
     <li class="tab-item" ui-route="/section/arts" ng-class="{active:$uiRoute}">
-      <a href="section/arts">
+      <a href="/section/arts">
         <img class="tab-icon" src="assets/icons/icon-arts.png">
         <div class="tab-label">Arts</div>
       </a>
+    </li>
+    <li class="tab-item" ui-route="/section/outdoors" ng-class="{active:$uiRoute}">
+      <a href="/section/outdoors">
+        <img class="tab-icon" src="assets/icons/icon-outdoors.png">
+        <div class="tab-label">Outdoors</div>
+      </a>
+    </li>
+    <li class="tab-item" ui-route="/settings" ng-class="{active:$uiRoute}">
+      <a href="/settings">
+        <img class="tab-icon" src="assets/icons/icon-settings.png">
+        <div class="tab-label">Settings</div>
+      </a>
+    </li>
+    <li class="tab-item">
+
     </li>
   </ul>
 </nav>

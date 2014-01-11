@@ -3,6 +3,9 @@
 * Switching to angular 1.2.9
 * made search directive linked to the search service
 * hooking up ngAnimate.
+* made search template for the section pages with ngAnimate.
+* added ngTouch angular library
+* replaced ngTouch with a more mature touch library, Hammer.js, the bridge to Angular is made by angular-hammer module.
 
 # 0.2.0 (2014-01-10)
 
@@ -71,8 +74,7 @@
 ****************** Investigate the cause of two or multiple digests running all the time ?
 ********* Solve the ngShow issue of disappearing only when the service starts running.
 ********* define error handling and messages.
-**** three flashing dots ... for listing {{food}} in ... ngShow ?
-
+*** On the drawer make the button change from more to less when open
 *** ng-cookie, suggest the user to make a shortcut for the application for a fullscreen experience.
 *** when scrolling down, hide the top bar, only when starting to scroll up show it, like chrome does it.
 

@@ -7,7 +7,8 @@ angular.module('tivity', [
   'tivity.search',
   'tivity.about',
   'ui.router.state',
-  'ui.route'
+  'ui.route',
+  'hmTouchEvents'
 ])
 
   .config( function myAppConfig ( $stateProvider, $urlRouterProvider, $locationProvider ) {

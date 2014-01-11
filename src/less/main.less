@@ -282,7 +282,7 @@ a {
 .tab-inner {
   display: -webkit-box;
   display: box;
-  height: 100%;
+  height: 70px;
   list-style: none;
   -webkit-box-orient: horizontal;
   box-orient: horizontal;
@@ -1351,6 +1351,17 @@ a {
 .search-closed-add, .search-open-add {
   -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s  !important;
   transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s  !important;
+}
+
+
+// Global Footer
+
+.bar-tab {
+  -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s  !important;
+  transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s  !important;
+  &.drawer-open {
+    height: 140px;
+  }
 }
 
 /**

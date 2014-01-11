@@ -70,6 +70,8 @@ module.exports = {
       'vendor/angular-ui-router/release/angular-ui-router.js',
       'vendor/angular-ui-utils/modules/route/route.js',
       'vendor/angularjs-geolocation/dist/angularjs-geolocation.min.js',
+      'vendor/hammerjs/hammer.min.js',
+      'vendor/angular-hammer/angular-hammer.js',
       'vendor/angular-local-storage/angular-local-storage.min.js'
     ],
     css: [
