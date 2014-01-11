@@ -19,7 +19,7 @@ angular.module('fetchLocations', [])
             var location = data.coords.latitude + ',' + data.coords.longitude;
 
             //With the location at hand, we're calling the foursquare service.
-            foursquare.getAllData(/*location*/'45.942171,25.02008', section).then(function(data){
+            foursquare.getAllData(location, section).then(function(data){
 
               //when the data is ready, populate the $scope variables.
               $scope.locations = data[0].response.groups[0].items;

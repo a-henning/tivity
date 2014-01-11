@@ -11,6 +11,12 @@ angular.module( 'tivity.section', [
 
 
   ])
+
+  /*.run(function($rootScope) {
+    $rootScope.$broadcast('error',CONSTANTS['errors.location.notFound']);
+    $rootScope.$broadcast('error',geolocation_msgs['errors.location.unsupportedBrowser']);
+  })*/
+
   .config(function config( $stateProvider ) {
     $stateProvider
       .state( 'section', {
