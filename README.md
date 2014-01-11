@@ -25,26 +25,47 @@ Not yet ready from prime time
 
 To have everything up and running:
 
-* `npm install` to get all the packages through NodeJs's npm
-* `bower install` to install vendor specific libraries (Angular, blah blah)
-* and finally to kick it off and have it rebuilt everytime you make a change start it with `grunt watch`
-* karma runs continuously and live reload makes sure it automatically refreshes your page.
-* the project is generated inside the build directory, make sure to point your vhost there if you want to.
+* you must be running a local server
 
-I also implemented beautiful links, as I will TOTALLY not support any version on IE lower or equal to 10 (if you choose to see it with that). This is for mobile devices only, most of which already support HTML5.
+* install NodeJS
 
-To have the beautiful (normal :) ) links you have to place this in your .htaccess or in the vhost declaration:
+* clone and run the project
 
 ```
-RewriteEngine on
-# Don't rewrite files or directories
-RewriteCond %{REQUEST_FILENAME} -f [OR]
-RewriteCond %{REQUEST_FILENAME} -d
-RewriteRule ^ - [L]
-
-# Rewrite everything else to index.html to allow html5 state links
-RewriteRule ^ index.html [L]
+$ git clone git://github.com/ArthurianX/tivity.git
+$ cd tivity
+$ sudo npm -g install grunt-cli karma bower
+$ npm install
+$ bower install
+$ grunt watch
 ```
+* setup a vhost with the following rules:
+
+```
+<VirtualHost *:80>
+    ServerName tivity.localhost
+    ServerAlias tivity.localhost.*.xip.io
+    DocumentRoot "/your/path/tivity/build"
+    ServerAdmin your-email@gmail.com
+        <Directory "/your/path/tivity/build">
+            Options Indexes FollowSymLinks
+            AllowOverride All
+            Order allow,deny
+            Allow from all
+            RewriteEngine on
+
+            # Don't rewrite files or directories
+            RewriteCond %{REQUEST_FILENAME} -f [OR]
+            RewriteCond %{REQUEST_FILENAME} -d
+            RewriteRule ^ - [L]
+
+            # Rewrite everything else to index.html to allow html5 state links
+            RewriteRule ^ index.html [L]
+        </Directory>
+</VirtualHost>
+```
+I also implemented beautiful (read: normal) links, as I will TOTALLY not support any version on IE lower or equal to 10 (if you choose to see it with that). This is for mobile devices only, most of which already support HTML5.
+
 
 
 
