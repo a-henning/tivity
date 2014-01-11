@@ -18,9 +18,7 @@ Not yet ready from prime time
 ## ~~Technical Details~~
 Not yet ready from prime time
 
-## ~~For the tinkerers~~
-Not yet ready from prime time
-
+## For the tinkerers
 ### Setup
 
 To have everything up and running:
@@ -64,6 +62,9 @@ $ grunt watch
         </Directory>
 </VirtualHost>
 ```
+* now you can test the page in your browser, or if you have pow.cx you can quickly create a project-name.IP-ADRESS.xip.io link to see it on your device.
+ 
+
 I also implemented beautiful (read: normal) links, as I will TOTALLY not support any version on IE lower or equal to 10 (if you choose to see it with that). This is for mobile devices only, most of which already support HTML5.
 
 
