@@ -3,9 +3,9 @@
 </div>
 
 <div ng-controller="SectionCtrl" class="location-listing">
-  <h2 class="top">Listing {{ theLocationType }} in {{ locationName }}</h2>
+  <h2 class="top">Listing {{ theLocationType }} in {{ locationName }} <button class="openSearch" ng-click="barState = !barState">search</button></h2>
   <!-- VVV DIRECTIVE: searchBar VVV -->
-  <div class="searchBar"></div>
+  <div class="searchBar" ng-class="{'search-closed': !barState, 'search-open': barState}"></div>
   <!--<h3>{{ coords.lat }}, {{ coords.long }}</h3>-->
   <!-- VVV DIRECTIVE: fetchLocations VVV -->
   <div class="fetchLocations" section-type="{{theLocationType}}"></div>

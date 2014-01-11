@@ -1330,6 +1330,29 @@ a {
   color: #157efb;
 }
 
+
+// Styles for the global search bar.
+.searchBar {
+  padding: 10px 10px 0px 10px;
+  border-bottom: 1px solid #ccc;
+  -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s !important;
+  transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s !important;
+
+}
+.searchBar.search-closed {
+  margin-top: -100px;
+  margin-bottom: 45px;
+
+}
+.searchBar.search-open {
+  margin-top: -5px;
+  margin-bottom: 5px;
+}
+.search-closed-add, .search-open-add {
+  -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s  !important;
+  transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s  !important;
+}
+
 /**
  * Now that all app-wide styles have been applied, we can load the styles for
  * all the submodules and components we are using. 

@@ -1,6 +1,12 @@
+# 0.2.1 (2014-01-11)
+
+* Switching to angular 1.2.9
+* made search directive linked to the search service
+* hooking up ngAnimate.
+
 # 0.2.0 (2014-01-10)
 
-* added & implemented foursquare search functionality.
+* added & implemented foursquare search functionality service.
 * refactored part of the code, got rid of unnecessary directives and services calls in places where they weren't needed.
 * unfortunately the search API does not return photos, so I am putting the basis of a multiple photo requests
 //TODO: this will be a very COSTLY service [network req wise], need to find a better way to do this.

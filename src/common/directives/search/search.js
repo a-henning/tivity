@@ -2,7 +2,7 @@ angular.module('searchBar', [])
   .directive('searchBar', function (){
     return {
       restrict: 'C',
-      replace: true,
+      //replace: true,
       scope: { ngModel : '=searchTerm' },
       //template: '<form ng-submit="searchVenue()" action=""><input type="search" placeholder="Search" ng-model="searchTerm"><input type="submit" value="go"></form>',
       templateUrl: 'templates/searchBar.tpl.html',

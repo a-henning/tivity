@@ -2,15 +2,18 @@
   "name": "tivity",
   "version": "0.4",
   "devDependencies": {
-    "angular": "~1.2.8",
+    "angular": "~1.2.9",
+    "angular-animate": "latest",
     "angular-promise-tracker": "latest",
     "angular-mocks": "~1.2.4",
     "ratchet": "latest",
     "angular-ui-router": "~0.2.7",
     "angular-ui-utils": "~0.0.4",
-    "angularjs-geolocation": "latest",
+    "angularjs-geolocation": "1.1",
     "angular-local-storage": "latest"
-
   },
-  "dependencies": {}
+  "dependencies": {},
+  "resolutions": {
+    "angular": "~1.x"
+  }
 }

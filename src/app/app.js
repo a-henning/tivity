@@ -1,4 +1,5 @@
 angular.module('tivity', [
+  'ngAnimate',
   'templates-app',
   'templates-common',
   'tivity.home',
