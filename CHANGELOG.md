@@ -1,3 +1,11 @@
+# 0.2.2 (2014-01-12)
+
+* got almost all of the data on the details page.
+* tried angular-pull-to-refresh library, I can make it better from scratch.
+* integrating google maps files and API.
+* switching to angular-google-maps.
+
+
 # 0.2.1 (2014-01-11)
 
 * Switching to angular 1.2.9
@@ -6,6 +14,7 @@
 * made search template for the section pages with ngAnimate.
 * added ngTouch angular library
 * replaced ngTouch with a more mature touch library, Hammer.js, the bridge to Angular is made by angular-hammer module.
+
 
 # 0.2.0 (2014-01-10)
 
@@ -70,9 +79,7 @@
 
 # TO DO
 
-****************** the footer bar, make it with an arrow, letting the user know he can pull it, to see all the options.
 ****************** Investigate the cause of two or multiple digests running all the time ?
-********* Solve the ngShow issue of disappearing only when the service starts running.
 ********* define error handling and messages.
 *** On the drawer make the button change from more to less when open
 *** ng-cookie, suggest the user to make a shortcut for the application for a fullscreen experience.
@@ -89,7 +96,6 @@ as an idea, we can redirect him to the home page and save the parameter then pas
 * Finish venue page
 * FINAL STAGES: Implement FastClick
 * do loading page animation / splash screen and make it transition automatically to the food section
-* Increase utility of the navigation bar, scrollable? more sections, about, dev information (timings, network calls etc)
 * Custom number of post listings per page (pagination maybe?)
 * Control Radius of found places?
 * Sort by rating, distance

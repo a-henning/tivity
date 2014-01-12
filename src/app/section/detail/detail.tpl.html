@@ -10,21 +10,37 @@
   </div>
   <div class="address">
     <ul>
-      <li class="desc"></li>
-      <li class="location"></li>
-      <li class="phone"></li>
-      <li class="site"></li>
+      <li class="desc">{{categories}}</li>
+      <li class="location">{{venue.location.address}}, {{venue.location.city}}</li>
+      <li>{{venue.location.lat}}, {{venue.location.lng}}</li>
+      <li class="phone"><a href="tel://{{venue.contact.phone}}">{{venue.contact.formattedPhone}}</a></li>
+      <li class="site"><a href="{{venue.url}}" target="_blank">{{venue.url}}</a></li>
       <li class="directions"></li>
       <li class="city"></li>
     </ul>
   </div>
-  <div class="rating">
+  <div class="map"></div>
 
+  <div class="rating">
+    Checkins: {{venue.stats.checkinsCount}}
+    Likes: {{venue.likes.count}}
+    Users: {{venue.stats.usersCount}}
+    Tips Count: {{venue.tips.count}}
   </div>
   <div class="stats">
 
+    Mayor: {{venue.mayor.user.firstName}} {{venue.mayor.user.lastName}} <img src="{{venue.mayor.user.photo.prefix}}width120{{venue.mayor.user.photo.suffix}}" alt="{{venue.mayor.user.firstName}} {{venue.mayor.user.lastName}}"/>
   </div>
   <div class="tips">
 
+    Latest Tip: {{venue.tips.groups[0].items[0].text}} by {{venue.tips.groups[0].items[0].user.firstName}} <img alt="{{venue.tips.groups[0].items[0].user.firstName}}" src="{{venue.tips.groups[0].items[0].user.photo.prefix}}width80{{venue.tips.groups[0].items[0].user.photo.suffix}}"/>
   </div>
+  <div class="carousel">
+    <ul >
+      <li ng-repeat="image in images">
+        <img src="{{image.scaledImage}}" alt="Photo of {{venue.name}} by {{image.user.firstName}}"/>
+      </li>
+    </ul>
+  </div>
+
 </div>

@@ -11,7 +11,8 @@
     "angularjs-geolocation": "latest",
     "hammerjs": "~1.0.6",
     "angular-hammer": "~1.0.3",
-    "angular-local-storage": "latest"
+    "angular-local-storage": "latest",
+    "angular-google-maps": "~1.0.4"
   },
   "dependencies": {},
   "resolutions": {

@@ -46,7 +46,7 @@ angular.module( 'tivity.section', [
 
     //Create / get our tracker with unique ID
     $scope.loadingTracker = promiseTracker('loadingTracker');
-
+    //console.log($scope.drawerState);
 
   })
 

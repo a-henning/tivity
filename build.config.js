@@ -72,10 +72,11 @@ module.exports = {
       'vendor/angularjs-geolocation/dist/angularjs-geolocation.min.js',
       'vendor/hammerjs/hammer.min.js',
       'vendor/angular-hammer/angular-hammer.js',
-      'vendor/angular-local-storage/angular-local-storage.min.js'
+      'vendor/angular-local-storage/angular-local-storage.min.js',
+      'vendor/angular-google-maps/dist/angular-google-maps.min.js'
     ],
     css: [
-      //'vendor/ratchet/dist/ratchet.css'
+      //'vendor/angular-pull-to-refresh/dist/angular-pull-to-refresh.min.css'
     ],
     assets: [
     ]
