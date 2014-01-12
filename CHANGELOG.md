@@ -81,6 +81,7 @@
 
 ****************** Investigate the cause of two or multiple digests running all the time ?
 ********* define error handling and messages.
+*** Implement settings page with dev switches.
 *** On the drawer make the button change from more to less when open
 *** ng-cookie, suggest the user to make a shortcut for the application for a fullscreen experience.
 *** when scrolling down, hide the top bar, only when starting to scroll up show it, like chrome does it.
