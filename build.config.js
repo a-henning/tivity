@@ -73,6 +73,7 @@ module.exports = {
       'vendor/hammerjs/hammer.min.js',
       'vendor/angular-hammer/angular-hammer.js',
       'vendor/angular-local-storage/angular-local-storage.min.js',
+      'vendor/lodash/dist/lodash.min.js',
       'vendor/angular-google-maps/dist/angular-google-maps.min.js'
     ],
     css: [
