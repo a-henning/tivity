@@ -1,3 +1,7 @@
+# 0.2.3 (2014-01-13)
+
+
+
 # 0.2.2 (2014-01-12)
 
 * got almost all of the data on the details page.

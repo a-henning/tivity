@@ -12,29 +12,6 @@ angular.module( 'tivity.detail', [
   .controller( 'DetailCtrl', function DetailController( $scope, geolocation, foursquare, $stateParams, $window, promiseTracker ) {
     $scope.name = $stateParams.venueDetail;
 
-
-    /*$scope.map = {
-      center: {
-        latitude: '46.77910918189165',
-        longitude: '23.609533309936523'
-      },
-      zoom: 11
-    };*/
-    /*geolocation.getLocation().then(function(data){
-      //When location data is ready, we populate the scope.
-      $scope.coords = {lat:data.coords.latitude, long:data.coords.longitude};
-      var location = data.coords.latitude + ',' + data.coords.longitude;
-      $scope.map = {
-        center: {
-          latitude: data.coords.latitude,
-          longitude: data.coords.longitude
-        },
-        zoom: 11
-      };
-    });*/
-
-
-
     //Create / get our tracker with unique ID
     $scope.loadingTracker = promiseTracker('loadingTracker');
 
@@ -70,8 +47,19 @@ angular.module( 'tivity.detail', [
           latitude: data[0].response.venue.location.lat,
           longitude: data[0].response.venue.location.lng
         },
-        zoom: 11
+        zoom: 16,
+        options: {
+          disableDefaultUI: true,
+          panControl: false,
+          navigationControl: false,
+          scrollwheel: false,
+          scaleControl: false
+        },
+        icons: {
+          venueIcon: data[0].response.venue.categories[0].icon.prefix + '88' + data[0].response.venue.categories[0].icon.suffix
+        }
       };
+
     });
   })
 

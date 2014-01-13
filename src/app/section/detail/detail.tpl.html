@@ -19,9 +19,6 @@
       <li class="city"></li>
     </ul>
   </div>
-  <div class="map">
-    <google-map center='map.center' zoom='map.zoom'></google-map>
-  </div>
 
   <div class="rating">
     Checkins: {{venue.stats.checkinsCount}}
@@ -43,6 +40,16 @@
         <img src="{{image.scaledImage}}" alt="Photo of {{venue.name}} by {{image.user.firstName}}"/>
       </li>
     </ul>
+  </div>
+
+  <div class="map">
+    <span ng-if="map !== undefined">
+      <google-map center='map.center' zoom='map.zoom' options="map.options" draggable="true">
+        <marker coords='map.center'
+                >
+        </marker>
+      </google-map>
+    </span>
   </div>
 
 </div>
