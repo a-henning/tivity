@@ -26,10 +26,16 @@ angular.module('tivity', [
     });
   })
 
-  .run( function run () {
+  .run( function run ($rootScope) {
+    $rootScope.$on('$stateChangeSuccess', function (event, currentState) {
+      $rootScope.getCurrentLocation = function() {
+        return currentState.name + '-page';
+      }
+      console.log(currentState.name);
+    });
   })
 
-  .controller( 'AppCtrl', function AppCtrl ( $scope, $location ) {
+  .controller( 'AppCtrl', function AppCtrl ( $scope, $location, $stateParams ) {
     $scope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams){
       if ( angular.isDefined( toState.data.pageTitle ) ) {
         $scope.pageTitle = toState.data.pageTitle + ' | tivity' ;

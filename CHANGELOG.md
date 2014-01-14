@@ -1,6 +1,8 @@
 # 0.2.3 (2014-01-13)
 
-
+* gmaps module is now working
+* used $rootScope to listen to $stateParams change to set a proper body class for each page.
+* set the map container functionality
 
 # 0.2.2 (2014-01-12)
 
@@ -82,6 +84,8 @@
 
 
 # TO DO
+
+** Create scrollTo functionality when opening the map.
 
 ****************** Investigate the cause of two or multiple digests running all the time ?
 ********* define error handling and messages.

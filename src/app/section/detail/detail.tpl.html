@@ -42,10 +42,11 @@
     </ul>
   </div>
 
-  <div class="map">
+  <div class="map" ng-class="{'map-closed': !openMap, 'map-open': openMap}">
+    <div class="overlay" ng-click="openMap = !openMap">Open Map</div>
     <span ng-if="map !== undefined">
       <google-map center='map.center' zoom='map.zoom' options="map.options" draggable="true">
-        <marker coords='map.center'
+        <marker coords='marker'
                 >
         </marker>
       </google-map>

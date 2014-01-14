@@ -59,6 +59,10 @@ angular.module( 'tivity.detail', [
           venueIcon: data[0].response.venue.categories[0].icon.prefix + '88' + data[0].response.venue.categories[0].icon.suffix
         }
       };
+      $scope.marker = {
+        latitude: data[0].response.venue.location.lat,
+        longitude: data[0].response.venue.location.lng
+      }
 
     });
   })
