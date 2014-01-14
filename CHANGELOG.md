@@ -1,8 +1,10 @@
 # 0.2.3 (2014-01-13)
 
-* gmaps module is now working
+* gmaps module is now working properly
 * used $rootScope to listen to $stateParams change to set a proper body class for each page.
-* set the map container functionality
+* set the map container functionality.
+* finished map opening and closing with it's adjacent functionality.
+* made a scroolTo snippet so the map always opens at the top.
 
 # 0.2.2 (2014-01-12)
 

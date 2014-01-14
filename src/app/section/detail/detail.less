@@ -54,7 +54,7 @@
     position: relative;
     &.map-closed {
       overflow: hidden;
-      height: 80px;
+      height: 80px !important;
       .overlay {
         color: #fff;
         font-weight: 200;
@@ -71,20 +71,22 @@
         z-index: 10;
         cursor: pointer;
       }
-      .angular-google-map {
-        margin-top: -145px;
+      div.angular-google-map {
+        margin-top: -65%;
       }
     }
 
     &.map-open {
       .overlay {
+        text-indent: -9999px;
         overflow: hidden;
         width: 15%;
         height: 50px;
         position: absolute;
         right: 5px;
         top: 5px;
-        background-color: rgba(0,0,0,0.5);
+        background: rgba(0,0,0,0.5) url(icons/icon-close.png) no-repeat center center;
+        background-size: 60%;
         z-index: 10;
         cursor: pointer;
         color: #fff;
@@ -96,8 +98,8 @@
 
       }
     }
-    .angular-google-map, .angular-google-map-container {
-      height: 400px;
+    div.angular-google-map, .angular-google-map-container {
+      height: 100%;
     }
   }
 

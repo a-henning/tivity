@@ -1,7 +1,6 @@
 <div class="my-super-awesome-loading-box" ng-show="loadingTracker.active()">
   Loading...
 </div>
-
 <div ng-controller="DetailCtrl" class="location-detail" ng-show="!loadingTracker.active()">
   <div class="top-info">
     <div class="image"><img src="{{image}}" alt=""/></div>
@@ -27,7 +26,6 @@
     Tips Count: {{venue.tips.count}}
   </div>
   <div class="stats">
-
     Mayor: {{venue.mayor.user.firstName}} {{venue.mayor.user.lastName}} <img src="{{venue.mayor.user.photo.prefix}}width120{{venue.mayor.user.photo.suffix}}" alt="{{venue.mayor.user.firstName}} {{venue.mayor.user.lastName}}"/>
   </div>
   <div class="tips">
@@ -42,10 +40,10 @@
     </ul>
   </div>
 
-  <div class="map" ng-class="{'map-closed': !openMap, 'map-open': openMap}">
-    <div class="overlay" ng-click="openMap = !openMap">Open Map</div>
+  <div class="map" id="map" ng-class="{'map-closed': !openMap, 'map-open': openMap}" ng-style="getWindowHeight()">
+    <div class="overlay" ng-click="openMap = !openMap; scrollMap()">Open Map</div>
     <span ng-if="map !== undefined">
-      <google-map center='map.center' zoom='map.zoom' options="map.options" draggable="true">
+      <google-map center='map.center' zoom='map.zoom' options="map.options" draggable="true" ng-class="runHeight()">
         <marker coords='marker'
                 >
         </marker>

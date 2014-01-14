@@ -30,7 +30,7 @@ angular.module('tivity', [
     $rootScope.$on('$stateChangeSuccess', function (event, currentState) {
       $rootScope.getCurrentLocation = function() {
         return currentState.name + '-page';
-      }
+      };
       console.log(currentState.name);
     });
   })

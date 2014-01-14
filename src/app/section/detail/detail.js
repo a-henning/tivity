@@ -9,11 +9,36 @@ angular.module( 'tivity.detail', [
   'google-maps'
 ])
 
-  .controller( 'DetailCtrl', function DetailController( $scope, geolocation, foursquare, $stateParams, $window, promiseTracker ) {
+  .controller( 'DetailCtrl', function DetailController( $scope, geolocation, foursquare, $stateParams, $window, promiseTracker, $location, $anchorScroll ) {
     $scope.name = $stateParams.venueDetail;
 
     //Create / get our tracker with unique ID
     $scope.loadingTracker = promiseTracker('loadingTracker');
+
+    //Some sizing functions with values returned to the view.
+    $scope.getWindowHeight = function() {
+      return {
+        height: $window.innerHeight + 'px'
+      };
+    };
+    $scope.runHeight = function() {
+      var mapHeight = angular.element(document.querySelector( '.angular-google-map-container' ));
+      mapHeight.css('height', ($window.innerHeight - 50) + 'px');
+      var mapHeightOuter = angular.element(document.querySelector( 'div.angular-google-map' ));
+      mapHeightOuter.css('height', ($window.innerHeight - 50) + 'px');
+    };
+    //Scroll to the map so it fits on the entire screen //TODO: Maybe a directive with this ?? :-?
+    $scope.scrollMap = function() {
+      if (!$scope.openMap) {
+        $location.hash('');
+        $anchorScroll();
+      } else {
+        $location.hash('map');
+        $anchorScroll();
+      }
+
+    };
+
 
     //With the location at hand, we're calling the foursquare service.
     foursquare.getVenue($stateParams.venueDetail).then(function(data){
@@ -62,7 +87,7 @@ angular.module( 'tivity.detail', [
       $scope.marker = {
         latitude: data[0].response.venue.location.lat,
         longitude: data[0].response.venue.location.lng
-      }
+      };
 
     });
   })
