@@ -87,31 +87,54 @@
 
 # TO DO
 
-** Create scrollTo functionality when opening the map.
+
+** .htaccess 404 rules and redirect to index.
+** session? NodeJS Backend maybe?
 
 ****************** Investigate the cause of two or multiple digests running all the time ?
+
+ERROR HANDLING
 ********* define error handling and messages.
+* when images or different fields are not available, don't even populate the DOM with the empty blocks.
+
+
 *** Implement settings page with dev switches.
 *** On the drawer make the button change from more to less when open
+
 *** ng-cookie, suggest the user to make a shortcut for the application for a fullscreen experience.
+
 *** when scrolling down, hide the top bar, only when starting to scroll up show it, like chrome does it.
 
 !!!! On a mobile device, if a user enters directly on a link, he's redirected to 404 not found, I GUESS,
-as an idea, we can redirect him to the home page and save the parameter then pass it to
+as an idea, we can redirect him to the home page and save the parameter then pass it on to the index
+
 * need to start working the TDD way.
+
+
 * implement favorites, remove from favorites
 * crate map for storing objects in localStorage
-* Left-right swipe navigation. Left-right in the sections, always right when opening a venue
-* Increase size || lower # of sections so the user can click it better-quicker
-* More details on the listing page (#of votes, thumbs up, comments, tips, popularity??)
-* Finish venue page
-* FINAL STAGES: Implement FastClick
-* do loading page animation / splash screen and make it transition automatically to the food section
+* caching ?
+
+
+FINAL STAGES:
+
+* Implement FastClick - Test with/out to see performance difference
+
 * Custom number of post listings per page (pagination maybe?)
+
 * Control Radius of found places?
+
 * Sort by rating, distance
+
+
+ANIMATION / EyeCandy
+
+* do loading page animation / splash screen and make it transition automatically to the food section
+** Left-right swipe navigation. Left-right in the sections, always right when opening a venue
 * Flow animation: sorting, elements appearance
 * Make carousel on the detail page
+
+FUTURE
 * FUTURE: login to foursquare to comment, recommend, like/dislike, check-in.
 * FUTURE: Aggregate further data from gMaps.
 

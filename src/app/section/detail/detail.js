@@ -21,12 +21,15 @@ angular.module( 'tivity.detail', [
         height: $window.innerHeight + 'px'
       };
     };
+
+    //Make gMaps container the height of the screen size.
     $scope.runHeight = function() {
       var mapHeight = angular.element(document.querySelector( '.angular-google-map-container' ));
       mapHeight.css('height', ($window.innerHeight - 50) + 'px');
       var mapHeightOuter = angular.element(document.querySelector( 'div.angular-google-map' ));
       mapHeightOuter.css('height', ($window.innerHeight - 50) + 'px');
     };
+
     //Scroll to the map so it fits on the entire screen //TODO: Maybe a directive with this ?? :-?
     $scope.scrollMap = function() {
       if (!$scope.openMap) {
@@ -39,8 +42,7 @@ angular.module( 'tivity.detail', [
 
     };
 
-
-    //With the location at hand, we're calling the foursquare service.
+    // Call the foursquare service
     foursquare.getVenue($stateParams.venueDetail).then(function(data){
       console.log(data[0].response.venue);
       $scope.venue = data[0].response.venue;
@@ -58,15 +60,18 @@ angular.module( 'tivity.detail', [
       }
       $scope.categories = categories;
 
-      //Prepare an array with the images
-      for (var j = 0; j < venue.photos.count; j++) {
-        var theImage = venue.photos.groups[0].items[j].prefix + 'width' + $window.innerWidth + venue.photos.groups[0].items[j].suffix;
-        venue.photos.groups[0].items[j].scaledImage = theImage;
-        venueImages.push(venue.photos.groups[0].items[j]);
+      //Prepare an array with the images, if there are any
+      if (venue.photos.count !== undefined) {
+        //Iterate through the images and add them to venueImages object.
+        for (var j = 0; j < venue.photos.count; j++) {
+          var theImage = venue.photos.groups[0].items[j].prefix + 'width' + $window.innerWidth + venue.photos.groups[0].items[j].suffix;
+          venue.photos.groups[0].items[j].scaledImage = theImage;
+          venueImages.push(venue.photos.groups[0].items[j]);
+        }
+        $scope.images = venueImages;
       }
-      $scope.images = venueImages;
 
-      //Google Maps
+      //Google Maps directive controls.
       $scope.map = {
         center: {
           latitude: data[0].response.venue.location.lat,

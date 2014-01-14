@@ -9,28 +9,43 @@
   </div>
   <div class="address">
     <ul>
-      <li class="desc">{{categories}}</li>
-      <li class="location">{{venue.location.address}}, {{venue.location.city}}</li>
-      <li>{{venue.location.lat}}, {{venue.location.lng}}</li>
-      <li class="phone"><a href="tel://{{venue.contact.phone}}">{{venue.contact.formattedPhone}}</a></li>
-      <li class="site"><a href="{{venue.url}}" target="_blank">{{venue.url}}</a></li>
-      <li class="directions"></li>
-      <li class="city"></li>
+      <li class="desc" ng-if="categories">{{categories}} <span>&#187;</span></li>
+      <li class="location"  ng-if="venue.location.address">{{venue.location.address}}, {{venue.location.city}} <span>&#187;</span></li>
+      <li class="phone" ng-if="venue.contact.phone"><a href="tel://{{venue.contact.phone}}">{{venue.contact.formattedPhone}}</a> <span>&#187;</span></li>
+      <li class="site" ng-if="venue.url"><a href="{{venue.url}}" target="_blank">{{venue.url}}</a>  <span>&#187;</span></li>
     </ul>
   </div>
 
   <div class="rating">
-    Checkins: {{venue.stats.checkinsCount}}
-    Likes: {{venue.likes.count}}
-    Users: {{venue.stats.usersCount}}
-    Tips Count: {{venue.tips.count}}
+    <h2><img src="assets/icons/icon-stats.png"> Stats</h2>
+    <ul>
+      <li class="checkins"><h3>{{venue.stats.checkinsCount}} <span>Checkins</span></h3></li>
+      <li class="likes"><h3>{{venue.likes.count}} <span>Likes</span></h3></li>
+      <li class="users"><h3>{{venue.stats.usersCount}} <span>Users</span></h3></li>
+      <li class="tips"><h3>{{venue.tips.count}} <span>Tips</span></h3></li>
+    </ul>
   </div>
-  <div class="stats">
-    Mayor: {{venue.mayor.user.firstName}} {{venue.mayor.user.lastName}} <img src="{{venue.mayor.user.photo.prefix}}width120{{venue.mayor.user.photo.suffix}}" alt="{{venue.mayor.user.firstName}} {{venue.mayor.user.lastName}}"/>
+  <div class="mayor">
+    <ul>
+      <li class="type">
+        <div class="bar"></div>
+        <div class="icon"><img src="assets/icons/icon-mayor.png"></div>
+        <h3>Mayor</h3>
+      </li>
+      <li class="name">{{venue.mayor.user.firstName}} {{venue.mayor.user.lastName}}</li>
+      <li class="photo"><img src="{{venue.mayor.user.photo.prefix}}120x120{{venue.mayor.user.photo.suffix}}" alt="{{venue.mayor.user.firstName}} {{venue.mayor.user.lastName}}"/></li>
+    </ul>
   </div>
   <div class="tips">
-
-    Latest Tip: {{venue.tips.groups[0].items[0].text}} by {{venue.tips.groups[0].items[0].user.firstName}} <img alt="{{venue.tips.groups[0].items[0].user.firstName}}" src="{{venue.tips.groups[0].items[0].user.photo.prefix}}width80{{venue.tips.groups[0].items[0].user.photo.suffix}}"/>
+    <ul>
+      <li class="type">
+        <div class="bar"></div>
+        <div class="icon"><img src="assets/icons/icon-tip.png"></div>
+        <h3>Last Tip</h3>
+      </li>
+      <li class="name">{{venue.tips.groups[0].items[0].text}}</li>
+      <li class="photo"><img alt="{{venue.tips.groups[0].items[0].user.firstName}}" src="{{venue.tips.groups[0].items[0].user.photo.prefix}}120x120{{venue.tips.groups[0].items[0].user.photo.suffix}}"/> <span>{{venue.tips.groups[0].items[0].user.firstName}}</span></li>
+    </ul>
   </div>
   <div class="carousel">
     <ul >

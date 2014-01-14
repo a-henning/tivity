@@ -13,7 +13,7 @@
     "angular-hammer": "~1.0.3",
     "angular-local-storage": "latest",
     "lodash": "~2.4.1",
-    "angular-google-maps": "~1.0.4"
+    "angular-google-maps": "~1.0.5"
   },
   "dependencies": {},
   "resolutions": {
