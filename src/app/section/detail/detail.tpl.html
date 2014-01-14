@@ -25,12 +25,32 @@
       <li class="tips"><h3>{{venue.tips.count}} <span>Tips</span></h3></li>
     </ul>
   </div>
+
+  <!-- Carousel START -->
+  <div class="carousel">
+    <div class="overlay" ng-click="startSlide = !startSlide" ng-class="{'slide-started': startSlide, 'slide-stopped': !startSlide}">
+      <div class="inner">
+        Swipe Gallery
+      </div>
+    </div>
+    <span ng-if="images[0].scaledImage !== undefined">
+      <ul rn-carousel class="image">
+        <li ng-repeat="image in images" style="background-image: url({{image.scaledImage}})">
+          <img src="{{image.scaledImage}}" alt="Photo of {{venue.name}} by {{image.user.firstName}}" ng-style="getWindowWidth()"/>
+        </li>
+      </ul>
+    </span>
+  </div>
+  <!-- Carousel END -->
+
   <div class="mayor">
     <ul>
       <li class="type">
         <div class="bar"></div>
-        <div class="icon"><img src="assets/icons/icon-mayor.png"></div>
-        <h3>Mayor</h3>
+        <div class="info">
+          <div class="icon"><img src="assets/icons/icon-mayor.png"></div>
+          <h3>Mayor</h3>
+        </div>
       </li>
       <li class="name">{{venue.mayor.user.firstName}} {{venue.mayor.user.lastName}}</li>
       <li class="photo"><img src="{{venue.mayor.user.photo.prefix}}120x120{{venue.mayor.user.photo.suffix}}" alt="{{venue.mayor.user.firstName}} {{venue.mayor.user.lastName}}"/></li>
@@ -40,21 +60,16 @@
     <ul>
       <li class="type">
         <div class="bar"></div>
-        <div class="icon"><img src="assets/icons/icon-tip.png"></div>
-        <h3>Last Tip</h3>
+        <div class="info">
+          <div class="icon"><img src="assets/icons/icon-tip.png"></div>
+          <h3>Last Tip</h3>
+        </div>
       </li>
-      <li class="name">{{venue.tips.groups[0].items[0].text}}</li>
-      <li class="photo"><img alt="{{venue.tips.groups[0].items[0].user.firstName}}" src="{{venue.tips.groups[0].items[0].user.photo.prefix}}120x120{{venue.tips.groups[0].items[0].user.photo.suffix}}"/> <span>{{venue.tips.groups[0].items[0].user.firstName}}</span></li>
+      <li class="name">{{venue.tips.groups[0].items[0].text}}<span> - {{venue.tips.groups[0].items[0].user.firstName}}</span></li>
+      <li class="photo"><img alt="{{venue.tips.groups[0].items[0].user.firstName}}" src="{{venue.tips.groups[0].items[0].user.photo.prefix}}120x120{{venue.tips.groups[0].items[0].user.photo.suffix}}"/></li>
     </ul>
   </div>
-  <div class="carousel">
-    <ul >
-      <li ng-repeat="image in images">
-        <img src="{{image.scaledImage}}" alt="Photo of {{venue.name}} by {{image.user.firstName}}"/>
-      </li>
-    </ul>
-  </div>
-
+  <!-- Map Start -->
   <div class="map" id="map" ng-class="{'map-closed': !openMap, 'map-open': openMap}" ng-style="getWindowHeight()">
     <div class="overlay" ng-click="openMap = !openMap; scrollMap()">Open Map</div>
     <span ng-if="map !== undefined">
@@ -65,5 +80,6 @@
       </google-map>
     </span>
   </div>
+  <!-- Map END -->
 
 </div>

@@ -66,18 +66,21 @@ module.exports = {
       'vendor/angular-animate/angular-animate.min.js',
       'vendor/angular-promise-tracker/promise-tracker.min.js',
       'vendor/ratchet/dist/ratchet.js',
-      'vendor/placeholders/angular-placeholders-0.0.1-SNAPSHOT.min.js',
       'vendor/angular-ui-router/release/angular-ui-router.js',
       'vendor/angular-ui-utils/modules/route/route.js',
       'vendor/angularjs-geolocation/dist/angularjs-geolocation.min.js',
       'vendor/hammerjs/hammer.min.js',
       'vendor/angular-hammer/angular-hammer.js',
       'vendor/angular-local-storage/angular-local-storage.min.js',
+      'vendor/angular-touch/angular-touch.min.js',
+      'vendor/angular-rn-carousel/dist/angular-carousel.min.js',
       'vendor/lodash/dist/lodash.min.js',
-      'vendor/angular-google-maps/dist/angular-google-maps.min.js'
+      'vendor/angular-google-maps/dist/angular-google-maps.js'
+
+
     ],
     css: [
-      //'vendor/angular-pull-to-refresh/dist/angular-pull-to-refresh.min.css'
+      'vendor/angular-rn-carousel/dist/angular-carousel.min.css'
     ],
     assets: [
     ]

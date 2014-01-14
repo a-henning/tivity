@@ -1,6 +1,5 @@
 angular.module( 'tivity.about', [
-  'ui.router.state',
-  'placeholders'
+  'ui.router.state'
 ])
 
 .config(function config( $stateProvider ) {

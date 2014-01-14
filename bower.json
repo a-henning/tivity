@@ -2,7 +2,7 @@
   "name": "tivity",
   "version": "0.4",
   "devDependencies": {
-    "angular": "~1.2.9",
+    "angular": "~1.2.8",
     "angular-animate": "latest",
     "angular-promise-tracker": "latest",
     "ratchet": "latest",
@@ -13,10 +13,13 @@
     "angular-hammer": "~1.0.3",
     "angular-local-storage": "latest",
     "lodash": "~2.4.1",
-    "angular-google-maps": "~1.0.5"
+    "angular-google-maps": "~1.0.4",
+    "angular-rn-carousel": "~0.1.4",
+    "angular-touch": "~1.2.8"
   },
   "dependencies": {},
   "resolutions": {
-    "angular": ">= 1.1.5"
+    "angular-touch": "~1.2.8",
+    "angular": "1.2.9-build.2130+sha.02a4582"
   }
 }

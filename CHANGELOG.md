@@ -5,6 +5,13 @@
 * set the map container functionality.
 * finished map opening and closing with it's adjacent functionality.
 * made a scroolTo snippet so the map always opens at the top.
+* made most the detail page design.
+* fixed a error when image count was greater than the actual image objects.
+* readding angular-touch for ng-carousel. :(
+* added angular-carousel
+* disabled hammerJS
+*
+
 
 # 0.2.2 (2014-01-12)
 
@@ -88,6 +95,7 @@
 # TO DO
 
 
+* if there's only one result, redirect instantly to the venue page.
 ** .htaccess 404 rules and redirect to index.
 ** session? NodeJS Backend maybe?
 
@@ -115,6 +123,20 @@ as an idea, we can redirect him to the home page and save the parameter then pas
 * crate map for storing objects in localStorage
 * caching ?
 
+DEV
+
+* create settings page
+* delete local storage switch
+* statistics switches:
+  - loading times
+  - frame rates
+  - network calls
+  - fps
+* experimental switches
+  - enable/disable acceleration
+  - enable/disable inertial sensor for 3D depth effect.
+
+
 
 FINAL STAGES:
 
@@ -133,6 +155,12 @@ ANIMATION / EyeCandy
 ** Left-right swipe navigation. Left-right in the sections, always right when opening a venue
 * Flow animation: sorting, elements appearance
 * Make carousel on the detail page
+***** INERTIAL MOVEMENT IN 3D FOR THE PAGE ELEMENTS BASED ON SENSOR MOVEMENT!!!!! FFFFSSS
+
+NAVIGATION
+* gMaps ROUTE
+* ~MAYBE~ with navigation?!
+
 
 FUTURE
 * FUTURE: login to foursquare to comment, recommend, like/dislike, check-in.

@@ -2,11 +2,12 @@
 angular.module( 'tivity.detail', [
   'ui.router.state',
   'foursquare',
-  'geolocation',
+  //'geolocation', TODO: Enable when doing gMaps Routes
   'searchBar',
   'footerBar',
   'ajoslin.promise-tracker',
-  'google-maps'
+  'google-maps',
+  'angular-carousel'
 ])
 
   .controller( 'DetailCtrl', function DetailController( $scope, geolocation, foursquare, $stateParams, $window, promiseTracker, $location, $anchorScroll ) {
@@ -19,6 +20,11 @@ angular.module( 'tivity.detail', [
     $scope.getWindowHeight = function() {
       return {
         height: $window.innerHeight + 'px'
+      };
+    };
+    $scope.getWindowWidth = function() {
+      return {
+        width: $window.innerWidth + 'px'
       };
     };
 
@@ -46,7 +52,7 @@ angular.module( 'tivity.detail', [
     foursquare.getVenue($stateParams.venueDetail).then(function(data){
       console.log(data[0].response.venue);
       $scope.venue = data[0].response.venue;
-      $scope.image = data[0].response.venue.photos.groups[0].items[0].prefix + 'width' + $window.innerWidth + data[0].response.venue.photos.groups[0].items[0].suffix;
+      $scope.image = data[0].response.venue.photos.groups[0].items[0].prefix + $window.innerWidth + 'x' + $window.innerWidth + data[0].response.venue.photos.groups[0].items[0].suffix;
       $scope.icon =  data[0].response.venue.categories[0].icon.prefix + '88' + data[0].response.venue.categories[0].icon.suffix;
 
       //Prepare some iterative output
@@ -63,8 +69,8 @@ angular.module( 'tivity.detail', [
       //Prepare an array with the images, if there are any
       if (venue.photos.count !== undefined) {
         //Iterate through the images and add them to venueImages object.
-        for (var j = 0; j < venue.photos.count; j++) {
-          var theImage = venue.photos.groups[0].items[j].prefix + 'width' + $window.innerWidth + venue.photos.groups[0].items[j].suffix;
+        for (var j = 0; j < venue.photos.groups[0].items.length; j++) {
+          var theImage = venue.photos.groups[0].items[j].prefix + $window.innerWidth + 'x' + $window.innerWidth + venue.photos.groups[0].items[j].suffix;
           venue.photos.groups[0].items[j].scaledImage = theImage;
           venueImages.push(venue.photos.groups[0].items[j]);
         }

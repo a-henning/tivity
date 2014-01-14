@@ -8,7 +8,8 @@ angular.module('tivity', [
   'tivity.about',
   'ui.router.state',
   'ui.route',
-  'hmTouchEvents'
+  //'hmTouchEvents'
+  'ngTouch'
 ])
 
   .config( function myAppConfig ( $stateProvider, $urlRouterProvider, $locationProvider ) {
@@ -44,4 +45,3 @@ angular.module('tivity', [
   })
 
 ;
-
