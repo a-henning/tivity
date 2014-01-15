@@ -6,6 +6,7 @@ angular.module('tivity', [
   'tivity.section',
   'tivity.search',
   'tivity.about',
+  'tivity.settings',
   'ui.router.state',
   'ui.route',
   //'hmTouchEvents'

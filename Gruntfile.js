@@ -88,7 +88,7 @@ module.exports = function ( grunt ) {
      * The directories to delete when `grunt clean` is executed.
      */
     clean: [ 
-      '<%= build_dir %>', 
+      '<%= build_dir %>',
       '<%= compile_dir %>'
     ],
 
@@ -148,6 +148,16 @@ module.exports = function ( grunt ) {
             expand: true
           }
         ]
+      },
+      move_prod: {
+        files: [
+          {
+            src: [ '**' ],
+            dest: '<%= production_dir %>/',
+            cwd: 'bin/',
+            expand: true
+          }
+        ]
       }
     },
 
@@ -177,8 +187,8 @@ module.exports = function ( grunt ) {
         src: [ 
           '<%= vendor_files.js %>', 
           'module.prefix', 
-          '<%= build_dir %>/src/**/*.js', 
-          '<%= html2js.app.dest %>', 
+          '<%= build_dir %>/src/**/*.js',
+          '<%= html2js.app.dest %>',
           '<%= html2js.common.dest %>', 
           'module.suffix' 
         ],
@@ -563,7 +573,7 @@ module.exports = function ( grunt ) {
     'clean', 'html2js', 'jshint', 'coffeelint', 'coffee', 'recess:build',
     'concat:build_css', 'copy:build_app_assets', 'copy:build_vendor_assets',
     'copy:build_appjs', 'copy:build_vendorjs', 'index:build', 'karmaconfig',
-    'karma:continuous' 
+    'karma:continuous'
   ]);
 
   /**
@@ -571,7 +581,7 @@ module.exports = function ( grunt ) {
    * minifying your code.
    */
   grunt.registerTask( 'compile', [
-    'recess:compile', 'copy:compile_assets', 'ngmin', 'concat:compile_js', 'uglify', 'index:compile'
+    'recess:compile', 'copy:compile_assets', 'ngmin', 'concat:compile_js', 'uglify', 'index:compile', 'copy:move_prod'
   ]);
 
   /**

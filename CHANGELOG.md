@@ -1,6 +1,11 @@
 # 0.2.4 (2014-01-14)
 
 * started working on the settings page.
+* added icons
+* added the about page
+* added nodeJS+express barebone server for extra routing capabilities
+* started working on a automated production release, inside
+* on grunt compile, everything is minified and copied to the nodeJS production folder in views.
 
 # 0.2.3 (2014-01-13)
 
