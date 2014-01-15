@@ -1,3 +1,7 @@
+# 0.2.4 (2014-01-14)
+
+* started working on the settings page.
+
 # 0.2.3 (2014-01-13)
 
 * gmaps module is now working properly
@@ -10,7 +14,7 @@
 * readding angular-touch for ng-carousel. :(
 * added angular-carousel
 * disabled hammerJS
-*
+* carousel fixes (promise to wait for images to load, overall functionality)
 
 
 # 0.2.2 (2014-01-12)
@@ -95,18 +99,21 @@
 # TO DO
 
 
+## Miscelaneous
+
+
 * if there's only one result, redirect instantly to the venue page.
 ** .htaccess 404 rules and redirect to index.
 ** session? NodeJS Backend maybe?
 
 ****************** Investigate the cause of two or multiple digests running all the time ?
 
-ERROR HANDLING
+## ERROR HANDLING
 ********* define error handling and messages.
 * when images or different fields are not available, don't even populate the DOM with the empty blocks.
 
 
-*** Implement settings page with dev switches.
+
 *** On the drawer make the button change from more to less when open
 
 *** ng-cookie, suggest the user to make a shortcut for the application for a fullscreen experience.
@@ -123,10 +130,25 @@ as an idea, we can redirect him to the home page and save the parameter then pas
 * crate map for storing objects in localStorage
 * caching ?
 
-DEV
+## Detail Page
+
+* [DETAIL PAGE] Add appropriate icons for gallery and close. to the map too.
+* [DETAIL PAGE] carousel calculates the slide elements wrong, intertwined images as a result, FIX.
+* [DETAIL PAGE] add Swipe left event to the SWIPE GALLERRY BUTTON
+
+## DEPLOYMENT
+
+* buy tivity.XXX domain
+* link domain to heroku
+* deploy to heroku
+* maybe a NodeJS server, doing nothing at start, with the purpose of better routing and securing afterwards.
+
+## DEV
 
 * create settings page
+* see stored data
 * delete local storage switch
+* location providers
 * statistics switches:
   - loading times
   - frame rates
@@ -135,10 +157,16 @@ DEV
 * experimental switches
   - enable/disable acceleration
   - enable/disable inertial sensor for 3D depth effect.
+* drag and drop menu items to sort menu, order stored in localStorage
 
 
+## ABOUT PAGE:
 
-FINAL STAGES:
+* no interaction at start, the screen slowly scrolls down, pushing the logo up until it's squashed
+* if the user tries to interact popup a small thing near the finger saying "Not Yet, Not yet."
+* small description of the app, formatted gitHub changelog.
+
+## FINAL STAGES:
 
 * Implement FastClick - Test with/out to see performance difference
 
@@ -149,7 +177,7 @@ FINAL STAGES:
 * Sort by rating, distance
 
 
-ANIMATION / EyeCandy
+## ANIMATION / EyeCandy
 
 * do loading page animation / splash screen and make it transition automatically to the food section
 ** Left-right swipe navigation. Left-right in the sections, always right when opening a venue
@@ -157,12 +185,14 @@ ANIMATION / EyeCandy
 * Make carousel on the detail page
 ***** INERTIAL MOVEMENT IN 3D FOR THE PAGE ELEMENTS BASED ON SENSOR MOVEMENT!!!!! FFFFSSS
 
-NAVIGATION
+## NAVIGATION
 * gMaps ROUTE
 * ~MAYBE~ with navigation?!
 
 
-FUTURE
+## FUTURE
+
+** Protect API keys
 * FUTURE: login to foursquare to comment, recommend, like/dislike, check-in.
 * FUTURE: Aggregate further data from gMaps.
 

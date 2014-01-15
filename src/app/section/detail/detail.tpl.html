@@ -26,22 +26,18 @@
     </ul>
   </div>
 
-  <!-- Carousel START -->
-  <div class="carousel">
-    <div class="overlay" ng-click="startSlide = !startSlide" ng-class="{'slide-started': startSlide, 'slide-stopped': !startSlide}">
-      <div class="inner">
-        Swipe Gallery
-      </div>
-    </div>
-    <span ng-if="images[0].scaledImage !== undefined">
-      <ul rn-carousel class="image">
-        <li ng-repeat="image in images" style="background-image: url({{image.scaledImage}})">
-          <img src="{{image.scaledImage}}" alt="Photo of {{venue.name}} by {{image.user.firstName}}" ng-style="getWindowWidth()"/>
-        </li>
-      </ul>
+  <!-- Map Start -->
+  <div class="map" id="map" ng-class="{'map-closed': !openMap, 'map-open': openMap}" ng-style="getWindowHeight()">
+    <div class="overlay" ng-click="openMap = !openMap; scrollMap()">Open Map</div>
+    <span ng-if="map !== undefined">
+      <google-map center='map.center' zoom='map.zoom' options="map.options" draggable="true" ng-class="runHeight()">
+        <marker coords='marker'
+                >
+        </marker>
+      </google-map>
     </span>
   </div>
-  <!-- Carousel END -->
+  <!-- Map END -->
 
   <div class="mayor">
     <ul>
@@ -69,17 +65,23 @@
       <li class="photo"><img alt="{{venue.tips.groups[0].items[0].user.firstName}}" src="{{venue.tips.groups[0].items[0].user.photo.prefix}}120x120{{venue.tips.groups[0].items[0].user.photo.suffix}}"/></li>
     </ul>
   </div>
-  <!-- Map Start -->
-  <div class="map" id="map" ng-class="{'map-closed': !openMap, 'map-open': openMap}" ng-style="getWindowHeight()">
-    <div class="overlay" ng-click="openMap = !openMap; scrollMap()">Open Map</div>
-    <span ng-if="map !== undefined">
-      <google-map center='map.center' zoom='map.zoom' options="map.options" draggable="true" ng-class="runHeight()">
-        <marker coords='marker'
-                >
-        </marker>
-      </google-map>
+
+  <!-- Carousel START -->
+  <div class="carousel">
+    <div class="overlay" ng-click="startSlide = !startSlide" ng-class="{'slide-started': startSlide, 'slide-stopped': !startSlide}">
+      <div class="inner">
+        Swipe Gallery
+      </div>
+    </div>
+    <span ng-if="images[0].scaledImage !== undefined">
+      <ul rn-carousel class="image">
+        <li ng-repeat="image in images" style="background-image: url({{image.scaledImage}})">
+          <img src="{{image.scaledImage}}" alt="Photo of {{venue.name}} by {{image.user.firstName}}" ng-style="getWindowWidth()"/>
+        </li>
+      </ul>
     </span>
   </div>
-  <!-- Map END -->
+  <!-- Carousel END -->
+
 
 </div>
