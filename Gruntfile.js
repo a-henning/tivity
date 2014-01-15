@@ -57,7 +57,9 @@ module.exports = function ( grunt ) {
     changelog: {
       options: {
         dest: 'CHANGELOG.md',
-        template: 'changelog.tpl'
+        template: 'changelog.tpl',
+        github: 'arthurianx/tivity',
+        editor: 'subl -w'
       }
     },
 
@@ -74,9 +76,9 @@ module.exports = function ( grunt ) {
         commitMessage: 'chore(release): v%VERSION%',
         commitFiles: [
           "package.json", 
-          "client/bower.json"
+          "bower.json"
         ],
-        createTag: false,
+        createTag: true,
         tagName: 'v%VERSION%',
         tagMessage: 'Version %VERSION%',
         push: false,

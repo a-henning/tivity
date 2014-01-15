@@ -1,7 +1,7 @@
 {
   "name": "tivity",
-  "version": "0.4",
-  "devDependencies": {
+  "version": "0.2.4",
+  "dependencies": {
     "angular": "~1.2.8",
     "angular-animate": "latest",
     "angular-promise-tracker": "latest",
@@ -17,7 +17,9 @@
     "angular-rn-carousel": "~0.1.4",
     "angular-touch": "~1.2.8"
   },
-  "dependencies": {},
+  "devDependencies": {
+
+  },
   "resolutions": {
     "angular-touch": "~1.2.8",
     "angular": "1.2.9-build.2130+sha.02a4582"

@@ -2,15 +2,15 @@
   "author": "Kovacs Arthur",
   "name": "tivity",
   "version": "0.2.4",
-  "homepage": "https://github.com/ArthurianX/ngboilerplate-advanced",
+  "homepage": "https://github.com/ArthurianX/tivity",
   "licenses": {
     "type": "MIT",
-    "url": "https://raw.github.com/joshdmiller/ng-boilerplate/master/LICENSE"
+    "url": ""
   },
-  "bugs": "https://github.com/ArthurianX/ngboilerplate-advanced/issues",
+  "bugs": "https://github.com/ArthurianX/tivity/issues",
   "repository": {
     "type": "git",
-    "url": "git@github.com:ArthurianX/ngboilerplate-advanced.git"
+    "url": "git@github.com:ArthurianX/tivity.git"
   },
   "dependencies": {},
   "devDependencies": {
