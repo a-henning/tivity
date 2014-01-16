@@ -32,11 +32,27 @@ To have everything up and running:
 ```
 $ git clone git://github.com/ArthurianX/tivity.git
 $ cd tivity
-$ sudo npm -g install grunt-cli karma bower
-$ npm install
-$ bower install
-$ grunt watch
 ```
+* node package manager will install globally grunt-cli, the cli command line for grunt, karma for testing and bower  web package manager
+
+```
+$ sudo npm -g install grunt-cli karma bower
+```
+* npm install will get all the dependencies from `package.json`, this dependencies are for the build/deployment system of the project
+
+```
+$ npm install
+```
+* bower install will run the contents of `bower.json` to install all the necesarry libraries for the project in the newly created vendor folder
+
+```
+$ bower install
+```
+* now we can run the project in different combinations:
+- `grunt` will create a development build that will be placed in the `build` folder
+- `grunt watch --force` will create a build and watch for any file changes in the `src` folder and rebuild the entire project in the `build` folder
+- `grunt compile` will create a production version of the project, minifying all the templates and JavaScript, compressing CSS into 3 files and one folder placed in `bin` and `production/views` folder. We will have the index file, ONE Javascript file containing everything minimized (even the partials/templates are converted to JS Code), one CSS file and the assets.
+
 * after you run `grunt watch`, grunt will make a build directory, setup a vhost to that with the following rules:
 
 ```
@@ -63,6 +79,14 @@ $ grunt watch
 </VirtualHost>
 ```
 * now you can test the page in your browser, or if you have pow.cx you can quickly create a project-name.IP-ADRESS.xip.io link to see it on your device.
+* if you don't have a local server and you just want to run the node production:
+- run `grunt compile`
+- cd to the `production` folder
+- run the NodeJS server with `node server.js`
+- open `localhost:3000` in your preferred browser
+ 
+## Voila! Instant gratification code soup
+
  
 
 I also implemented beautiful (read: normal) links, as I will TOTALLY not support any version on IE lower or equal to 10 (if you choose to see it with that). This is for mobile devices only, most of which already support HTML5.
@@ -72,4 +96,4 @@ I also implemented beautiful (read: normal) links, as I will TOTALLY not support
 
 ### Build System
 
-The build system is based on ng-boilerplate's build system, so all thanks go there, I just fine tuned it a bit, updated the libraries, worked out some kinks, for IN-depth details and a good read on best practices (IMHO) go to https://github.com/ngbp/ng-boilerplate
+* incoming description
