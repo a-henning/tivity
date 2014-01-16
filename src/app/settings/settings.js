@@ -3,8 +3,6 @@ angular.module( 'tivity.settings', [
     'ui.router.state',
     'foursquare',
     //'geolocation', TODO: Enable when doing gMaps Routes
-    'searchBar',
-    'footerBar',
     'ajoslin.promise-tracker'/*,
     'google-maps',
     'angular-carousel'*/

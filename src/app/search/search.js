@@ -4,7 +4,6 @@ angular.module( 'tivity.search', [
   'foursquare',
   'geolocation',
   'fetchLocations',
-  'footerBar',
   'ajoslin.promise-tracker'
 ])
 

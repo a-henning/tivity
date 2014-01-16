@@ -3,6 +3,7 @@
     Loading...
   </div>
   <h2 class="top">Searching for {{ queryParam }} in {{ locations[0].location.city }}</h2>
+  <div class="searchBar" ng-class="{'search-closed': !barState, 'search-open': barState}"></div>
   <ul class="locations list">
     <li ng-repeat="location in locations">
       <div class="image {{ location.venue.picClass }}"><img src="{{ location.venue.photos.groups.thePhoto }}" alt=""/></div>

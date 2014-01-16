@@ -2,6 +2,8 @@ angular.module('tivity', [
   'ngAnimate',
   'templates-app',
   'templates-common',
+  'searchBar',
+  'footerBar',
   'tivity.home',
   'tivity.section',
   'tivity.search',
@@ -14,7 +16,7 @@ angular.module('tivity', [
 
   .config( function myAppConfig ( $stateProvider, $urlRouterProvider, $locationProvider ) {
     $locationProvider.html5Mode(true).hashPrefix('!');
-    $urlRouterProvider.otherwise( '/home' );
+    $urlRouterProvider.otherwise( '/section/food' );
     $stateProvider.state( 'search', {
       url: '/search/:queryVenue',
       views: {

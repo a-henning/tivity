@@ -4,9 +4,7 @@ angular.module( 'tivity.section', [
     'tivity.detail',
     'foursquare',
     'geolocation',
-    'searchBar',
     'fetchLocations',
-    'footerBar',
     'ajoslin.promise-tracker'
 
 
