@@ -1,3 +1,11 @@
+# 0.2.5 (2014-01-16)
+
+* friendly URL's for venues
+* updated semantic versioning system, still not there yet.
+* meddled with the build configuration, still needs optimization
+* searchBar directive made global.
+
+
 # 0.2.4 (2014-01-14)
 
 * started working on the settings page.
