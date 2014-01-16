@@ -70,7 +70,7 @@ module.exports = {
       'vendor/angular-ui-router/release/angular-ui-router.js',
       'vendor/angular-ui-utils/modules/route/route.js',
       'vendor/angularjs-geolocation/dist/angularjs-geolocation.min.js',
-      'vendor/angular-cookies/angular-cookies.min.js',
+      'vendor/angular-cookie/angular-cookie.min.js',
       'vendor/angular-touch/angular-touch.min.js',
       'vendor/angular-rn-carousel/dist/angular-carousel.min.js',
       'vendor/lodash/dist/lodash.min.js',

@@ -1,5 +1,8 @@
-angular.module('storageManagement', ['mongoService', 'ngCookies'])
-  .service('storageManagement', function (mongoService, ngCookies) {
+angular.module('storageManagement', ['mongoService', 'ivpusic.cookie'])
+  .service('storageManagement', function (mongoService, ipCookie) {
+
+    /*cookies*/
+
 
     /* mongo */
 

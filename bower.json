@@ -11,7 +11,7 @@
     "angularjs-geolocation": "latest",
     "hammerjs": "~1.0.6",
     "angular-hammer": "~1.0.3",
-    "angular-cookies": "~1.2.0",
+    "angular-cookie": "latest",
     "lodash": "~2.4.1",
     "angular-google-maps": "~1.0.4",
     "angular-rn-carousel": "~0.1.4",
