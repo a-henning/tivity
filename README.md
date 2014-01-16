@@ -2,13 +2,15 @@
 
 
 
-Based on the ng-boilerplate-advanced (which is based on ng-boilerplate by ngpb [https://github.com/ngbp/ng-boilerplate]), is a small mobile application made with Angular and all the best and latest 'good practices'.
+tivity is a small mobile application made with Angular and all the best and latest 'good practices'.
 
 The app itself serves like a small location aggregator near your location based on your preferences.
 
 The challenge here is to make it as lightweight as possible and to try and get a near to native performance out of it on different mobile devices.
 
-
+------------
+#### You can access the webapp directly on http://ac.tivity.in (have to do something about the naming). The domain is linked to a heroku app wich has the `production` folder from this repo, builds are updated automagically to the domain.
+------------
 ## ~~The concept~~
 Not yet ready from prime time
 
