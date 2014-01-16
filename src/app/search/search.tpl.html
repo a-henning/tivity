@@ -6,7 +6,7 @@
   <ul class="locations list">
     <li ng-repeat="location in locations">
       <div class="image {{ location.venue.picClass }}"><img src="{{ location.venue.photos.groups.thePhoto }}" alt=""/></div>
-      <a href="/section/{{location.categories[0].categoryName}}/{{location.id}}">
+      <a href="/section/{{location.categories[0].categoryName}}/{{location.id}}/{{location.venueName}}">
         <h2>{{ location.name }}</h2>
         <span class="distance">{{ location.location.distance }}m</span>
         <span class="chevron"></span>

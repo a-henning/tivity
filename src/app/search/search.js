@@ -33,7 +33,7 @@ angular.module( 'tivity.search', [
         console.log(data[0].response.venues);
         $scope.locations = data[0].response.venues;
 
-        console.log($scope.locations);
+        //console.log($scope.locations);
 
         //Check to see if the venue has a photo, if not display a default one.
         var nrLocations = data[0].response.venues.length;
@@ -41,6 +41,9 @@ angular.module( 'tivity.search', [
           //Create a category name in the scope for each venue to add it in the link
           var categoryName = data[0].response.venues[i].categories[0].shortName;
           data[0].response.venues[i].categories[0].categoryName = categoryName.toLowerCase();
+          var venueName = encodeURI(data[0].response.venues[i].name.toLowerCase().replace(/ /g,"-").replace(/[&'<>"0123456789]/g,""));
+          data[0].response.venues[i].venueName = venueName;
+          console.log(venueName.toLowerCase());
 
           //Call for each venue foursquare for the image
           /*var venueID = data[0].response.venues[i].id;

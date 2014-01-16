@@ -30,7 +30,7 @@ angular.module( 'tivity.section', [
         data:{ pageTitle: 'Section - ' /*+ $state.params.sectionType*/} //TODO: Inject current state parameter here.
       })
       .state( 'detail', {
-        url: '/section/:sectionType/:venueDetail', //TODO: make SEO ready links for all the venues.
+        url: '/section/:sectionType/:venueDetail/:venueName', //TODO: make SEO ready links for all the venues.
         views: {
           "main": {
             controller: 'DetailCtrl',

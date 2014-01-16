@@ -29,6 +29,10 @@ angular.module('fetchLocations', [])
               //Check to see if the venue has a photo, if not display a default one.
               var nrLocations = data[0].response.groups[0].items.length;
               for( var i=0 ; i < nrLocations; i++ ) {
+                //create the extra name in URL
+                var venueName = encodeURI(data[0].response.groups[0].items[i].venue.name.toLowerCase().replace(/ /g,"-").replace(/[&'<>"0123456789]/g,""));
+                data[0].response.groups[0].items[i].venue.venueName = venueName;
+
                 if (data[0].response.groups[0].items[i].venue.photos.groups[0] !== undefined) {
                   var venuePhoto =  data[0].response.groups[0].items[i].venue.photos.groups[0].items[0];
                   data[0].response.groups[0].items[i].venue.photos.groups.thePhoto = venuePhoto.prefix + 'width200' + venuePhoto.suffix;
