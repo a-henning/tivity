@@ -1,3 +1,12 @@
+# 0.2.6 (2014-01-16)
+
+* made a global even listener when the drawer is open, clicking anywhere but on the more button will close the drawer
+* hooked in MongoLabs MongoDB service
+* created list/add/edit methods for MongoDB Collection and custom ID's
+* started working on the cookie - storageManagement - MongoDB communication.
+
+
+
 # 0.2.5 (2014-01-16)
 
 * friendly URL's for venues

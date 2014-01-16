@@ -1,6 +1,6 @@
 {
   "name": "tivity",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "dependencies": {
     "angular": "~1.2.8",
     "angular-animate": "latest",
