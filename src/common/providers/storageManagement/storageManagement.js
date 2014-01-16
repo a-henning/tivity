@@ -2,7 +2,41 @@ angular.module('storageManagement', ['mongoService', 'ivpusic.cookie'])
   .service('storageManagement', function (mongoService, ipCookie) {
 
     /*cookies*/
+    ipCookie('mongo_id', '21312312321', { expires: 30 });
 
+
+    var tellMongo = {
+        setRead: function(collection, jsonObject) {
+          if (ipCookie(collection + '_id') === undefined) {
+            mongoService.addCollectionID(collection, jsonObject).then(function(data){
+              console.log(collection + "_id cookie has been CREATED");
+              console.log(data);
+              ipCookie(collection + '_id', data[0]._id.$oid, {expires: 30});
+            });
+          } else {
+            mongoService.viewCollectionID(collection, ipCookie(collection + '_id')).then(function(data){
+              console.log(collection + "_id cookie has been READ");
+              console.log(data);
+            });
+          }
+        },
+        addInfo: function(collection, jsonObject) {
+          mongoService.editCollectionID(collection, jsonObject, ipCookie(collection + '_id')).then(function(data){
+            console.log("Data for " + collection + " with the id " + ipCookie(collection + '_id') + " has been UPDATED");
+            console.log(data);
+          });
+        }
+    };
+    
+    var jsonToSend = {nume_de_cod: "profesorul"};
+    jsonToSend.ocupatia = "frontend developer";
+    jsonToSend.varsta = "28, vertiginos spre 29";
+
+    tellMongo.setRead('favorites', jsonToSend);
+
+
+
+    //TODO: Have to create a default object to be written in mongo for each collection and use it as wireframe for data entry/reading
 
     /* mongo */
 
@@ -13,8 +47,10 @@ angular.module('storageManagement', ['mongoService', 'ivpusic.cookie'])
      //console.log(data);
      });*/
 
+
+    //DEMO USAGE
     //editCollectionID parameters: collectionID(collection name), collectionData(the JSON Object), dataID (the data ID inside the collection)
-    var theObject = {venue: "Old House"};
+    /*var theObject = {venue: "Old House"};
     var dataID = '52d83a61e4b00bec814de847';
     mongoService.addEditCollectionID('excluded', theObject, dataID).then(function(data){
       console.log('addEditCollectionID METHOD CALL results:');
@@ -31,7 +67,7 @@ angular.module('storageManagement', ['mongoService', 'ivpusic.cookie'])
     mongoService.listCollection('excluded').then(function(data){
       console.log('listCollection METHOD CALL results:');
       console.log(data);
-    });
+    });*/
 
   })
 ;

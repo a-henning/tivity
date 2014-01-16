@@ -44,10 +44,26 @@ angular.module('mongoService', [])
             return aggregatedData;
           });
       },
-      addEditCollectionID: function (collectionID, collectionData, dataID) {
+      addCollectionID: function (collectionName, collectionData) {
+        return $q.all([
+            $http.post(
+              'https://api.mongolab.com/api/1/databases/tivity/collections/' + collectionName + '?apiKey=SN7DF704FBSTjFq5rycwwMHeBluJK4dT',
+              collectionData
+            )
+          ]).then(function (results) {
+            console.log('addEditCollectionID METHOD results:');
+            console.log(results);
+            var aggregatedData = [];
+            angular.forEach(results, function (result) {
+              aggregatedData = aggregatedData.concat(result.data);
+            });
+            return aggregatedData;
+          });
+      },
+      editCollectionID: function (collectionName, collectionData, dataID) {
         return $q.all([
             $http.put(
-              'https://api.mongolab.com/api/1/databases/tivity/collections/' + collectionID + '/' + dataID  + '?apiKey=SN7DF704FBSTjFq5rycwwMHeBluJK4dT',
+              'https://api.mongolab.com/api/1/databases/tivity/collections/' + collectionName + '/' + dataID  + '?apiKey=SN7DF704FBSTjFq5rycwwMHeBluJK4dT',
               collectionData
             )
           ]).then(function (results) {
