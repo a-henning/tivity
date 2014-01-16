@@ -84,6 +84,7 @@ $ bower install
 * if you don't have a local server and you just want to run the node production:
 - run `grunt compile`
 - cd to the `production` folder
+- run `npm install` to run/fetch NodeJs's dependencies
 - run the NodeJS server with `node server.js`
 - open `localhost:3000` in your preferred browser
  
