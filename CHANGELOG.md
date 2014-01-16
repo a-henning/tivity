@@ -4,12 +4,15 @@
 * hooked in MongoLabs MongoDB service
 * created list/add/edit methods for MongoDB Collection and custom ID's
 * started working on the cookie - storageManagement - MongoDB communication.
+* replaced localStorage service with ngCookies service
+* renamed previous storeManagement factory service to mongoService
+* created the real storeManagement service which uses mongoService and ngCookies service
 
 
 
 # 0.2.5 (2014-01-16)
 
-* friendly URL's for venues
+* friendly URL's for venues (venue_type/id/venue_name) - the foursquare way :)
 * updated semantic versioning system, still not there yet.
 * meddled with the build configuration, still needs optimization
 * searchBar directive made global.

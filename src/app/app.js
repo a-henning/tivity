@@ -2,6 +2,8 @@ angular.module('tivity', [
   'ngAnimate',
   'templates-app',
   'templates-common',
+  'mongoService',
+  'storageManagement',
   'searchBar',
   'footerBar',
   'tivity.home',
@@ -34,7 +36,7 @@ angular.module('tivity', [
       $rootScope.getCurrentLocation = function() {
         return currentState.name + '-page';
       };
-      console.log(currentState.name);
+      console.log('We are on the "' + currentState.name + '" page.');
     });
   })
 

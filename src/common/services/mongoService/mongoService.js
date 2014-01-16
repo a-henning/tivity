@@ -1,5 +1,5 @@
-angular.module('storageManagement', [])
-  .factory('storageManagement', function ($http, $q) {
+angular.module('mongoService', [])
+  .factory('mongoService', function ($http, $q) {
     return {
       listCollections: function () {
         return $q.all([
