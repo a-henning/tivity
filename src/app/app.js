@@ -9,7 +9,6 @@ angular.module('tivity', [
   'tivity.settings',
   'ui.router.state',
   'ui.route',
-  //'hmTouchEvents'
   'ngTouch'
 ])
 
