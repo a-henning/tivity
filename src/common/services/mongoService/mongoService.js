@@ -51,7 +51,7 @@ angular.module('mongoService', [])
               collectionData
             )
           ]).then(function (results) {
-            console.log('addEditCollectionID METHOD results:');
+            console.log('Mongo Service: addEditCollectionID METHOD results:');
             console.log(results);
             var aggregatedData = [];
             angular.forEach(results, function (result) {
@@ -67,7 +67,7 @@ angular.module('mongoService', [])
               collectionData
             )
           ]).then(function (results) {
-            console.log('addEditCollectionID METHOD results:');
+            console.log('Mongo Service: addEditCollectionID METHOD results:');
             console.log(results);
             var aggregatedData = [];
             angular.forEach(results, function (result) {
@@ -82,7 +82,7 @@ angular.module('mongoService', [])
               'https://api.mongolab.com/api/1/databases/tivity/collections/' + collectionID + '/' + dataID  + '?apiKey=SN7DF704FBSTjFq5rycwwMHeBluJK4dT'
             )
           ]).then(function (results) {
-            console.log('viewCollectionID METHOD results:');
+            console.log('Mongo Service: viewCollectionID METHOD results:');
             console.log(results);
             var aggregatedData = [];
             angular.forEach(results, function (result) {

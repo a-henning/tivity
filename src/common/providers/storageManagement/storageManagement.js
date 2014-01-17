@@ -1,38 +1,38 @@
 angular.module('storageManagement', ['mongoService', 'ivpusic.cookie'])
   .service('storageManagement', function (mongoService, ipCookie) {
 
-    /*cookies*/
-    ipCookie('mongo_id', '21312312321', { expires: 30 });
-
+    /* mongoDB cookies - the scariest cookies in the universe */
 
     var tellMongo = {
         setRead: function(collection, jsonObject) {
           if (ipCookie(collection + '_id') === undefined) {
             mongoService.addCollectionID(collection, jsonObject).then(function(data){
-              console.log(collection + "_id cookie has been CREATED");
+              console.log("Mongo -> Cookie: " + collection + "_id cookie has been CREATED");
               console.log(data);
               ipCookie(collection + '_id', data[0]._id.$oid, {expires: 30});
             });
           } else {
             mongoService.viewCollectionID(collection, ipCookie(collection + '_id')).then(function(data){
-              console.log(collection + "_id cookie has been READ");
+              console.log("Mongo -> Cookie: " + collection + "_id cookie has been READ");
               console.log(data);
             });
           }
         },
         addInfo: function(collection, jsonObject) {
           mongoService.editCollectionID(collection, jsonObject, ipCookie(collection + '_id')).then(function(data){
-            console.log("Data for " + collection + " with the id " + ipCookie(collection + '_id') + " has been UPDATED");
+            console.log("Mongo -> Cookie: " + "Data for " + collection + " with the id " + ipCookie(collection + '_id') + " has been UPDATED");
             console.log(data);
           });
         }
     };
-    
+
     var jsonToSend = {nume_de_cod: "profesorul"};
     jsonToSend.ocupatia = "frontend developer";
     jsonToSend.varsta = "28, vertiginos spre 29";
 
     tellMongo.setRead('favorites', jsonToSend);
+    tellMongo.setRead('excluded', jsonToSend);
+    tellMongo.setRead('switches', jsonToSend);
 
 
 

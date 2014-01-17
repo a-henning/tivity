@@ -2,11 +2,9 @@
 angular.module( 'tivity.settings', [
     'ui.router.state',
     'foursquare',
-    'mongoService',
-    //'geolocation', TODO: Enable when doing gMaps Routes
-    'ajoslin.promise-tracker'/*,
-    'google-maps',
-    'angular-carousel'*/
+    'storageManagement',
+    'ajoslin.promise-tracker'
+
   ])
 
   //The dev controller will meddle a lot with the rootScope, just putting this here for the future.
