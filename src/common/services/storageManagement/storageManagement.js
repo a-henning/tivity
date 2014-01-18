@@ -61,6 +61,13 @@ angular.module('storageManagement', ['mongoService', 'ivpusic.cookie'])
     tellMongo.setRead(excludedCollection, jsonToSend);
     tellMongo.setRead(switchesCollection, jsonToSend);
 
+    /*===================== SWITCHES LOGIC
+    *  For the switches we need to return to methods:
+    *  1. A method who actually does the action
+    *  2. A method that checks the current state (enabled/disabled)
+    * */
+
+
     /* Logic ABOVE, Outside Service Methods BELOW */
     /* ============ storageManagement RETURN ============= */
     return {
@@ -73,6 +80,25 @@ angular.module('storageManagement', ['mongoService', 'ivpusic.cookie'])
         } else {
           return true;
         }
+      },
+      switchDebug: function() {
+        return {
+          //This is the switch function
+          switch: function() {
+            if (ipCookie(debugCookie) == '0') {
+              alert('debug enabled');
+              ipCookie(debugCookie, '1');
+            } else {
+              alert('debug disabled');
+              ipCookie(debugCookie, '0');
+            }
+          },
+          //This is the status function, it can be called from outside.
+          status: function() {
+            if (ipCookie(debugCookie) == '0') { return false; } else { return true; }
+          }
+        };
+
       }
     };
 
@@ -81,7 +107,7 @@ angular.module('storageManagement', ['mongoService', 'ivpusic.cookie'])
 
 
 
-    /* =====================   SAVED AS EXAMPLE   ================== */
+    /* =====================   SAVED AS MongoService communication EXAMPLE   ================== */
     /* mongo */
 
     //This method creates a new collection in the MongoDB, we don't need it anymore, we have the three necessary collections already made.

@@ -72,6 +72,8 @@ module.exports = {
       'vendor/angularjs-geolocation/dist/angularjs-geolocation.min.js',
       'vendor/angular-cookie/angular-cookie.min.js',
       'vendor/angular-touch/angular-touch.min.js',
+      '/vendor/hammerjs/hammer.min.js',
+      'vendor/angular-hammer/angular-hammer.js',
       'vendor/angular-rn-carousel/dist/angular-carousel.min.js',
       'vendor/lodash/dist/lodash.min.js',
       'vendor/angular-google-maps/dist/angular-google-maps.js'

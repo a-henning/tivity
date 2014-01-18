@@ -16,16 +16,17 @@
   <ul class="settings">
     <li class="tab-application" ng-controller="AppSettingsCtrl">
       <ul class="list">
+
         <li class="list-divider">Location Providers</li>
         <li>
           Foursquare
-          <div class="toggle">
+          <div class="toggle active">
             <div class="toggle-handle"></div>
           </div>
         </li>
         <li>
           Google
-          <div class="toggle active">
+          <div class="toggle">
             <div class="toggle-handle"></div>
           </div>
         </li>
@@ -61,7 +62,16 @@
         <a class="button-negative button-block">Reset all settings</a>
       </div>
     </li>
-    <li class="tab-developer" ng-controller="DeveloperSettingsCtrl"></li>
+    <li class="tab-developer" ng-controller="DeveloperSettingsCtrl">
+      <ul class="list">
+        <li>
+          Enable Console Debug (destop only)
+          <div class="toggle" hm-tap="toggleDebug()" ng-class="{'active': toggleDebugStatus}">
+            <div class="toggle-handle"></div>
+          </div>
+        </li>
+      </ul>
+    </li>
     <li class="tab-experimental" ng-controller="ExperimentalSettingsCtrl"></li>
   </ul>
 </div>
