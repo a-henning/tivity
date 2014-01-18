@@ -7,6 +7,7 @@
 * replaced localStorage service with ngCookies service
 * renamed previous storeManagement factory service to mongoService
 * created the real storeManagement service which uses mongoService and ngCookies service
+* created a object with methods that handle cookie reading and mongoDb inseration, inspirationally called `tellMongo`
 
 
 

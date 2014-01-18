@@ -4,7 +4,7 @@ angular.module('footerBar', [])
       restrict: 'C',
       replace: true,
       //template: '',
-      templateUrl: 'templates/footerBar.tpl.html',
+      templateUrl: 'directive-templates/footerBar.tpl.html',
       controller: ['$scope', '$window', function( $scope, $window ) {
         //Putting window in scope
         $scope.$window = $window;

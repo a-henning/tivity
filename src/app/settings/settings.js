@@ -28,10 +28,14 @@ angular.module( 'tivity.settings', [
   })
   .controller( 'SettingsCtrl', function SettinsgController( $scope, storageManagement ) {
 
+  })
+  .controller( 'AppSettingsCtrl', function AppSettinsgController( $scope, storageManagement ) {
 
-    //$scope.hello = storageManagement.sayHello();
+  })
+  .controller( 'DeveloperSettingsCtrl', function DeveloperSettinsgController( $scope, storageManagement ) {
 
-
+  })
+  .controller( 'ExperimentalSettingsCtrl', function ExperimentalSettinsgController( $scope, storageManagement ) {
 
   })
 ;

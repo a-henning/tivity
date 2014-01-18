@@ -1,5 +1,67 @@
 <div class="searchBar" ng-class="{'search-closed': !barState, 'search-open': barState}"></div>
-<div class="settings">
-  Settings Page
-  {{hello}}
+<div class="settings" ng-controller="SettingsCtrl">
+
+  <ul class="segmented-controller">
+    <li class="active">
+      <a ng-click="">Application</a>
+    </li>
+    <li>
+      <a ng-click="">Developer</a>
+    </li>
+    <li>
+      <a ng-click="">Experimental</a>
+    </li>
+  </ul>
+
+  <ul class="settings">
+    <li class="tab-application" ng-controller="AppSettingsCtrl">
+      <ul class="list">
+        <li class="list-divider">Location Providers</li>
+        <li>
+          Foursquare
+          <div class="toggle">
+            <div class="toggle-handle"></div>
+          </div>
+        </li>
+        <li>
+          Google
+          <div class="toggle active">
+            <div class="toggle-handle"></div>
+          </div>
+        </li>
+        <li>
+          Bing
+          <div class="toggle">
+            <div class="toggle-handle"></div>
+          </div>
+        </li>
+        <li class="list-divider">Favorites</li>
+        <li>
+          Enable Favorites
+          <div class="toggle active">
+            <div class="toggle-handle"></div>
+          </div>
+        </li>
+        <li>Show favorites <a class="button-positive">List</a></li>
+        <li>Clear favorites <a class="button-negative">Delete</a></li>
+        <li class="list-divider">Excluded</li>
+        <li>
+          Enable Excluded
+          <div class="toggle active">
+            <div class="toggle-handle"></div>
+          </div>
+        </li>
+        <li>Show excluded <a class="button-positive">List</a></li>
+        <li>Clear excluded <a class="button-negative">Delete</a></li>
+      </ul>
+      <div class="location-cache">
+        <a class="button-main button-block">Clear Location Cache</a>
+      </div>
+      <div class="reset">
+        <a class="button-negative button-block">Reset all settings</a>
+      </div>
+    </li>
+    <li class="tab-developer" ng-controller="DeveloperSettingsCtrl"></li>
+    <li class="tab-experimental" ng-controller="ExperimentalSettingsCtrl"></li>
+  </ul>
 </div>

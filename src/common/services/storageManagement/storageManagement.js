@@ -1,7 +1,10 @@
 angular.module('storageManagement', ['mongoService', 'ivpusic.cookie'])
   .service('storageManagement', function (mongoService, ipCookie) {
 
-    /* mongoDB cookies - the scariest cookies in the universe */
+
+    //TODO:
+    /* cookie methods */
+    /* mongoDB & cookies methods - the scariest cookies in the universe */
 
     var tellMongo = {
         setRead: function(collection, jsonObject) {
@@ -26,10 +29,12 @@ angular.module('storageManagement', ['mongoService', 'ivpusic.cookie'])
         }
     };
 
+    //TODO: Create default JSON Scaffolding for MongoDB here.
     var jsonToSend = {nume_de_cod: "profesorul"};
     jsonToSend.ocupatia = "frontend developer";
     jsonToSend.varsta = "28, vertiginos spre 29";
 
+    //TODO: Should we make this dynamic? based on user input, with economy in mind?
     tellMongo.setRead('favorites', jsonToSend);
     tellMongo.setRead('excluded', jsonToSend);
     tellMongo.setRead('switches', jsonToSend);
