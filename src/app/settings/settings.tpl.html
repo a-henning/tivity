@@ -14,7 +14,7 @@
   </ul>
 
   <ul class="settings">
-    <li class="tab-application" ng-controller="AppSettingsCtrl">
+    <li id="tab-application" class="tab-application active" ng-controller="AppSettingsCtrl">
       <ul class="list">
 
         <li class="list-divider">Location Providers</li>
@@ -62,16 +62,72 @@
         <a class="button-negative button-block">Reset all settings</a>
       </div>
     </li>
-    <li class="tab-developer" ng-controller="DeveloperSettingsCtrl">
+    <li id="tab-developer" class="tab-developer hidden" ng-controller="DeveloperSettingsCtrl">
       <ul class="list">
+        <li class="list-divider">Console Messages</li>
         <li>
           Enable Console Debug (destop only)
           <div class="toggle" hm-tap="toggleDebug()" ng-class="{'active': toggleDebugStatus}">
             <div class="toggle-handle"></div>
           </div>
         </li>
+        <li class="list-divider">Overlay Info (then start navigating the site)</li>
+        <li>
+          Loading times
+          <div class="toggle" hm-tap="" ng-class="{'active': insertvar}">
+            <div class="toggle-handle"></div>
+          </div>
+        </li>
+        <li>
+          FPS
+          <div class="toggle" hm-tap="" ng-class="{'active': insertvar}">
+            <div class="toggle-handle"></div>
+          </div>
+        </li>
+        <li>
+          Network Calls
+          <div class="toggle" hm-tap="" ng-class="{'active': insertvar}">
+            <div class="toggle-handle"></div>
+          </div>
+        </li>
+        <li>
+          Cookies
+          <div class="toggle" hm-tap="" ng-class="{'active': insertvar}">
+            <div class="toggle-handle"></div>
+          </div>
+        </li>
+        <li class="list-divider">Disable Libraries & Optimizations</li>
+        <li>
+          Disable FastClick
+          <div class="toggle" hm-tap="" ng-class="{'active': insertvar}">
+            <div class="toggle-handle"></div>
+          </div>
+        </li>
+        <li>
+          Other libaries ... more to come.
+          <div class="toggle" hm-tap="" ng-class="{'active': insertvar}">
+            <div class="toggle-handle"></div>
+          </div>
+        </li>
       </ul>
     </li>
-    <li class="tab-experimental" ng-controller="ExperimentalSettingsCtrl"></li>
+    <li id="tab-experimental" class="tab-experimental hidden" ng-controller="ExperimentalSettingsCtrl">
+      <ul class="list">
+        <li class="list-divider red">DANGER! DANGER! RED ALERT!</li>
+        <li class="list-divider">These are experimental features, may cause your phone to explode.</li>
+        <li>
+          Acceleration
+          <div class="toggle" hm-tap="" ng-class="{'active': variableHere}">
+            <div class="toggle-handle"></div>
+          </div>
+        </li>
+        <li>
+          Inertial sensor motion
+          <div class="toggle" hm-tap="" ng-class="{'active': variableHere}">
+            <div class="toggle-handle"></div>
+          </div>
+        </li>
+      </ul>
+    </li>
   </ul>
 </div>

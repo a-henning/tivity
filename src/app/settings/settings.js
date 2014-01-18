@@ -4,7 +4,8 @@ angular.module( 'tivity.settings', [
     'foursquare',
     'storageManagement',
     'ajoslin.promise-tracker',
-    'hmTouchEvents'
+    'hmTouchEvents',
+    'angular-carousel'
 
   ])
 
@@ -27,7 +28,8 @@ angular.module( 'tivity.settings', [
       data:{ pageTitle: 'Settings' }
     });
   })
-  .controller( 'SettingsCtrl', function SettinsgController( $scope, storageManagement ) {
+  .controller( 'SettingsCtrl', function SettinsgController( $scope, storageManagement, $location, $anchorScroll ) {
+
 
   })
   .controller( 'AppSettingsCtrl', function AppSettinsgController( $scope, storageManagement ) {

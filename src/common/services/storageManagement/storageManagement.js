@@ -81,6 +81,7 @@ angular.module('storageManagement', ['mongoService', 'ivpusic.cookie'])
           return true;
         }
       },
+      //============= USE THIS METHOD STRUCTURE FOR ALL OTHER, we need switch&status methods for action and status response.
       switchDebug: function() {
         return {
           //This is the switch function
@@ -99,7 +100,7 @@ angular.module('storageManagement', ['mongoService', 'ivpusic.cookie'])
           }
         };
 
-      }
+      } //====== DEMO METHOD ^^^
     };
 
 

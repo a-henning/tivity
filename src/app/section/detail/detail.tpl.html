@@ -75,7 +75,7 @@
       </div>
     </div>
     <span ng-if="images[0].scaledImage !== undefined">
-      <ul rn-carousel class="image">
+      <ul rn-carousel rn-carousel-indicator class="image">
         <li ng-repeat="image in images" style="background-image: url({{image.scaledImage}})">
           <img src="{{image.scaledImage}}" alt="Photo of {{venue.name}} by {{image.user.firstName}}" ng-style="getWindowWidth()"/>
         </li>
