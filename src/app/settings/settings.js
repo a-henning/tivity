@@ -28,7 +28,10 @@ angular.module( 'tivity.settings', [
       data:{ pageTitle: 'Settings' }
     });
   })
-  .controller( 'SettingsCtrl', function SettinsgController( $scope, storageManagement, $location, $anchorScroll ) {
+  .controller( 'SettingsCtrl', function SettingsController( $scope, storageManagement, $location, $anchorScroll ) {
+    /*//Making the tabs
+    var liElemsMenu = angular.element(document.querySelectorAll( 'ul.segmented-controller > li' ));
+    var liElemsContent = angular.element(document.querySelectorAll( 'ul.settings > li' ));*/
 
 
   })
