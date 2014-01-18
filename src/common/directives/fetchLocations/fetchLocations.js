@@ -1,5 +1,5 @@
 angular.module('fetchLocations', [])
-  .directive('fetchLocations', function (){
+  .directive('fetchLocations', function ($rootScope){
     return {
       restrict: 'C',
       //scope: true, // With the scope enabled, we're actually isolating the scope to the current directive, without this we're still bleeing information to the outer scope.
@@ -24,7 +24,11 @@ angular.module('fetchLocations', [])
               //when the data is ready, populate the $scope variables.
               $scope.locations = data[0].response.groups[0].items;
               $scope.locationName = data[0].response.headerFullLocation;
-              console.log($scope.locations);
+              if ($rootScope.debugStatus === true) {
+                console.log('fetchLocations Service: Results Object');
+                console.log($scope.locations);
+              }
+
 
               //Check to see if the venue has a photo, if not display a default one.
               var nrLocations = data[0].response.groups[0].items.length;

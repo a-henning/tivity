@@ -31,13 +31,20 @@ angular.module('tivity', [
     });
   })
 
-  .run( function run ($rootScope) {
+  .run( function run ($rootScope, storageManagement) {
+    //Create a rootScope variable telling us if the console debugging is enabled or not.
+    $rootScope.debugStatus = storageManagement.consoleDebugStatus();
+
+    //Set body class for individual route pages.
     $rootScope.$on('$stateChangeSuccess', function (event, currentState) {
       $rootScope.getCurrentLocation = function() {
         return currentState.name + '-page';
       };
-      console.log('We are on the "' + currentState.name + '" page.');
+      if ($rootScope.debugStatus === true) {
+        console.log('We are on the "' + currentState.name + '" page.');
+      }
     });
+
   })
 
   .controller( 'AppCtrl', function AppCtrl ( $scope, $location, $stateParams ) {

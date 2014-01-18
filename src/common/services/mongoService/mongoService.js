@@ -1,5 +1,5 @@
 angular.module('mongoService', [])
-  .factory('mongoService', function ($http, $q) {
+  .factory('mongoService', function ($http, $q, $rootScope) {
     return {
       listCollections: function () {
         return $q.all([
@@ -36,7 +36,11 @@ angular.module('mongoService', [])
               collectionData
             )
           ]).then(function (results) {
-            console.log(results);
+            if ($rootScope.debugStatus === true) {
+              console.log('Mongo Service: Create Collection');
+              console.log(results);
+            }
+
             var aggregatedData = [];
             angular.forEach(results, function (result) {
               aggregatedData = aggregatedData.concat(result.data);
@@ -51,8 +55,11 @@ angular.module('mongoService', [])
               collectionData
             )
           ]).then(function (results) {
-            console.log('Mongo Service: addEditCollectionID METHOD results:');
-            console.log(results);
+            if ($rootScope.debugStatus === true) {
+              console.log('Mongo Service: addEditCollectionID METHOD results:');
+              console.log(results);
+            }
+
             var aggregatedData = [];
             angular.forEach(results, function (result) {
               aggregatedData = aggregatedData.concat(result.data);
@@ -67,8 +74,11 @@ angular.module('mongoService', [])
               collectionData
             )
           ]).then(function (results) {
-            console.log('Mongo Service: addEditCollectionID METHOD results:');
-            console.log(results);
+            if ($rootScope.debugStatus === true) {
+              console.log('Mongo Service: addEditCollectionID METHOD results:');
+              console.log(results);
+            }
+
             var aggregatedData = [];
             angular.forEach(results, function (result) {
               aggregatedData = aggregatedData.concat(result.data);
@@ -82,8 +92,10 @@ angular.module('mongoService', [])
               'https://api.mongolab.com/api/1/databases/tivity/collections/' + collectionID + '/' + dataID  + '?apiKey=SN7DF704FBSTjFq5rycwwMHeBluJK4dT'
             )
           ]).then(function (results) {
-            console.log('Mongo Service: viewCollectionID METHOD results:');
-            console.log(results);
+            if ($rootScope.debugStatus === true) {
+              console.log('Mongo Service: viewCollectionID METHOD results:');
+              console.log(results);
+            }
             var aggregatedData = [];
             angular.forEach(results, function (result) {
               aggregatedData = aggregatedData.concat(result.data);
