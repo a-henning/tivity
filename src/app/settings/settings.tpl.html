@@ -14,6 +14,80 @@
   </ul>
 
   <ul class="settings">
+
+    <li id="tab-developer" class="tab-developer hidden" ng-controller="DeveloperSettingsCtrl">
+      <ul class="list">
+        <li class="list-divider">Console Messages</li>
+        <li>
+          Enable Console Debug (destop only)
+          <div class="toggle" hm-tap="toggleDebug()" ng-class="{'active': toggleDebugStatus}">
+            <div class="toggle-handle"></div>
+          </div>
+        </li>
+        <li class="list-divider">Change Database (Firebase has Facebook Authentication.)</li>
+        <li class="databases">
+          Firebase <span>MongoDB</span>
+          <div class="toggle" hm-tap="toggleDatabase()" ng-class="{'active': databaseStatus}">
+            <div class="toggle-handle"></div>
+          </div>
+        </li>
+        <li class="list-divider facebook" ng-show="!auth.user && !databaseStatus" style="text-align: center">
+          <h3>Login to facebook to add/read data to Firebase DB</h3>
+          <h4>At the moment just click the login button, OAuth window will open and ask for credentials. Need to use facebook SDK to send my own usrname and pass.</h4>
+          <div class="input-group">
+            <input type="text" placeholder="Username" ng-model="facebookemail">
+            <input type="password" placeholder="Password" ng-model="facebookpassword">
+          </div>
+
+          <a class="button-positive button-block" ng-click="doLogin();">Login</a>
+
+        </li>
+        <li class="list-divider facebook-logged" ng-show="auth.user">
+          <span>
+            Logged in as {{auth.user.name}} <a class="button-negative" ng-click="auth.$logout()">Logout</a>
+          </span>
+        </li>
+        <li class="list-divider">Overlay Info (then start navigating the site)</li>
+        <li>
+          Loading times
+          <div class="toggle" hm-tap="" ng-class="{'active': insertvar}">
+            <div class="toggle-handle"></div>
+          </div>
+        </li>
+        <li>
+          FPS
+          <div class="toggle" hm-tap="" ng-class="{'active': insertvar}">
+            <div class="toggle-handle"></div>
+          </div>
+        </li>
+        <li>
+          Network Calls
+          <div class="toggle" hm-tap="" ng-class="{'active': insertvar}">
+            <div class="toggle-handle"></div>
+          </div>
+        </li>
+        <li>
+          Cookies
+          <div class="toggle" hm-tap="" ng-class="{'active': insertvar}">
+            <div class="toggle-handle"></div>
+          </div>
+        </li>
+        <li class="list-divider">Disable Libraries & Optimizations</li>
+        <li>
+          Disable FastClick
+          <div class="toggle" hm-tap="" ng-class="{'active': insertvar}">
+            <div class="toggle-handle"></div>
+          </div>
+        </li>
+        <li>
+          Other libaries ... more to come.
+          <div class="toggle" hm-tap="" ng-class="{'active': insertvar}">
+            <div class="toggle-handle"></div>
+          </div>
+        </li>
+      </ul>
+    </li>
+
     <li id="tab-application" class="tab-application active" ng-controller="AppSettingsCtrl">
       <ul class="list">
 
@@ -62,62 +136,7 @@
         <a class="button-negative button-block">Reset all settings</a>
       </div>
     </li>
-    <li id="tab-developer" class="tab-developer hidden" ng-controller="DeveloperSettingsCtrl">
-      <ul class="list">
-        <li class="list-divider">Console Messages</li>
-        <li>
-          Enable Console Debug (destop only)
-          <div class="toggle" hm-tap="toggleDebug()" ng-class="{'active': toggleDebugStatus}">
-            <div class="toggle-handle"></div>
-          </div>
-        </li>
-        <li class="list-divider">Change Database (Firebase has Facebook Authentication.)</li>
-        <li class="databases">
-          Firebase <span>MongoDB</span>
-          <div class="toggle" hm-tap="toggleDatabase()" ng-class="{'active': databaseStatus}">
-            <div class="toggle-handle"></div>
-          </div>
-        </li>
-        <li class="list-divider">Overlay Info (then start navigating the site)</li>
-        <li>
-          Loading times
-          <div class="toggle" hm-tap="" ng-class="{'active': insertvar}">
-            <div class="toggle-handle"></div>
-          </div>
-        </li>
-        <li>
-          FPS
-          <div class="toggle" hm-tap="" ng-class="{'active': insertvar}">
-            <div class="toggle-handle"></div>
-          </div>
-        </li>
-        <li>
-          Network Calls
-          <div class="toggle" hm-tap="" ng-class="{'active': insertvar}">
-            <div class="toggle-handle"></div>
-          </div>
-        </li>
-        <li>
-          Cookies
-          <div class="toggle" hm-tap="" ng-class="{'active': insertvar}">
-            <div class="toggle-handle"></div>
-          </div>
-        </li>
-        <li class="list-divider">Disable Libraries & Optimizations</li>
-        <li>
-          Disable FastClick
-          <div class="toggle" hm-tap="" ng-class="{'active': insertvar}">
-            <div class="toggle-handle"></div>
-          </div>
-        </li>
-        <li>
-          Other libaries ... more to come.
-          <div class="toggle" hm-tap="" ng-class="{'active': insertvar}">
-            <div class="toggle-handle"></div>
-          </div>
-        </li>
-      </ul>
-    </li>
+
     <li id="tab-experimental" class="tab-experimental hidden" ng-controller="ExperimentalSettingsCtrl">
       <ul class="list">
         <li class="list-divider red">DANGER! DANGER! RED ALERT!</li>

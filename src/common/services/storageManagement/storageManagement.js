@@ -114,6 +114,7 @@ angular.module('storageManagement', ['mongoService', 'firebaseService'])
     var firstRunFirebase = function() {
       //we are telling Firebase to add a user for our current ID and the default scaffolding.
       firebaseService.addUser(currentUser, jsonToSend);//TODO: Still need to read the data, don't forget.
+
       if ($rootScope.debugStatus === true) {
         console.log('storageManagement: firstRunFirebase() has run.');
       }
@@ -202,6 +203,10 @@ angular.module('storageManagement', ['mongoService', 'firebaseService'])
           }
         };
 
+      },
+      runFirebase: function(){
+        alert('Just wrote something in db');
+        firstRunFirebase();
       }
     };
 

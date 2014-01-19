@@ -78,7 +78,8 @@ module.exports = {
       'vendor/lodash/dist/lodash.min.js',
       'vendor/angular-google-maps/dist/angular-google-maps.js',
       'vendor/firebase/firebase.js',
-      'vendor/angularfire/angularfire.min.js'
+      'vendor/angularfire/angularfire.min.js',
+      'vendor/firebase-simple-login/firebase-simple-login.js'
     ],
     css: [
       //'vendor/angular-rn-carousel/dist/angular-carousel.min.css'
