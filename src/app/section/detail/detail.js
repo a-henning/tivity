@@ -8,7 +8,7 @@ angular.module( 'tivity.detail', [
   'angular-carousel'
 ])
 
-  .controller( 'DetailCtrl', function DetailController( $scope, geolocation, foursquare, $stateParams, $window, promiseTracker, $location, $anchorScroll ) {
+  .controller( 'DetailCtrl', function DetailController( $scope, geolocation, foursquare, $stateParams, $window, promiseTracker, $location, $anchorScroll, $rootScope ) {
     $scope.name = $stateParams.venueDetail;
 
     //Create / get our tracker with unique ID
@@ -48,7 +48,11 @@ angular.module( 'tivity.detail', [
 
     // Call the foursquare service
     foursquare.getVenue($stateParams.venueDetail).then(function(data){
-      console.log(data[0].response.venue);
+
+      if ($rootScope.debugStatus === true) {
+        console.log('Details Object:');
+        console.log(data[0].response.venue);
+      }
       $scope.venue = data[0].response.venue;
       $scope.image = data[0].response.venue.photos.groups[0].items[0].prefix + $window.innerWidth + 'x' + $window.innerWidth + data[0].response.venue.photos.groups[0].items[0].suffix;
       $scope.icon =  data[0].response.venue.categories[0].icon.prefix + '88' + data[0].response.venue.categories[0].icon.suffix;

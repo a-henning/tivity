@@ -63,11 +63,11 @@ module.exports = {
    */
   vendor_files: {
     js: [
-      'vendor/angular/angular.js',
+      'vendor/angular/angular.min.js',
       'vendor/angular-animate/angular-animate.min.js',
       'vendor/angular-promise-tracker/promise-tracker.min.js',
-      'vendor/ratchet/dist/ratchet.js',
-      'vendor/angular-ui-router/release/angular-ui-router.js',
+      'src/common/strippedLibraries/ratchet.js',
+      'vendor/angular-ui-router/release/angular-ui-router.min.js',
       'vendor/angular-ui-utils/modules/route/route.js',
       'vendor/angularjs-geolocation/dist/angularjs-geolocation.min.js',
       'vendor/angular-cookie/angular-cookie.min.js',
