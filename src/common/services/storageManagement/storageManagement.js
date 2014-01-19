@@ -1,4 +1,4 @@
-angular.module('storageManagement', ['mongoService', 'firebaseService', 'ivpusic.cookie'])
+angular.module('storageManagement', ['mongoService', 'firebaseService'])
   .service('storageManagement', function (mongoService, firebaseService, ipCookie, $rootScope) {
 
 
@@ -105,22 +105,36 @@ angular.module('storageManagement', ['mongoService', 'firebaseService', 'ivpusic
 
       /* ===EXAMPLE=== Tell Mongo to update the info in the favorite collection, id comes from cookie, object from JSONSend, it the future it will come dynamically */
       tellMongo.addInfo(favoriteCollection, jsonToSend);
-    }
+
+      if ($rootScope.debugStatus === true) {
+        console.log('storageManagement: firstRunMongo() has run.');
+      }
+    };
 
     var firstRunFirebase = function() {
       //we are telling Firebase to add a user for our current ID and the default scaffolding.
       firebaseService.addUser(currentUser, jsonToSend);//TODO: Still need to read the data, don't forget.
-    }
+      if ($rootScope.debugStatus === true) {
+        console.log('storageManagement: firstRunFirebase() has run.');
+      }
+    };
 
-    if (ipCookie(databaseCookie) == undefined) {
+    if (ipCookie(databaseCookie) === undefined) {
 
       //defining the cookie, it will be later changed from cookies, and READ at every load.
       ipCookie(databaseCookie, 'mongo', {expires: 30});
-
+      if ($rootScope.debugStatus === true) {
+        console.log('storageManagement: default databaseCookie not present, I have just created one.');
+      }
       //tellMongo first run in order to populate the db and get the ID's
       firstRunMongo();
 
+
     } else {//we are assuming that if it's not mongo, it's firebase, no point in checking otherwise
+
+      if ($rootScope.debugStatus === true) {
+        console.log('storageManagement: databaseCookie is FIREBASE, running firstRunFirebase().');
+      }
       firstRunFirebase();
     }
 
@@ -150,19 +164,6 @@ angular.module('storageManagement', ['mongoService', 'firebaseService', 'ivpusic
     /* ============ storageManagement RETURN ============= */
     return {
 
-      /*Given the switchDebug function, this seems a bit counter intuitive, but we need it
-      **in this special scenarion to propragate through $rootScope to enable the logs. NEVER AGAIN.
-      **/
-      consoleDebugStatus: function() {
-        if (ipCookie(debugCookie) === undefined) {
-          ipCookie(debugCookie, '0', {expires: 30});
-          return false;
-        } else if (ipCookie(debugCookie) == '0') {
-          return false;
-        } else {
-          return true;
-        }
-      },
       //============= USE THIS METHOD STRUCTURE FOR ALL OTHER, we need switch&status methods for action and status response.
       switchDebug: function() {
         return {

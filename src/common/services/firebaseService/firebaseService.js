@@ -6,15 +6,20 @@ angular.module('firebaseService', ['firebase'])
       users = $firebase(new Firebase(URL + '/' + ID));
       users.details = JSON;
       users.$save('details');
-    }
+    };
 
     return {
       addUser: function(ID, JSON) {
-        tellFirebase(ID,JSON);
+        tellFirebase(ID, JSON);
+        if ($rootScope.debugStatus === true) {
+          console.log('Firebase Service .addUSer Called');
+        }
       },
       getUser: function(ID) {
-
+        if ($rootScope.debugStatus === true) {
+          console.log('Firebase Service .getUser Called');
+        }
       }
-    }
+    };
   })
 ;

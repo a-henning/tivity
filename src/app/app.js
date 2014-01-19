@@ -1,9 +1,8 @@
 angular.module('tivity', [
   'ngAnimate',
+  'ivpusic.cookie',
   'templates-app',
   'templates-common',
-  'mongoService',
-  'firebaseService',
   'storageManagement',
   'searchBar',
   'footerBar',
@@ -32,9 +31,25 @@ angular.module('tivity', [
     });
   })
 
-  .run( function run ($rootScope, storageManagement) {
+  .run( function run ($rootScope, ipCookie ) {
     //Create a rootScope variable telling us if the console debugging is enabled or not.
-    $rootScope.debugStatus = storageManagement.consoleDebugStatus();
+
+    var debugCookie = 'debugStatus';
+
+    /*Given the switchDebug function, this seems a bit counter intuitive, but we need it
+     **in this special scenarion to propragate through $rootScope to enable the logs. NEVER AGAIN.
+     **/
+
+    $rootScope.debugStatus = function() {
+      if (ipCookie(debugCookie) === undefined) {
+        ipCookie(debugCookie, '0', {expires: 30});
+        return false;
+      } else if (ipCookie(debugCookie) == '0') {
+        return false;
+      } else {
+        return true;
+      }
+    };
 
     //Set body class for individual route pages.
     $rootScope.$on('$stateChangeSuccess', function (event, currentState) {
