@@ -16,6 +16,7 @@
     "angular-google-maps": "~1.0.4",
     "angular-rn-carousel": "~0.1.4",
     "angular-touch": "~1.2.8"
+
   },
   "devDependencies": {
 

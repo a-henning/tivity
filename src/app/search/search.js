@@ -13,7 +13,7 @@ angular.module( 'tivity.search', [
  * this way makes each module more "self-contained".
  */
 
-  .controller( 'SearchCtrl', function SearchController( $scope, geolocation, foursquare, $stateParams, promiseTracker ) {
+  .controller( 'SearchCtrl', function SearchController( $scope, geolocation, foursquare, $stateParams, promiseTracker, $rootScope ) {
     $scope.queryParam = $stateParams.queryVenue;
 
     //Create / get our tracker with unique ID
@@ -29,7 +29,13 @@ angular.module( 'tivity.search', [
       foursquare.searchVenue(location, $stateParams.queryVenue).then(function(data){
 
         //when the data is ready, populate the $scope variables.
-        console.log(data[0].response.venues);
+        if ($rootScope.debugStatus === true) {
+          console.log('Search Page: Results Objects');
+          console.log(data[0].response.venues);
+        }
+
+
+
         $scope.locations = data[0].response.venues;
 
         //console.log($scope.locations);
@@ -42,7 +48,11 @@ angular.module( 'tivity.search', [
           data[0].response.venues[i].categories[0].categoryName = categoryName.toLowerCase();
           var venueName = encodeURI(data[0].response.venues[i].name.toLowerCase().replace(/ /g,"-").replace(/[&'<>"0123456789]/g,""));
           data[0].response.venues[i].venueName = venueName;
-          console.log(venueName.toLowerCase());
+          if ($rootScope.debugStatus === true) {
+            console.log('Search Page: Search term');
+            console.log(venueName.toLowerCase());
+          }
+
 
           //Call for each venue foursquare for the image
           /*var venueID = data[0].response.venues[i].id;
@@ -53,6 +63,10 @@ angular.module( 'tivity.search', [
           });*/
           //TODO: need to rewrite this in a different way so I can fetch images for all the venues in the search result.
 
+        }
+        //If there is only one result, redirect to the venue page automatically.
+        if (data[0].response.venues.length == '1') {
+          window.location = "/section/" + data[0].response.venues[0].categories[0].categoryName + "/" + data[0].response.venues[0].id + "/" + data[0].response.venues[0].venueName;
         }
 
       });
