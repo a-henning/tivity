@@ -17,11 +17,56 @@
         text-shadow:  1px 0 rgba(0, 0, 0, 0.5)
       }
     }
-    li.hidden {
+    .tab-developer {
+      li.databases {
+        padding-right: 10px;
+        > span {
+          float: right;
+        }
+        .toggle {
+          top: 50%;
+          left: 50%;
+          margin-left: -37px;
+          background-color: @orange;
+          border: 1px solid @orange;
+        }
+        /* Text indicating "on" or "off". Default is "off" */
+        .toggle:before {
+          color: #fff;
+          text-shadow: 0 1px #fff;
+          content: "F";
+        }
+
+        /* Sliding handle */
+        .toggle-handle {
+          border: 1px solid rgba(0, 0, 0, .2);
+        }
+        /* Active state for toggle */
+        .toggle.active {
+          background-color: @green;
+          background-image: none;
+          border: 1px solid @green;
+        }
+
+        /* Active state for toggle handle */
+        .toggle.active .toggle-handle {
+          border-color: @green;
+        }
+
+        /* Change "off" to "on" for active state */
+        .toggle.active:before {
+          left: 15px;
+          color: #fff;
+          text-shadow: 0 -1px rgba(0, 0, 0, 0.25);
+          content: "M";
+        }
+      }
+    }
+    /*li.hidden {
       display: none;
     }
     li.active {
       display: block;
-    }
+    }*/
   }
 }

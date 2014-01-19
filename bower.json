@@ -1,6 +1,6 @@
 {
   "name": "tivity",
-  "version": "0.2.6",
+  "version": "0.2.8",
   "dependencies": {
     "angular": "~1.2.8",
     "angular-animate": "latest",
@@ -15,7 +15,10 @@
     "lodash": "~2.4.1",
     "angular-google-maps": "~1.0.4",
     "angular-rn-carousel": "~0.1.4",
-    "angular-touch": "~1.2.8"
+    "angular-touch": "~1.2.8",
+    "firebase": "~1.0.2",
+    "angularfire": "~0.6.0"
+
 
   },
   "devDependencies": {

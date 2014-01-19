@@ -40,7 +40,13 @@ angular.module( 'tivity.settings', [
   })
   .controller( 'DeveloperSettingsCtrl', function DeveloperSettinsgController( $scope, storageManagement ) {
 
-    //Console Debug Switch ========== DEMO FOR USAGE IN OTHER PARTS
+
+
+    /*===========================
+     * ==== DEBUG SWITCH
+     * ===========================*/
+
+     //Console Debug Switch ========== DEMO FOR USAGE IN OTHER PARTS
 
     //ATTENTION: We need to expose to the scope the value of the status so it can be interpreted by ng-class
     //====== Like this the buttons will be active or not depending on the settings, how it should be...
@@ -59,6 +65,21 @@ angular.module( 'tivity.settings', [
     };
     //Console Debug Switch END
 
+
+    /*===========================
+    * ==== DATABASE SWITCH
+    * ===========================*/
+    $scope.databaseStatus = storageManagement.switchDatabase().status();
+
+    $scope.toggleDatabase = function(){
+
+      //Run the switch function back in storageManagement
+      storageManagement.switchDatabase().switch();
+
+      //Running again to change the value so the dom is refreshed.
+      $scope.databaseStatus = storageManagement.switchDatabase().status();
+
+    };
 
 
   })

@@ -1,3 +1,26 @@
+# 0.2.8 (2014-01-19)
+
+* added firebase library
+* added angularfirebase module to connect to the firebase library
+* creating firebase service, for another persistence option, this one will have facebook authentication.
+* firebaseService will be accessed from storageManagement service, setting up dependency injection
+* created a new facebook app to get appID & secret to have access limited only with credentials from there.
+* made Firebase vs MongoDB switching.
+
+
+# 0.2.7 (2014-01-17)
+
+* redirect to venue on search when there is only one result
+* stripped ratchet.js and css into pieces and build them into the project.
+* finally set up proper routing with nodejs and express in the production environment.
+* optimized production build.
+* starting angular tabs.
+* reorganized directive templates. Created settingsManagement service for the settings page
+* global service to show debug information created. need to apply it from now on
+* Modified storageManagement return methods to have swith&status options to read&apply the status, alongside visual changes.
+
+
+
 # 0.2.6 (2014-01-16)
 
 * made a global even listener when the drawer is open, clicking anywhere but on the more button will close the drawer
@@ -11,7 +34,7 @@
 
 
 
-# 0.2.5 (2014-01-16)
+# 0.2.5 (2014-01-15)
 
 * friendly URL's for venues (venue_type/id/venue_name) - the foursquare way :)
 * updated semantic versioning system, still not there yet.

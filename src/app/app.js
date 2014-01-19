@@ -3,6 +3,7 @@ angular.module('tivity', [
   'templates-app',
   'templates-common',
   'mongoService',
+  'firebaseService',
   'storageManagement',
   'searchBar',
   'footerBar',
