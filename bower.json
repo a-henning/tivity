@@ -19,14 +19,10 @@
     "firebase": "~1.0.2",
     "angularfire": "~0.6.0",
     "angular-mocks": "latest"
-
-
   },
-  "devDependencies": {
-
-  },
+  "devDependencies": {},
   "resolutions": {
     "angular-touch": "~1.2.8",
-    "angular": "1.2.9-build.2130+sha.02a4582"
+    "angular": "1.2.10-build.2164+sha.8b395ff"
   }
 }
