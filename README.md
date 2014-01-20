@@ -21,6 +21,11 @@ Not yet ready from prime time
 Not yet ready from prime time
 
 ## For the tinkerers
+
+### Update
+
+I installed protractor for tests.
+
 ### Setup
 
 To have everything up and running:

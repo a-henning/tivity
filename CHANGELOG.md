@@ -1,3 +1,20 @@
+# 0.3.0 (2014-01-20)
+
+## Version 0.3.x will be mostly based on creating tests and polishing what we have so far.
+* Installing protractor.
+
+
+
+
+# 0.2.9 (2014-01-20)
+
+* Firebase DB access with facebook login.
+* a lot of ui bugs on mobile devices ... fuck.
+
+
+
+
+
 # 0.2.8 (2014-01-19)
 
 * added firebase library

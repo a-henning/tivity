@@ -79,7 +79,10 @@ module.exports = {
       'vendor/angular-google-maps/dist/angular-google-maps.js',
       'vendor/firebase/firebase.js',
       'vendor/angularfire/angularfire.min.js',
-      'vendor/firebase-simple-login/firebase-simple-login.js'
+      'vendor/firebase-simple-login/firebase-simple-login.js',
+      'vendor/angular-mocks/angular-mocks.js'
+
+
     ],
     css: [
       //'vendor/angular-rn-carousel/dist/angular-carousel.min.css'

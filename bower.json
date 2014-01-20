@@ -1,6 +1,6 @@
 {
   "name": "tivity",
-  "version": "0.2.8",
+  "version": "0.3.0",
   "dependencies": {
     "angular": "~1.2.8",
     "angular-animate": "latest",
@@ -17,7 +17,8 @@
     "angular-rn-carousel": "~0.1.4",
     "angular-touch": "~1.2.8",
     "firebase": "~1.0.2",
-    "angularfire": "~0.6.0"
+    "angularfire": "~0.6.0",
+    "angular-mocks": "latest"
 
 
   },
