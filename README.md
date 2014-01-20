@@ -91,7 +91,7 @@ $ bower install
 - cd to the `production` folder
 - run `npm install` to run/fetch NodeJs's dependencies
 - run the NodeJS server with `node server.js`
-- open `localhost:3000` in your preferred browser
+- open `localhost:8080` in your preferred browser
  
 ## Voila! Instant gratification code soup
 
