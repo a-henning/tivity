@@ -28,6 +28,8 @@ I installed protractor for tests.
 
 ### Setup
 
+#### You might run into some trouble on Windows machine with this process, Windows is a fickle b...astard, OSX and Linux preferred, I will add at a later date a description on how to fix, up until then, you're on your own.
+
 To have everything up and running:
 
 * you must be running a local server
