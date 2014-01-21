@@ -61,6 +61,7 @@ module.exports = {
    * with our app's assets. This structure is flattened, so it is not
    * recommended that you use wildcards.
    */
+
   vendor_files: {
     js: [
       'vendor/angular/angular.min.js',
@@ -85,7 +86,7 @@ module.exports = {
 
     ],
     css: [
-      //'vendor/angular-rn-carousel/dist/angular-carousel.min.css'
+      //'vendor/angular-ui-router-anim-in-out-master/css/anim-in-out.css'
     ],
     assets: [
     ]

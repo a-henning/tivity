@@ -1,4 +1,3 @@
-
 angular.module( 'tivity.search', [
   'ui.router.state',
   'foursquare',
