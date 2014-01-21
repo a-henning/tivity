@@ -1,3 +1,6 @@
+### Update, on `bower install` there might be a problem installing `angular-ui-router` module, if there's an error, download the module manually (https://github.com/angular-ui/ui-router) and place it in the vendor folder.
+----------------------------------------------
+
 # tivity.
 
 
