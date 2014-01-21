@@ -32,7 +32,7 @@ I installed protractor for tests.
 
 ### Setup
 
-#### You might run into some trouble on Windows machine with this process, Windows is a fickle b...astard, OSX and Linux preferred, I will add at a later date a description on how to fix, up until then, you're on your own.
+#### You might run into some trouble on Windows machine with bower. To use Bower on Windows, you must install msysgit (http://code.google.com/p/msysgit/) correctly. Be sure to check the option "Run Git from the Windows command prompt."
 
 To have everything up and running:
 
