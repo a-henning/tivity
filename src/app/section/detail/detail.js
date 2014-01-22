@@ -4,11 +4,21 @@ angular.module( 'tivity.detail', [
   'foursquare',
   //'geolocation', TODO: Enable when doing gMaps Routes
   'ajoslin.promise-tracker',
+  'googleMapsFactory',
   'google-maps',
   'angular-carousel'
 ])
 
-  .controller( 'DetailCtrl', function DetailController( $scope, geolocation, foursquare, $stateParams, $window, promiseTracker, $location, $anchorScroll, $rootScope ) {
+/*
+  .run(function run(googleMapsFactory) {
+
+  })
+*/
+
+  .controller( 'DetailCtrl', function DetailController( $scope, geolocation, foursquare, $stateParams, $window, promiseTracker, $location, $anchorScroll, $rootScope, googleMapsFactory ) {
+
+    console.log(googleMapsFactory);
+
     $scope.name = $stateParams.venueDetail;
 
     //Create / get our tracker with unique ID
@@ -80,27 +90,31 @@ angular.module( 'tivity.detail', [
       }
 
       //Google Maps directive controls.
-      $scope.map = {
-        center: {
+      googleMapsFactory.then(function(){
+
+        $scope.map = {
+          center: {
+            latitude: data[0].response.venue.location.lat,
+            longitude: data[0].response.venue.location.lng
+          },
+          zoom: 16,
+          options: {
+            disableDefaultUI: true,
+            panControl: false,
+            navigationControl: false,
+            scrollwheel: false,
+            scaleControl: false
+          },
+          icons: {
+            venueIcon: data[0].response.venue.categories[0].icon.prefix + '88' + data[0].response.venue.categories[0].icon.suffix
+          }
+        };
+        $scope.marker = {
           latitude: data[0].response.venue.location.lat,
           longitude: data[0].response.venue.location.lng
-        },
-        zoom: 16,
-        options: {
-          disableDefaultUI: true,
-          panControl: false,
-          navigationControl: false,
-          scrollwheel: false,
-          scaleControl: false
-        },
-        icons: {
-          venueIcon: data[0].response.venue.categories[0].icon.prefix + '88' + data[0].response.venue.categories[0].icon.suffix
-        }
-      };
-      $scope.marker = {
-        latitude: data[0].response.venue.location.lat,
-        longitude: data[0].response.venue.location.lng
-      };
+        };
+
+      })
 
     });
   })

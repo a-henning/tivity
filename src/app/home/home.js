@@ -5,8 +5,7 @@ angular.module( 'tivity.home', [
   'geolocation',
   'fetchLocations',
   'footerBar',
-  'ajoslin.promise-tracker'/*,
-  'LocalStorageModule'*/
+  'ajoslin.promise-tracker'
 ])
 
 /**
@@ -30,12 +29,7 @@ angular.module( 'tivity.home', [
   .controller( 'HomeCtrl', function HomeController( $scope, geolocation, foursquare, promiseTracker/*, localStorageService*/ ) {
     //Create / get our tracker with unique ID
     $scope.loadingTracker = promiseTracker('loadingTracker');
-    /*if (localStorageService.get('visits') === null ) {
-      localStorageService.add('visits', '1');
-    } else {
-      var nrVisits = parseInt(localStorageService.get('visits'), 10);
-      localStorageService.add('visits', nrVisits + 1);
-    }*/
+
   })
 
 ;

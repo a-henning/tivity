@@ -1,17 +1,15 @@
-describe( 'AppCtrl', function() {
-  describe( 'isCurrentUrl', function() {
-    var AppCtrl, $location, $scope;
+
+
+describe( 'Main App Controller', function() {
+    var AppCtrl;
 
     beforeEach( module( 'tivity' ) );
 
-    beforeEach( inject( function( $controller, _$location_, $rootScope ) {
-      $location = _$location_;
-      $scope = $rootScope.$new();
-      AppCtrl = $controller( 'AppCtrl', { $location: $location, $scope: $scope });
+    beforeEach( inject( function( $controller ) {
+      AppCtrl = $controller( 'AppCtrl' );
     }));
 
     it( 'should pass a dummy test', inject( function() {
-      expect( AppCtrl ).toBeTruthy();
+      expect( true ).toBe(true);
     }));
-  });
 });

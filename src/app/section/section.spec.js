@@ -4,11 +4,4 @@
  * build process will exclude all `.spec.js` files from the build
  * automatically.
  */
-describe( 'location section', function() {
-  beforeEach( module( 'tivity.section' ) );
-
-  it( 'should have a dummy test', inject( function() {
-    expect( true ).toBeTruthy();
-  }));
-});
 

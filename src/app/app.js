@@ -1,5 +1,5 @@
 angular.module('tivity', [
-  'ngAnimate',
+  /*'ngAnimate', for the moment we turn it off. */ //TODO: Fix Animation content duplication problem.
   'ivpusic.cookie',
   'templates-app',
   'templates-common',
