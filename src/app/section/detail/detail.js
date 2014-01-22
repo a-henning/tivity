@@ -17,8 +17,6 @@ angular.module( 'tivity.detail', [
 
   .controller( 'DetailCtrl', function DetailController( $scope, geolocation, foursquare, $stateParams, $window, promiseTracker, $location, $anchorScroll, $rootScope, googleMapsFactory ) {
 
-    console.log(googleMapsFactory);
-
     $scope.name = $stateParams.venueDetail;
 
     //Create / get our tracker with unique ID
@@ -113,8 +111,8 @@ angular.module( 'tivity.detail', [
           latitude: data[0].response.venue.location.lat,
           longitude: data[0].response.venue.location.lng
         };
-
-      })
+      //EO GoogleMapsFactory factory Provider.
+      });
 
     });
   })
