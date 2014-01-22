@@ -73,17 +73,41 @@
           padding: 35px;
         }
       }
-      li.facebook {
+      li.email-logged {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        span {
+          background: transparent url(http://png-1.findicons.com/files/icons/1580/devine_icons_part_2/128/mail_2.png) no-repeat left center;
+          background-size: 12%;
+          padding: 45px;
+        }
+      }
+      li.facebook, li.emailandpass {
         padding: 15px;
         h3 {
           margin: 15px 0;
         }
         .input-group {}
-        a.button-positive {
+        a.button-block {
           left: auto !important;
           right: auto !important;
           position: relative;
           margin: 15px auto;
+        }
+        .inactive {
+          display: none;
+        }
+        .badpass {
+          background-color: @red;
+        }
+
+      }
+      .normal-login {
+        h2 {
+          padding: 15px 0;
+          a {
+            padding: 15px 0;
+          }
         }
       }
     }

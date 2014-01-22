@@ -88,22 +88,42 @@ angular.module( 'tivity.settings', [
     var URL = "https://glowing-fire-4586.firebaseio.com";
     var users = new Firebase(URL);
 
-    $scope.auth = $firebaseSimpleLogin(users, function(error, user){});
+    $scope.authfb = $firebaseSimpleLogin(users, function(error, user){});
+    $scope.authemail = $firebaseSimpleLogin(users, function(error, user){});
 
-    if ($scope.auth.user == null) {
+    if ($scope.authfb.user == null) {
       //$scope.auth.$login('facebook');
     }
+    console.log($scope.authfb);
+    $scope.doLoginFB = function() {
+      $scope.authfb.$login('facebook');
+      $scope.$on("$firebaseSimpleLogin:login", function(evt, user) {
+        storageManagement.runFirebase();
+      });
 
-    console.log($scope.auth);
+      /* example of logging in while asking access to permissions like email, user_list, friends_list etc.
+       * auth.$login('facebook', {
+       rememberMe: true,
+       scope: 'email,user_likes'
+       });*/
+    };
+    console.log($scope.authemail);
+    $scope.validStatus = true;
+    $scope.doRegister = function() {
+      //Check to see if the passwords match.
+      if ($scope.thepass === $scope.therepeatpass) {
 
-    //$scope.auth.$logout('facebook');
+        $scope.authemail.$createUser($scope.useremail, $scope.thepass, function(error, user) {
+          if (!error) {
+            console.log(user);
+            console.log('User Id: ' + user.id + ', Email: ' + user.email);
+          }
+        });
 
+      } else {
+        $scope.validStatus = false;
+      }
 
-    $scope.doLogin = function() {
-      console.log($scope.facebookemail);
-      console.log($scope.facebookpassword);
-
-      $scope.auth.$login('facebook');
 
       $scope.$on("$firebaseSimpleLogin:login", function(evt, user) {
         storageManagement.runFirebase();
@@ -115,9 +135,36 @@ angular.module( 'tivity.settings', [
        scope: 'email,user_likes'
        });*/
     };
-    $scope.doLogout = function() {
-      $scope.auth.$logout();
+
+    $scope.doLoginEmail = function() {
+      $scope.authemail.$login('password', {
+        email: $scope.useremail,
+        password: $scope.thepass,
+        rememberMe: true
+      });
+
+      $scope.$on("$firebaseSimpleLogin:login", function(evt, user) {
+        storageManagement.runFirebase();
+      });
+
+      /* example of logging in while asking access to permissions like email, user_list, friends_list etc.
+       * auth.$login('facebook', {
+       rememberMe: true,
+       scope: 'email,user_likes'
+       });*/
     };
+
+    $scope.emailStatus = false;
+    $scope.doEmailReg = function(){
+      if($scope.emailStatus === false) {
+        $scope.emailStatus = true;
+      } else {
+        $scope.emailStatus = false;
+      }
+    };
+
+
+
 
 
 

@@ -64,6 +64,10 @@ angular.module('tivity', [
   })
 
   .controller( 'AppCtrl', function AppCtrl ( $scope, $location, $stateParams ) {
+    //set some properties
+    $scope.foo = 'foo';
+    $scope.bar = 'bar';
+
     $scope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams){
       if ( angular.isDefined( toState.data.pageTitle ) ) {
         $scope.pageTitle = toState.data.pageTitle + ' | tivity' ;

@@ -1,15 +1,19 @@
-
-
 describe( 'Main App Controller', function() {
-    var AppCtrl;
+  var $scope = null;
+  var ctrl = null;
 
-    beforeEach( module( 'tivity' ) );
 
-    beforeEach( inject( function( $controller ) {
-      AppCtrl = $controller( 'AppCtrl' );
-    }));
+  beforeEach( module( 'tivity' ) );
+  beforeEach(inject(function($rootScope, $controller) {
+    $scope = $rootScope.$new();
+    ctrl = $controller('AppCtrl', {
+      $scope: $scope
+    });
+  }));
+  it('should be a mockingjay', function() {
 
-    it( 'should pass a dummy test', inject( function() {
-      expect( true ).toBe(true);
-    }));
+    //just assert. $scope was set up in beforeEach() (above)
+    expect( true ).toBe(true);
+  });
+
 });

@@ -171,7 +171,7 @@ angular.module('storageManagement', ['mongoService', 'firebaseService'])
           //This is the switch function
           switch: function() {
             if (ipCookie(debugCookie) == '0') {
-              alert('debug enabled');
+              alert('Debug Mode enabled, desktop only.');
               ipCookie(debugCookie, '1');
             } else {
               alert('debug disabled');

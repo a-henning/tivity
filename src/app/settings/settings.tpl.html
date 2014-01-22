@@ -20,33 +20,48 @@
         <li class="list-divider">Console Messages</li>
         <li>
           Enable Console Debug (destop only)
-          <div class="toggle" hm-tap="toggleDebug()" ng-class="{'active': toggleDebugStatus}">
+          <div class="toggle" hm-dragend="toggleDebug()" hm-tap="toggleDebug()" ng-class="{'active': toggleDebugStatus}">
             <div class="toggle-handle"></div>
           </div>
         </li>
         <li class="list-divider">Change Database (Firebase has Facebook Authentication.)</li>
         <li class="databases">
           Firebase <span>MongoDB</span>
-          <div class="toggle" hm-tap="toggleDatabase()" ng-class="{'active': databaseStatus}">
+          <div class="toggle" hm-dragend="toggleDatabase()" hm-tap="toggleDatabase()" ng-class="{'active': databaseStatus}">
             <div class="toggle-handle"></div>
           </div>
         </li>
-        <li class="list-divider facebook" ng-show="!auth.user && !databaseStatus" style="text-align: center">
-          <h3>Login to facebook to add/read data to Firebase DB</h3>
-          <h4>At the moment just click the login button, OAuth window will open and ask for credentials. Need to use facebook SDK to send my own usrname and pass.</h4>
-          <div class="input-group">
-            <input type="text" placeholder="Username" ng-model="facebookemail">
-            <input type="password" placeholder="Password" ng-model="facebookpassword">
-          </div>
-
-          <a class="button-positive button-block" ng-click="doLogin();">Login</a>
-
+        <li class="list-divider facebook" ng-show="!authfb.user && !authemail.user && !databaseStatus" style="text-align: center">
+          <h3>Firebase with authentication</h3>
+          <a class="button-main button-block" ng-click="doLoginFB();">Facebook Login</a>
         </li>
-        <li class="list-divider facebook-logged" ng-show="auth.user">
+        <li class="list-divider facebook-logged" ng-show="authfb.user">
           <span>
-            Logged in as {{auth.user.name}} <a class="button-negative" ng-click="auth.$logout()">Logout</a>
+            Logged in as {{authfb.user.name}} <a class="button-negative" ng-click="authfb.$logout()">Logout</a>
           </span>
         </li>
+        <li class="list-divider emailandpass" ng-show="!authfb.user && !authemail.user && !databaseStatus" style="text-align: center">
+          <div class="normal-login">
+            <h2><a hm-tap="doEmailReg()">Login or <u>Create a new account</u></a></h2>
+            <div class="input-group">
+              <input type="text" placeholder="Full Name" ng-class="{'active': emailStatus, 'inactive': !emailStatus}" ng-model="fullname">
+              <input type="text" placeholder="Username" ng-class="{'active': emailStatus, 'inactive': !emailStatus}" ng-model="username">
+              <input type="email" placeholder="Email" ng-model="useremail">
+              <input type="password" placeholder="Password" ng-model="thepass" ng-class="{'badpass': !validStatus}">
+              <input type="password" placeholder="Repeat Password" ng-class="{'active': emailStatus, 'inactive': !emailStatus, 'badpass': !validStatus}" ng-model="therepeatpass">
+
+            </div>
+            <a class="button-positive button-block" ng-class="{'inactive': emailStatus}" ng-click="doLoginEmail();">Login</a>
+            <a class="button-positive button-block" ng-class="{'active': emailStatus, 'inactive': !emailStatus}" ng-click="doRegister();">Create Account</a>
+
+          </div>
+        </li>
+        <li class="list-divider email-logged" ng-show="authemail.user">
+          <span>
+            Logged in as <u>{{authemail.user.email}}</u> <a class="button-negative" ng-click="authemail.$logout()">Logout</a>
+          </span>
+        </li>
+
         <li class="list-divider">Overlay Info (then start navigating the site)</li>
         <li>
           Loading times
