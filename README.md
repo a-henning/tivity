@@ -1,8 +1,11 @@
-####UPDATE: there'a problem in the angular-google-maps module, I suggested a fix (https://github.com/nlaplante/angular-google-maps/issues/196#issuecomment-33027899) , it should be in the works, up until that point, you might experience some issues when getting the plugin from bower.
+
 -----------------------
 
-# tivity.
+# tivity - Cordova Branch. 
 
+After following this tutorial, in order to have cordova running you have to do this: 
+
+*  ~~empty~~ tutorial to come.
 
 
 tivity is a small mobile application made with Angular and all the best and latest 'good practices'.
