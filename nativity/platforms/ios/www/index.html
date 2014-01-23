@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="tivity" ng-controller="AppCtrl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+    <!--<base href="/">-->
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/icons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/icons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="assets/icons/apple-touch-icon-57x57.png">
+
+    <!-- compiled CSS -->
+    
+    <link rel="stylesheet" type="text/css" href="assets/tivity-0.3.0.css" />
+    
+
+    <!-- compiled JavaScript -->
+    
+    <script type="text/javascript" src="assets/tivity-0.3.0.js"></script>
+    
+
+  </head>
+  <body ng-class="getCurrentLocation();">
+  <!--<div ui-view="main" class="content"></div>-->
+  <div ui-view="main" class="content anim-in-out anim-fade anim-slide-below" data-anim-speed="500"></div>
+  <!-- VVV DIRECTIVE: footerBar VVV -->
+  <div class="footerBar"></div>
+  </body>
+</html>

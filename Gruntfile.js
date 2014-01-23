@@ -161,6 +161,16 @@ module.exports = function ( grunt ) {
             expand: true
           }
         ]
+      },
+      move_native: {
+        files: [
+          {
+            src: [ '**' ],
+            dest: '<%= native_dir %>/',
+            cwd: 'bin/',
+            expand: true
+          }
+        ]
       }
     },
 
@@ -584,7 +594,7 @@ module.exports = function ( grunt ) {
    * minifying your code.
    */
   grunt.registerTask( 'compile', [
-    'recess:compile', 'copy:compile_assets', 'ngmin', 'concat:compile_js', 'uglify', 'index:compile', 'copy:move_prod'
+    'recess:compile', 'copy:compile_assets', 'ngmin', 'concat:compile_js', 'uglify', 'index:compile', 'copy:move_prod', 'copy:move_native'
   ]);
 
   /**
