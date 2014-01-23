@@ -1,4 +1,4 @@
-angular.module('fetchLocations', [])
+angular.module('fetchLocations', ['geolocation'])
   .directive('fetchLocations', function ($rootScope){
     return {
       restrict: 'C',

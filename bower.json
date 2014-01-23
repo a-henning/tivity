@@ -5,6 +5,7 @@
     "angular": "~1.2.10",
     "angular-animate": "latest",
     "angular-promise-tracker": "latest",
+    "angular-ui-router-anim-in-out": "0.0.5",
     "angular-ui-router": "#0.2.8-bowratic-tedium",
     "angular-ui-utils": "~0.0.4",
     "angularjs-geolocation": "latest",

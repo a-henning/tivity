@@ -1,8 +1,9 @@
-<div class="my-super-awesome-loading-box" ng-show="loadingTracker.active()">
-  Loading...
-</div>
+<div ng-controller="SectionCtrl" class="location-listing {{ theLocationType }}" >
+  <div class="my-super-awesome-loading-box" ng-show="loadingTracker.active()">
+    <div class="circle"></div>
+    <div class="circle1"></div>
+  </div>
 
-<div ng-controller="SectionCtrl" class="location-listing" pull-to-refresh="doReload()">
   <h2 class="top">Listing {{ theLocationType }} in {{ locationName }} <button class="openSearch" ng-click="barState = !barState"><img src="assets/icons/icon-search.png"></button></h2>
   <!-- VVV DIRECTIVE: searchBar VVV -->
   <div class="searchBar" ng-class="{'search-closed': !barState, 'search-open': barState}"></div>

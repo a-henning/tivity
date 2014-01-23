@@ -1,3 +1,75 @@
+.my-super-awesome-loading-box {
+  width: 120px;
+  position: absolute;
+  z-index: 9999;
+  top: 50%;
+  left: 50%;
+  margin: -60px 0 0 -60px;
+  height: 120px;
+  background-color: #fff;
+  border-radius: 100px;
+  padding-top: 34px;
+  box-shadow: 0 0 30px 24px #fff;
+}
+
+
+.circle {
+  background-color: #B4DCED;
+  border:5px solid rgba(0,183,229,0.9);
+  opacity:.9;
+  border-right:5px solid rgba(0,0,0,0);
+  border-left:5px solid rgba(0,0,0,0);
+  border-radius:50px;
+  box-shadow: 0 0 35px #2187e7;
+  width:50px;
+  height:50px;
+  margin:0 auto;
+  -moz-animation:spinPulse 1s infinite ease-in-out;
+  -webkit-animation:spinPulse 1s infinite linear;
+}
+.circle1 {
+  background-color: #fff;
+  border:5px solid rgba(0,183,229,0.9);
+  opacity:.9;
+  border-left:5px solid rgba(0,0,0,0);
+  border-right:5px solid rgba(0,0,0,0);
+  border-radius:50px;
+  box-shadow: 0 0 15px #2187e7;
+  width:30px;
+  height:30px;
+  margin:0 auto;
+  position:relative;
+  top:-40px;
+  -moz-animation:spinoffPulse 2s infinite linear;
+  -webkit-animation:spinoffPulse 2s infinite linear;
+}
+
+@-moz-keyframes spinPulse {
+  0% { -moz-transform:rotate(160deg); opacity:0; box-shadow:0 0 1px #2187e7;}
+  50% { -moz-transform:rotate(145deg); opacity:1; }
+  100% { -moz-transform:rotate(-320deg); opacity:0; }
+}
+@-moz-keyframes spinoffPulse {
+  0% { -moz-transform:rotate(0deg); }
+  100% { -moz-transform:rotate(360deg);  }
+}
+@-webkit-keyframes spinPulse {
+  0% { -webkit-transform:rotate(160deg); opacity:0; box-shadow:0 0 1px #2187e7; }
+  50% { -webkit-transform:rotate(145deg); opacity:1;}
+  100% { -webkit-transform:rotate(-320deg); opacity:0; }
+}
+@-webkit-keyframes spinoffPulse {
+  0% { -webkit-transform:rotate(0deg); }
+  100% { -webkit-transform:rotate(360deg); }
+}
+
+
+
+
+
+
+/* UI VIEW ANIMATIONS */
+
 /* line 10, ../scss/anim-in-out.scss */
 .anim-in-out.anim-in-setup.anim-fade, .anim-in-out.anim-in-setup .anim-fade {
   opacity: 0;
@@ -209,4 +281,28 @@
   -moz-transition: all, 500ms;
   -o-transition: all, 500ms;
   transition: all, 500ms;
+}
+
+
+/* NG REPEATS ANIMATION */
+
+.animate-repeat.ng-move,
+.animate-repeat.ng-enter,
+.animate-repeat.ng-leave {
+  -webkit-transition:all linear 0.5s;
+  transition:all linear 0.5s;
+}
+
+.animate-repeat.ng-leave.ng-leave-active,
+.animate-repeat.ng-move,
+.animate-repeat.ng-enter {
+  opacity:0;
+  max-height:0;
+}
+
+.animate-repeat.ng-leave,
+.animate-repeat.ng-move.ng-move-active,
+.animate-repeat.ng-enter.ng-enter-active {
+  opacity:1;
+  max-height:40px;
 }

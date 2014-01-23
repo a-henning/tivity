@@ -69,6 +69,7 @@ module.exports = {
       'vendor/angular-promise-tracker/promise-tracker.min.js',
       'strippedLibraries/ratchet.js',
       'vendor/angular-ui-router/release/angular-ui-router.min.js',
+      'vendor/angular-ui-router-anim-in-out/anim-in-out.js',
       'vendor/angular-ui-utils/modules/route/route.js',
       'vendor/angularjs-geolocation/dist/angularjs-geolocation.min.js',
       'vendor/angular-cookie/angular-cookie.min.js',
@@ -80,10 +81,7 @@ module.exports = {
       'vendor/angular-google-maps/dist/angular-google-maps.js',
       'vendor/firebase/firebase.js',
       'vendor/angularfire/angularfire.min.js',
-      'vendor/firebase-simple-login/firebase-simple-login.js',
-      'vendor/angular-mocks/angular-mocks.js'
-
-
+      'vendor/firebase-simple-login/firebase-simple-login.js'
     ],
     css: [
       //'vendor/angular-ui-router-anim-in-out-master/css/anim-in-out.css'

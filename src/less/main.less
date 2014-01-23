@@ -4,24 +4,11 @@
  * the Grunt configuration that is automatically processed.
  */
 
-//First things first, hide the content until it's loaded.
-[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
-  display: none !important;
-}
-
-.ng-hide {
-
-  display:block!important;
-
-  //this is just another form of hiding an element
-  position:absolute;
-  top:-9999px;
-  left:-9999px;
-}
 
 @import 'variables.less';
 @import 'ratchet.less'; //TODO: NEED TO STRIP RATCHET LESS, to exactly what I need.
 @import 'animation.less';
+@import 'ng-carousel.less';
 
 
 /* Code Starts here */
@@ -46,8 +33,7 @@ a {
 .searchBar {
   padding: 10px 10px 0px 10px;
   border-bottom: 1px solid #ccc;
-  //-webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s !important;
-  //transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s !important;
+
 
 }
 .searchBar.search-closed {
@@ -60,25 +46,20 @@ a {
   margin-bottom: 5px;
 }
 .search-closed-add, .search-open-add {
-  -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s  !important;
-  transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s  !important;
+
 }
 
 
 // Global Footer
 
 .bar-tab {
-  -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s  !important;
-  transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s  !important;
+
   &.drawer-open {
     height: 140px;
   }
   .tab-inner {
     > li {
-      /*&.ng-click-active {
-        background-color: lighten(@yellow, 20%);
-        color: #fff;
-      }*/
+
     }
   }
 }

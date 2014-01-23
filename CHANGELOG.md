@@ -2,7 +2,8 @@
 
 ## Version 0.3.x will be mostly based on creating tests and polishing what we have so far.
 * Installing protractor.
-
+* Fixed Animations!
+* Promise tracker loading animation
 
 
 
@@ -10,7 +11,10 @@
 
 * Firebase DB access with facebook login.
 * a lot of ui bugs on mobile devices ... fuck.
-
+* fixed gmaps api js problem
+* created factory service for gmaps.
+* fixed angular-google-maps library.
+* added email/password authentication to firebase.
 
 
 

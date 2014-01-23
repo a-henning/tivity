@@ -1,5 +1,5 @@
 <ul class="locations list">
-  <li ng-repeat="location in locations">
+  <li ng-repeat="location in locations" class="animate-repeat">
     <div class="image {{ location.venue.picClass }}"><img src="{{ location.venue.photos.groups.thePhoto }}" alt=""/></div>
     <a href="/section/{{theLocationType}}/{{location.venue.id}}/{{location.venue.venueName}}">
       <h2>{{ location.venue.name }}</h2>

@@ -23,7 +23,8 @@
 
   </head>
   <body ng-class="getCurrentLocation();">
-  <div class="content" ui-view="main"></div>
+  <!--<div ui-view="main" class="content"></div>-->
+  <div ui-view="main" class="content anim-in-out anim-fade anim-slide-below" data-anim-speed="500"></div>
   <!-- VVV DIRECTIVE: footerBar VVV -->
   <div class="footerBar"></div>
   </body>

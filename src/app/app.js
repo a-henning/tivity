@@ -1,5 +1,5 @@
 angular.module('tivity', [
-  /*'ngAnimate', for the moment we turn it off. */ //TODO: Fix Animation content duplication problem.
+  'ngAnimate',
   'ivpusic.cookie',
   'templates-app',
   'templates-common',
@@ -13,6 +13,7 @@ angular.module('tivity', [
   'tivity.settings',
   'ui.router.state',
   'ui.route',
+  'anim-in-out',
   'ngTouch'
 ])
 
@@ -64,9 +65,6 @@ angular.module('tivity', [
   })
 
   .controller( 'AppCtrl', function AppCtrl ( $scope, $location, $stateParams ) {
-    //set some properties
-    $scope.foo = 'foo';
-    $scope.bar = 'bar';
 
     $scope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams){
       if ( angular.isDefined( toState.data.pageTitle ) ) {

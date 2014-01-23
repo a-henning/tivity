@@ -3,7 +3,6 @@ angular.module( 'tivity.section', [
     'ui.router.state',
     'tivity.detail',
     'foursquare',
-    'geolocation',
     'fetchLocations',
     'ajoslin.promise-tracker'
 
