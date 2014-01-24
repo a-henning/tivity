@@ -9,13 +9,16 @@ angular.module( 'tivity.detail', [
   'angular-carousel'
 ])
 
-/*
-  .run(function run(googleMapsFactory) {
+    .config(function (googleMapsProvider) {
+        googleMapsProvider
+            .useSensor(true)
+            .apiKey('AIzaSyA73am219_wQkRg2fk3Co7jYYCenD622Ck')
+            .useLanguage('en')
+            .useLibrary('weather,visualization')
+            .useVersion('3.14');
+    })
 
-  })
-*/
-
-  .controller( 'DetailCtrl', function DetailController( $scope, geolocation, foursquare, $stateParams, $window, promiseTracker, $location, $anchorScroll, $rootScope, googleMapsFactory ) {
+  .controller( 'DetailCtrl', function DetailController( $scope, geolocation, foursquare, $stateParams, $window, promiseTracker, $location, $anchorScroll, $rootScope, googleMaps ) {
 
     $scope.name = $stateParams.venueDetail;
 
@@ -87,32 +90,44 @@ angular.module( 'tivity.detail', [
         $scope.images = venueImages;
       }
 
-      //Google Maps directive controls.
-      googleMapsFactory.then(function(){
+        //Populate Map
 
-        $scope.map = {
-          center: {
-            latitude: data[0].response.venue.location.lat,
-            longitude: data[0].response.venue.location.lng
-          },
-          zoom: 16,
-          options: {
-            disableDefaultUI: true,
-            panControl: false,
-            navigationControl: false,
-            scrollwheel: false,
-            scaleControl: false
-          },
-          icons: {
-            venueIcon: data[0].response.venue.categories[0].icon.prefix + '88' + data[0].response.venue.categories[0].icon.suffix
-          }
+        var populateMap = function () {
+            $scope.map = {
+                center: {
+                    latitude: data[0].response.venue.location.lat,
+                    longitude: data[0].response.venue.location.lng
+                },
+                zoom: 16,
+                options: {
+                    disableDefaultUI: true,
+                    panControl: false,
+                    navigationControl: false,
+                    scrollwheel: false,
+                    scaleControl: false
+                },
+                icons: {
+                    venueIcon: data[0].response.venue.categories[0].icon.prefix + '88' + data[0].response.venue.categories[0].icon.suffix
+                }
+            };
+            $scope.marker = {
+                latitude: data[0].response.venue.location.lat,
+                longitude: data[0].response.venue.location.lng
+            };
         };
-        $scope.marker = {
-          latitude: data[0].response.venue.location.lat,
-          longitude: data[0].response.venue.location.lng
-        };
-      //EO GoogleMapsFactory factory Provider.
-      });
+
+      //Google Maps directive controls.
+        var mapCall = false;
+        if (!mapCall) {
+            console.log('ran once');
+            googleMaps.runMap().then(function() {
+                console.log('shit is on.');
+                //Add lat/long and other options to the map
+                populateMap();
+
+            });
+            mapCall = true;
+        }
 
     });
   })

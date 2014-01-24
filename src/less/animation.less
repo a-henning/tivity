@@ -286,23 +286,90 @@
 
 /* NG REPEATS ANIMATION */
 
+.animate-repeat {
+  -webkit-tap-highlight-color: @blue;
+}
+
 .animate-repeat.ng-move,
 .animate-repeat.ng-enter,
 .animate-repeat.ng-leave {
-  -webkit-transition:all linear 0.5s;
-  transition:all linear 0.5s;
+  -webkit-transition:all 0.7s cubic-bezier(0.79, 0.33, 0.94, 0.17);
+  transition:all 0.7s cubic-bezier(0.79, 0.33, 0.94, 0.17);
 }
 
 .animate-repeat.ng-leave.ng-leave-active,
 .animate-repeat.ng-move,
 .animate-repeat.ng-enter {
   opacity:0;
-  max-height:0;
+  left: -50%;
+  //max-height:0;
+  width: 30%;
 }
 
 .animate-repeat.ng-leave,
 .animate-repeat.ng-move.ng-move-active,
 .animate-repeat.ng-enter.ng-enter-active {
   opacity:1;
-  max-height:40px;
+  left: 0;
+  //max-height:77px;
+  width: 100%;
 }
+
+
+/* Search Bar */
+
+.searchBar {
+  border-bottom: 0px solid #ccc;
+  padding: 0px 10px;
+  overflow: hidden;
+  height: 0px;
+  width: 100%;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+
+}
+
+.searchBar.search-open {
+  height: 56px;
+  border-bottom: 1px solid #ccc;
+  padding: 10px 10px 0px 10px;
+}
+
+
+.searchBar.search-open-add, .searchBar.search-open-add-active /*.searchBar.search-closed-add*/ {
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+/*
+.searchBar.search-open-add-active, .searchBar.search-closed-add-active {
+  -webkit-transition: height 7s linear;
+  transition: height 7s linear;
+}
+*/
+
+.searchBar.search-open-add {
+
+}
+.searchBar.search-open-add-active {
+  //height: 0px;
+}
+.searchBar.search-closed-add {
+
+}
+
+
+/* Drawer */
+
+
+  .bar-tab {
+    -webkit-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+    &.drawer-open {
+      height: 140px;
+
+    }
+    &.drawer-open-add, &.drawer-open-add-active {
+      -webkit-transition: all 0.2s linear;
+      transition: all 0.2s linear;
+    }
+  }
