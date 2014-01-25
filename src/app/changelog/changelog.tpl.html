@@ -1,0 +1,52 @@
+<div ng-controller="HomeCtrl" class="homepage">
+
+  <div class="logo">
+    <a class="version" href="/changelog">v0.3.0</a>
+  </div>
+  <div class="tagline">
+    <h2>Today I'd like to find:</h2>
+
+  </div>
+  <div class="homelist">
+    <ul>
+      <li class="item" ui-route="/section/food" ng-class="{active:$uiRoute}">
+        <a href="/section/food">
+          <img class="tab-icon" src="assets/icons/icon-food.png">
+          <div class="tab-label">Food</div>
+        </a>
+      </li>
+      <li class="item" ui-route="/section/drinks" ng-class="{active:$uiRoute}">
+        <a href="/section/drinks">
+          <img class="tab-icon" src="assets/icons/icon-drinks.png">
+          <div class="tab-label">Drinks</div>
+        </a>
+      </li>
+      <li class="item" ui-route="/section/shops" ng-class="{active:$uiRoute}">
+        <a href="/section/shops">
+          <img class="tab-icon" src="assets/icons/icon-shops.png">
+          <div class="tab-label">Shops</div>
+        </a>
+      </li>
+      <li class="item" ui-route="/section/arts" ng-class="{active:$uiRoute}">
+        <a href="/section/arts">
+          <img class="tab-icon" src="assets/icons/icon-arts.png">
+          <div class="tab-label">Arts</div>
+        </a>
+      </li>
+      <li class="item" ui-route="/section/outdoors" ng-class="{active:$uiRoute}">
+        <a href="/section/outdoors">
+          <img class="tab-icon" src="assets/icons/icon-outdoors.png">
+          <div class="tab-label">Outdoors</div>
+        </a>
+      </li>
+      <li class="item" ui-route="/extras" ng-class="{active:$uiRoute}">
+        <a href="/extras">
+          <img class="tab-icon" src="assets/icons/icon-angular.png">
+          <div class="tab-label">Extras</div>
+        </a>
+      </li>
+
+    </ul>
+  </div>
+
+</div>

@@ -1,9 +1,12 @@
 # 0.3.0 (2014-01-20)
 
-## Version 0.3.x will be mostly based on creating tests and polishing what we have so far.
+## Version 0.3.x will be mostly based on creating tests and polishing what we have so far. // OR NOT ... crap.
 * Installing protractor.
 * Fixed Animations!
 * Promise tracker loading animation
+* Progress on animations
+* Made homepage, extras and changelog pages.
+* Finished homepage.
 
 
 

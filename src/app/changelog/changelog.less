@@ -1,0 +1,68 @@
+
+  .homepage {
+    width: 100%;
+    height: 100%;
+    background-color: lighten(@light-blue, 30%);
+    .logo {
+      width: 100%;
+      height: 30%;
+      overflow: hidden;
+      background: transparent url(logo.png) no-repeat center 10px;
+      background-size: 42%;
+      position: relative;
+      a.version {
+        position: absolute;
+        right: 30%;
+        bottom: 5%;
+      }
+    }
+    .tagline {
+      width: 100%;
+      height: 10%;
+      overflow: hidden;
+      h2 {
+        display: block;
+        text-align: center;
+        font-weight: 200;
+        color: @grey;
+        margin-top: 5%;
+      }
+    }
+    .homelist {
+      width: 100%;
+      height: 60%;
+      overflow: hidden;
+      ul {
+        list-style-image: none;
+        list-style: none;
+        height: 100%;
+        width: 100%;
+        li {
+          width: 50%;
+          height: 33.3%;
+          float:left;
+          border-bottom: 1px solid @grey;
+          .tab-icon {
+            height: 50%;
+            margin: 7% auto 0% auto;
+          }
+          .tab-label {
+            font-size: 20px;
+            color: @grey;
+            text-align: center;
+            font-weight: 200;
+            letter-spacing: 1px;
+          }
+        }
+        li:nth-child(2n+1) {
+          border-right: 1px solid @grey;
+        }
+        li:nth-child(5n), li:nth-child(6n) {
+          border-bottom: 0px solid #f6f6f6;
+        }
+      }
+    }
+  }
+  .footerBar {
+    display: none;
+  }
