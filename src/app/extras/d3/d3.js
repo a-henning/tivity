@@ -1,9 +1,6 @@
 
-angular.module( 'tivity.extras', [
+angular.module( 'tivity.d3', [
         'ui.router.state',
-        'tivity.d3',
-        'tivity.pubnub',
-        'tivity.pubnubd3',
         'footerBar',
         'ajoslin.promise-tracker'
     ])
@@ -14,19 +11,19 @@ angular.module( 'tivity.extras', [
  * this way makes each module more "self-contained".
  */
     .config(function config( $stateProvider ) {
-        $stateProvider.state( 'extras', {
-            url: '/extras',
+        $stateProvider.state( 'd3', {
+            url: '/extras/d3',
             views: {
                 "main": {
-                    controller: 'ExtrasCtrl',
-                    templateUrl: 'extras/extras.tpl.html'
+                    controller: 'D3Ctrl',
+                    templateUrl: 'd3/d3.tpl.html'
                 }
             },
-            data:{ pageTitle: 'Extras' }
+            data:{ pageTitle: 'd3 Data visualization library' }
         });
     })
 
-    .controller( 'ExtrasCtrl', function ExtrasController( $scope, geolocation, foursquare, promiseTracker/*, localStorageService*/ ) {
+    .controller( 'D3Ctrl', function D3Controller( $scope, geolocation, foursquare, promiseTracker/*, localStorageService*/ ) {
         //Create / get our tracker with unique ID
         $scope.loadingTracker = promiseTracker('loadingTracker');
 
