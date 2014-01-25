@@ -19,7 +19,7 @@ angular.module('tivity', [
 
   .config( function myAppConfig ( $stateProvider, $urlRouterProvider, $locationProvider ) {
     $locationProvider.html5Mode(true).hashPrefix('!');
-    $urlRouterProvider.otherwise( '/section/food' );
+    $urlRouterProvider.otherwise( '/home' );
     $stateProvider.state( 'search', {
       url: '/search/:queryVenue',
       views: {
