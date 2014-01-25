@@ -11,6 +11,8 @@ angular.module('tivity', [
   'tivity.search',
   'tivity.about',
   'tivity.settings',
+  'tivity.extras',
+  'tivity.changelog',
   'ui.router.state',
   'ui.route',
   'anim-in-out',

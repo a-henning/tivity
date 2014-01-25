@@ -1,9 +1,6 @@
 
-angular.module( 'tivity.home', [
+angular.module( 'tivity.changelog', [
   'ui.router.state',
-  'foursquare',
-  'geolocation',
-  'fetchLocations',
   'footerBar',
   'ajoslin.promise-tracker'
 ])
@@ -14,19 +11,19 @@ angular.module( 'tivity.home', [
  * this way makes each module more "self-contained".
  */
   .config(function config( $stateProvider ) {
-    $stateProvider.state( 'home', {
-      url: '/home',
+    $stateProvider.state( 'changelog', {
+      url: '/changelog',
       views: {
         "main": {
-          controller: 'HomeCtrl',
-          templateUrl: 'home/home.tpl.html'
+          controller: 'ChangelogCtrl',
+          templateUrl: 'changelog/changelog.tpl.html'
         }
       },
-      data:{ pageTitle: 'Home' }
+      data:{ pageTitle: 'Changelog' }
     });
   })
 
-  .controller( 'HomeCtrl', function HomeController( $scope, geolocation, foursquare, promiseTracker/*, localStorageService*/ ) {
+  .controller( 'ChangelogCtrl', function ChangelogController( $scope, geolocation, foursquare, promiseTracker/*, localStorageService*/ ) {
     //Create / get our tracker with unique ID
     $scope.loadingTracker = promiseTracker('loadingTracker');
 
