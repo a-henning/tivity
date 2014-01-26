@@ -68,6 +68,7 @@ module.exports = {
       'vendor/angular-animate/angular-animate.min.js',
       'vendor/angular-promise-tracker/promise-tracker.min.js',
       'strippedLibraries/ratchet.js',
+      'strippedLibraries/script.min.js',
       'vendor/angular-ui-router/release/angular-ui-router.min.js',
       'vendor/angular-ui-router-anim-in-out/anim-in-out.js',
       'vendor/angular-ui-utils/modules/route/route.js',
@@ -81,7 +82,8 @@ module.exports = {
       'vendor/angular-google-maps/dist/angular-google-maps.js',
       'vendor/firebase/firebase.js',
       'vendor/angularfire/angularfire.min.js',
-      'vendor/firebase-simple-login/firebase-simple-login.js'
+      'vendor/firebase-simple-login/firebase-simple-login.js',
+      'vendor/ocLazyLoad/ocLazyLoad.min.js'
     ],
     css: [
       //'vendor/angular-ui-router-anim-in-out-master/css/anim-in-out.css'

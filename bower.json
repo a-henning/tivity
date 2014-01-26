@@ -1,6 +1,6 @@
 {
   "name": "tivity",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "dependencies": {
     "angular": "~1.2.10",
     "angular-animate": "latest",
@@ -18,7 +18,8 @@
     "angular-touch": "~1.2.8",
     "firebase": "~1.0.2",
     "angularfire": "~0.6.0",
-    "angular-mocks": "~1.2.10"
+    "angular-mocks": "~1.2.10",
+    "ocLazyLoad": "~0.0.2"
   },
   "devDependencies": {},
   "resolutions": {

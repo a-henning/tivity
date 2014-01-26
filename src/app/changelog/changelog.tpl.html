@@ -1,169 +1,173 @@
 <div ng-controller="ChangelogCtrl" class="changelog">
 
-  # 0.3.0 (2014-01-20)
+  <article class="markdown-body entry-content" itemprop="mainContentOfPage"><h1>
+    <a name="030-2014-01-20" class="anchor" href="#030-2014-01-20"><span class="octicon octicon-link"></span></a>0.3.0 (2014-01-20)</h1>
 
-  ## Version 0.3.x will be mostly based on creating tests and polishing what we have so far. // OR NOT ... crap.
-  * Installing protractor.
-  * Fixed Animations!
-  * Promise tracker loading animation
-  * Progress on animations
-  * Made homepage, extras and changelog pages.
-  * Finished homepage.
+    <h2>
+      <a name="version-03x-will-be-mostly-based-on-creating-tests-and-polishing-what-we-have-so-far--or-not--crap" class="anchor" href="#version-03x-will-be-mostly-based-on-creating-tests-and-polishing-what-we-have-so-far--or-not--crap"><span class="octicon octicon-link"></span></a>Version 0.3.x will be mostly based on creating tests and polishing what we have so far. // OR NOT ... crap.</h2>
 
+    <ul>
+      <li>Installing protractor.</li>
+      <li>Fixed Animations!</li>
+      <li>Promise tracker loading animation</li>
+      <li>Progress on animations</li>
+      <li>Made homepage, extras and changelog pages.</li>
+      <li>Finished homepage.</li>
+    </ul><h1>
+      <a name="029-2014-01-20" class="anchor" href="#029-2014-01-20"><span class="octicon octicon-link"></span></a>0.2.9 (2014-01-20)</h1>
 
+    <ul>
+      <li>Firebase DB access with facebook login.</li>
+      <li>a lot of ui bugs on mobile devices ... fuck.</li>
+      <li>fixed gmaps api js problem</li>
+      <li>created factory service for gmaps.</li>
+      <li>fixed angular-google-maps library.</li>
+      <li>added email/password authentication to firebase.</li>
+    </ul><h1>
+      <a name="028-2014-01-19" class="anchor" href="#028-2014-01-19"><span class="octicon octicon-link"></span></a>0.2.8 (2014-01-19)</h1>
 
-  # 0.2.9 (2014-01-20)
+    <ul>
+      <li>added firebase library</li>
+      <li>added angularfirebase module to connect to the firebase library</li>
+      <li>creating firebase service, for another persistence option, this one will have facebook authentication.</li>
+      <li>firebaseService will be accessed from storageManagement service, setting up dependency injection</li>
+      <li>created a new facebook app to get appID &amp; secret to have access limited only with credentials from there.</li>
+      <li>made Firebase vs MongoDB switching.</li>
+    </ul><h1>
+      <a name="027-2014-01-17" class="anchor" href="#027-2014-01-17"><span class="octicon octicon-link"></span></a>0.2.7 (2014-01-17)</h1>
 
-  * Firebase DB access with facebook login.
-  * a lot of ui bugs on mobile devices ... fuck.
-  * fixed gmaps api js problem
-  * created factory service for gmaps.
-  * fixed angular-google-maps library.
-  * added email/password authentication to firebase.
+    <ul>
+      <li>redirect to venue on search when there is only one result</li>
+      <li>stripped ratchet.js and css into pieces and build them into the project.</li>
+      <li>finally set up proper routing with nodejs and express in the production environment.</li>
+      <li>optimized production build.</li>
+      <li>starting angular tabs.</li>
+      <li>reorganized directive templates. Created settingsManagement service for the settings page</li>
+      <li>global service to show debug information created. need to apply it from now on</li>
+      <li>Modified storageManagement return methods to have swith&amp;status options to read&amp;apply the status, alongside visual changes.</li>
+    </ul><h1>
+      <a name="026-2014-01-16" class="anchor" href="#026-2014-01-16"><span class="octicon octicon-link"></span></a>0.2.6 (2014-01-16)</h1>
 
+    <ul>
+      <li>made a global even listener when the drawer is open, clicking anywhere but on the more button will close the drawer</li>
+      <li>hooked in MongoLabs MongoDB service</li>
+      <li>created list/add/edit methods for MongoDB Collection and custom ID's</li>
+      <li>started working on the cookie - storageManagement - MongoDB communication.</li>
+      <li>replaced localStorage service with ngCookies service</li>
+      <li>renamed previous storeManagement factory service to mongoService</li>
+      <li>created the real storeManagement service which uses mongoService and ngCookies service</li>
+      <li>created a object with methods that handle cookie reading and mongoDb inseration, inspirationally called <code>tellMongo</code>
+      </li>
+    </ul><h1>
+      <a name="025-2014-01-15" class="anchor" href="#025-2014-01-15"><span class="octicon octicon-link"></span></a>0.2.5 (2014-01-15)</h1>
 
+    <ul>
+      <li>friendly URL's for venues (venue_type/id/venue_name) - the foursquare way :)</li>
+      <li>updated semantic versioning system, still not there yet.</li>
+      <li>meddled with the build configuration, still needs optimization</li>
+      <li>searchBar directive made global.</li>
+    </ul><h1>
+      <a name="024-2014-01-14" class="anchor" href="#024-2014-01-14"><span class="octicon octicon-link"></span></a>0.2.4 (2014-01-14)</h1>
 
+    <ul>
+      <li>started working on the settings page.</li>
+      <li>added icons</li>
+      <li>added the about page</li>
+      <li>added nodeJS+express barebone server for extra routing capabilities</li>
+      <li>started working on a automated production release, inside</li>
+      <li>on grunt compile, everything is minified and copied to the nodeJS production folder in views.</li>
+    </ul><h1>
+      <a name="023-2014-01-13" class="anchor" href="#023-2014-01-13"><span class="octicon octicon-link"></span></a>0.2.3 (2014-01-13)</h1>
 
-  # 0.2.8 (2014-01-19)
+    <ul>
+      <li>gmaps module is now working properly</li>
+      <li>used $rootScope to listen to $stateParams change to set a proper body class for each page.</li>
+      <li>set the map container functionality.</li>
+      <li>finished map opening and closing with it's adjacent functionality.</li>
+      <li>made a scroolTo snippet so the map always opens at the top.</li>
+      <li>made most the detail page design.</li>
+      <li>fixed a error when image count was greater than the actual image objects.</li>
+      <li>readding angular-touch for ng-carousel. :(</li>
+      <li>added angular-carousel</li>
+      <li>disabled hammerJS</li>
+      <li>carousel fixes (promise to wait for images to load, overall functionality)</li>
+    </ul><h1>
+      <a name="022-2014-01-12" class="anchor" href="#022-2014-01-12"><span class="octicon octicon-link"></span></a>0.2.2 (2014-01-12)</h1>
 
-  * added firebase library
-  * added angularfirebase module to connect to the firebase library
-  * creating firebase service, for another persistence option, this one will have facebook authentication.
-  * firebaseService will be accessed from storageManagement service, setting up dependency injection
-  * created a new facebook app to get appID & secret to have access limited only with credentials from there.
-  * made Firebase vs MongoDB switching.
+    <ul>
+      <li>got almost all of the data on the details page.</li>
+      <li>tried angular-pull-to-refresh library, I can make it better from scratch.</li>
+      <li>integrating google maps files and API.</li>
+      <li>switching to angular-google-maps.</li>
+    </ul><h1>
+      <a name="021-2014-01-11" class="anchor" href="#021-2014-01-11"><span class="octicon octicon-link"></span></a>0.2.1 (2014-01-11)</h1>
 
+    <ul>
+      <li>Switching to angular 1.2.9</li>
+      <li>made search directive linked to the search service</li>
+      <li>hooking up ngAnimate.</li>
+      <li>made search template for the section pages with ngAnimate.</li>
+      <li>added ngTouch angular library</li>
+      <li>replaced ngTouch with a more mature touch library, Hammer.js, the bridge to Angular is made by angular-hammer module.</li>
+    </ul><h1>
+      <a name="020-2014-01-10" class="anchor" href="#020-2014-01-10"><span class="octicon octicon-link"></span></a>0.2.0 (2014-01-10)</h1>
 
-  # 0.2.7 (2014-01-17)
+    <ul>
+      <li>added &amp; implemented foursquare search functionality service.</li>
+      <li>refactored part of the code, got rid of unnecessary directives and services calls in places where they weren't needed.</li>
+      <li>unfortunately the search API does not return photos, so I am putting the basis of a multiple photo requests
+        //TODO: this will be a very COSTLY service [network req wise], need to find a better way to do this.</li>
+      <li>some graphic updates.</li>
+      <li>added ngCookies module</li>
+      <li>removed angular cookies and added angular-local-storage</li>
+    </ul><h1>
+      <a name="019-2014-01-9" class="anchor" href="#019-2014-01-9"><span class="octicon octicon-link"></span></a>0.1.9 (2014-01-9)</h1>
 
-  * redirect to venue on search when there is only one result
-  * stripped ratchet.js and css into pieces and build them into the project.
-  * finally set up proper routing with nodejs and express in the production environment.
-  * optimized production build.
-  * starting angular tabs.
-  * reorganized directive templates. Created settingsManagement service for the settings page
-  * global service to show debug information created. need to apply it from now on
-  * Modified storageManagement return methods to have swith&status options to read&apply the status, alongside visual changes.
+    <ul>
+      <li>started testing on iPhone and made some css changes</li>
+      <li>made some icons and pictures for retina display</li>
+      <li>design changes, using ratchet.</li>
+      <li>started working on the presentation and adding a lof of optimization notes</li>
+      <li>added angular-promise-tracker to manage promises and show a loading animation and implemented it.</li>
+    </ul><h1>
+      <a name="018-2014-01-8" class="anchor" href="#018-2014-01-8"><span class="octicon octicon-link"></span></a>0.1.8 (2014-01-8)</h1>
 
+    <ul>
+      <li>finally parametrized all the categories routes, we have only one section template now, which loads all section types depending on the received parameter</li>
+      <li>trying to figure out a way to propagate the page title upwards in the config, or maybe after ... ???</li>
+      <li>made the detail page route with the proper information passed to it from foursquare.</li>
+      <li>I'm leveraging foursquare's api to get the exact image size I need for my current window size. shouldn't be a problem on mobile devices with resizing the window, maybe rotation?</li>
+    </ul><h1>
+      <a name="017-2014-01-7" class="anchor" href="#017-2014-01-7"><span class="octicon octicon-link"></span></a>0.1.7 (2014-01-7)</h1>
 
+    <ul>
+      <li>finished the fetchLocations directive, reusability awesomeness</li>
+      <li>finished the footer directive</li>
+      <li>still have to hook in the footer menu.</li>
+      <li>created all the categories, future task: parametrize the categories and all the paths.</li>
+    </ul><h1>
+      <a name="016-2014-01-6" class="anchor" href="#016-2014-01-6"><span class="octicon octicon-link"></span></a>0.1.6 (2014-01-6)</h1>
 
-  # 0.2.6 (2014-01-16)
+    <ul>
+      <li>made some changes to the way karma and grunt-karma do things, there were some blocking issues after the update</li>
+      <li>lost of maintenance</li>
+      <li>started moving the entire fetch location logic to a directive, at the benefit of ~400 lines of code and for reusability on all the categories</li>
+      <li>parametrized the section type inside the directive</li>
+      <li>started to make the footer bar also a directive, economy is the main word.</li>
+    </ul><h1>
+      <a name="015-2014-01-5" class="anchor" href="#015-2014-01-5"><span class="octicon octicon-link"></span></a>0.1.5 (2014-01-5)</h1>
 
-  * made a global even listener when the drawer is open, clicking anywhere but on the more button will close the drawer
-  * hooked in MongoLabs MongoDB service
-  * created list/add/edit methods for MongoDB Collection and custom ID's
-  * started working on the cookie - storageManagement - MongoDB communication.
-  * replaced localStorage service with ngCookies service
-  * renamed previous storeManagement factory service to mongoService
-  * created the real storeManagement service which uses mongoService and ngCookies service
-  * created a object with methods that handle cookie reading and mongoDb inseration, inspirationally called `tellMongo`
+    <ul>
+      <li>'argumentized' the foursquare factory service, need to find a good coding architecture to switch the different categories, considering animations and both pages visible during swipe.</li>
+      <li>ordered the readme.md a bit</li>
+      <li>implemented geolocation and made the foursquare service to run through it</li>
+    </ul><h1>
+      <a name="011-2013-12-15" class="anchor" href="#011-2013-12-15"><span class="octicon octicon-link"></span></a>0.1.1 (2013-12-15)</h1>
 
-
-
-  # 0.2.5 (2014-01-15)
-
-  * friendly URL's for venues (venue_type/id/venue_name) - the foursquare way :)
-  * updated semantic versioning system, still not there yet.
-  * meddled with the build configuration, still needs optimization
-  * searchBar directive made global.
-
-
-  # 0.2.4 (2014-01-14)
-
-  * started working on the settings page.
-  * added icons
-  * added the about page
-  * added nodeJS+express barebone server for extra routing capabilities
-  * started working on a automated production release, inside
-  * on grunt compile, everything is minified and copied to the nodeJS production folder in views.
-
-  # 0.2.3 (2014-01-13)
-
-  * gmaps module is now working properly
-  * used $rootScope to listen to $stateParams change to set a proper body class for each page.
-  * set the map container functionality.
-  * finished map opening and closing with it's adjacent functionality.
-  * made a scroolTo snippet so the map always opens at the top.
-  * made most the detail page design.
-  * fixed a error when image count was greater than the actual image objects.
-  * readding angular-touch for ng-carousel. :(
-  * added angular-carousel
-  * disabled hammerJS
-  * carousel fixes (promise to wait for images to load, overall functionality)
-
-
-  # 0.2.2 (2014-01-12)
-
-  * got almost all of the data on the details page.
-  * tried angular-pull-to-refresh library, I can make it better from scratch.
-  * integrating google maps files and API.
-  * switching to angular-google-maps.
-
-
-  # 0.2.1 (2014-01-11)
-
-  * Switching to angular 1.2.9
-  * made search directive linked to the search service
-  * hooking up ngAnimate.
-  * made search template for the section pages with ngAnimate.
-  * added ngTouch angular library
-  * replaced ngTouch with a more mature touch library, Hammer.js, the bridge to Angular is made by angular-hammer module.
-
-
-  # 0.2.0 (2014-01-10)
-
-  * added & implemented foursquare search functionality service.
-  * refactored part of the code, got rid of unnecessary directives and services calls in places where they weren't needed.
-  * unfortunately the search API does not return photos, so I am putting the basis of a multiple photo requests
-  //TODO: this will be a very COSTLY service [network req wise], need to find a better way to do this.
-  * some graphic updates.
-  * added ngCookies module
-  * removed angular cookies and added angular-local-storage
-
-  # 0.1.9 (2014-01-9)
-
-  * started testing on iPhone and made some css changes
-  * made some icons and pictures for retina display
-  * design changes, using ratchet.
-  * started working on the presentation and adding a lof of optimization notes
-  * added angular-promise-tracker to manage promises and show a loading animation and implemented it.
-
-  # 0.1.8 (2014-01-8)
-
-  * finally parametrized all the categories routes, we have only one section template now, which loads all section types depending on the received parameter
-  * trying to figure out a way to propagate the page title upwards in the config, or maybe after ... ???
-  * made the detail page route with the proper information passed to it from foursquare.
-  * I'm leveraging foursquare's api to get the exact image size I need for my current window size. shouldn't be a problem on mobile devices with resizing the window, maybe rotation?
-
-  # 0.1.7 (2014-01-7)
-
-  * finished the fetchLocations directive, reusability awesomeness
-  * finished the footer directive
-  * still have to hook in the footer menu.
-  * created all the categories, future task: parametrize the categories and all the paths.
-
-  # 0.1.6 (2014-01-6)
-
-  * made some changes to the way karma and grunt-karma do things, there were some blocking issues after the update
-  * lost of maintenance
-  * started moving the entire fetch location logic to a directive, at the benefit of ~400 lines of code and for reusability on all the categories
-  * parametrized the section type inside the directive
-  * started to make the footer bar also a directive, economy is the main word.
-
-
-  # 0.1.5 (2014-01-5)
-
-  * 'argumentized' the foursquare factory service, need to find a good coding architecture to switch the different categories, considering animations and both pages visible during swipe.
-  * ordered the readme.md a bit
-  * implemented geolocation and made the foursquare service to run through it
-
-
-  # 0.1.1 (2013-12-15)
-
-  * Took ng-boilerplate-advanced to use for this project.
-  * added ratchet mobile library
-  * modified compilation files to compile the ratchet and removed all things related to bootstrap
-
-
+    <ul>
+      <li>Took ng-boilerplate-advanced to use for this project.</li>
+      <li>added ratchet mobile library</li>
+      <li>modified compilation files to compile the ratchet and removed all things related to bootstrap</li>
+    </ul></article>
 
 </div>

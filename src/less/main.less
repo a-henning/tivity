@@ -6,7 +6,7 @@
 
 
 @import 'variables.less';
-@import 'ratchet.less'; //TODO: NEED TO STRIP RATCHET LESS, to exactly what I need.
+@import 'other.less'; //TODO: NEED TO STRIP RATCHET LESS, to exactly what I need.
 @import 'animation.less';
 @import 'ng-carousel.less';
 
@@ -42,6 +42,27 @@ a {
   .tab-inner {
     > li {
 
+    }
+  }
+}
+
+.footerBar {
+  .homelink {
+    display: none;
+    position: absolute;
+    top: -65px;
+    left: 36%;
+    width: 30%;
+    overflow: hidden;
+    height: 130%;
+
+
+    img {
+      width: 100%;
+      border-radius: 100% 100% 0 0;
+      border-top: 1px solid @grey;
+      border-left: 1px solid @grey;
+      border-right: 1px solid @grey;
     }
   }
 }

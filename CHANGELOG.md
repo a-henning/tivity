@@ -1,3 +1,13 @@
+# 0.3.1 (2014-01-26)
+
+* added async loading method for files with $scriptJS
+* added on demand angular module injection
+* created a test for the way they are loading
+* added d3, nvd3 and PubNup on demand libraries with their angular modules, angular-charts, angular-dcharts, angular-nvd3 tempalte, pubnub provider service
+
+
+
+
 # 0.3.0 (2014-01-20)
 
 ## Version 0.3.x will be mostly based on creating tests and polishing what we have so far. // OR NOT ... crap.
