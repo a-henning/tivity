@@ -36,6 +36,10 @@ angular.module( 'tivity.extras', [
         //Create / get our tracker with unique ID
         $scope.loadingTracker = promiseTracker('loadingTracker');
 
+        $script('onDemand/pubnub.min.js', function() {
+            $scope.pubnubStatus = "has loaded";
+        });
+
         $script('onDemand/d3.min.js', function() {
             $scope.d3Status = "has loaded";
         });
@@ -44,9 +48,6 @@ angular.module( 'tivity.extras', [
             $scope.nvd3Status = "has loaded";
         });
 
-        $script('onDemand/pubnub.min.js', function() {
-            $scope.pubnubStatus = "has loaded";
-        });
 
         $script('onDemand/pubnub-crypto.min.js', function() {
             $scope.pubnubCryptoStatus = "has loaded";
@@ -78,31 +79,33 @@ angular.module( 'tivity.extras', [
                 $scope.pubnubCryptoStatus = "has loaded";
             });
             */
-        $ocLazyLoad.load({
-            name: 'angularCharts',
-            files:['onDemand/angular-charts.min.js']
-        }).then(function() {
-                $scope.chartStatus = " 'angularCharts' has been injected";
-            });
-        $ocLazyLoad.load({
-            name: 'dchart.solver',
-            files:['onDemand/angular-dchart.min.js']
-        }).then(function() {
-                $scope.dchartStatus = " 'angularDCharts' has been injected";
-            });
-        $ocLazyLoad.load({
-            name: 'nvd3ChartDirectives',
-            files:['onDemand/angularjs-nvd3-directives.js']
-        }).then(function() {
-                $scope.angularnvd3Status = " 'nvd3ChartDirectives' has been injected";
-            });
-        $ocLazyLoad.load({
-            name: 'ngPubNub',
-            files:['onDemand/angular-pubnub.js']
-        }).then(function() {
-                $scope.angularpubnubStatus = " 'ngPubNub' module has been injected";
-            });
+        setTimeout(function(){
+            $ocLazyLoad.load({
+                name: 'angularCharts',
+                files:['onDemand/angular-charts.min.js']
+            }).then(function() {
+                    $scope.chartStatus = " 'angularCharts' has been injected";
+                });
+            $ocLazyLoad.load({
+                name: 'dchart.solver',
+                files:['onDemand/angular-dchart.min.js']
+            }).then(function() {
+                    $scope.dchartStatus = " 'angularDCharts' has been injected";
+                });
+            $ocLazyLoad.load({
+                name: 'nvd3ChartDirectives',
+                files:['onDemand/angularjs-nvd3-directives.js']
+            }).then(function() {
+                    $scope.angularnvd3Status = " 'nvd3ChartDirectives' has been injected";
+                });
+            $ocLazyLoad.load({
+                name: 'ngPubNub',
+                files:['onDemand/angular-pubnub.js']
+            }).then(function() {
+                    $scope.angularpubnubStatus = " 'ngPubNub' module has been injected";
+                });
 
+        }, 2500);
 
 
         /*d3Status

@@ -7,7 +7,6 @@
 
 
 
-
 # 0.3.0 (2014-01-20)
 
 ## Version 0.3.x will be mostly based on creating tests and polishing what we have so far. // OR NOT ... crap.

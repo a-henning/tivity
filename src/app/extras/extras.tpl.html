@@ -1,54 +1,48 @@
 <div ng-controller="ExtrasCtrl" class="extras">
-  <h2>All the files below are loaded on demand, the actual file, than we're calling the module to inject it in our Angular app. Awesome.</h2>
-  <h3>Async. Loading Custom libraries (easy)</h3>
+  <h2 class="top">Files are loaded on demand, then angular modules are injected
+  <p>Awesome (demos below)</p>
+  </h2>
+    <ul class="list">
+      <li class="list-divider">Async. Loading Custom libraries (easy)</li>
+    </ul>
     <ul class="tab-inner">
       <li class="tab-item" ng-class="{'active': d3Status}">
-        <a>
           <div class="tab-label">D3 <p>{{d3Status}}</p></div>
-        </a>
       </li>
       <li class="tab-item" ng-class="{'active': nvd3Status}">
-        <a>
           <div class="tab-label">NVD3 <p>{{nvd3Status}}</p></div>
-        </a>
       </li>
       <li class="tab-item" ng-class="{'active': pubnubStatus}">
-        <a>
           <div class="tab-label">PubNub <p>{{pubnubStatus}}</p></div>
-        </a>
       </li>
       <li class="tab-item" ng-class="{'active': pubnubCryptoStatus}">
-        <a>
           <div class="tab-label">PubNub Crypto <p>{{pubnubCryptoStatus}}</p></div>
-        </a>
       </li>
     </ul>
-  <h3>Async. Loading and Injecting Angular Modules on the fly (cool)</h3>
+  <ul class="list">
+    <li class="list-divider">Async. Loading and Injecting Angular Modules on the fly (cool)</li>
+  </ul>
     <ul class="tab-inner">
       <li class="tab-item" ng-class="{'active': chartStatus}">
-        <a>
           <div class="tab-label">Angular Charts <p>{{chartStatus}}</p></div>
-        </a>
       </li>
       <li class="tab-item" ng-class="{'active': dchartStatus}">
-        <a>
           <div class="tab-label">Angular DCharts <p>{{dchartStatus}}</p></div>
-        </a>
       </li>
+      </ul>
+      <ul class="tab-inner">
       <li class="tab-item" ng-class="{'active': angularnvd3Status}">
-        <a>
           <div class="tab-label">Angular NVD3 <p>{{angularnvd3Status}}</p></div>
-        </a>
       </li>
       <li class="tab-item" ng-class="{'active': angularpubnubStatus}">
-        <a>
           <div class="tab-label">Angular Pubnub <p>{{angularpubnubStatus}}</p></div>
-        </a>
       </li>
     </ul>
-  <a class="button-positive button-block" ng-class="" ng-href="/extras/d3">D3</a>
-  <a class="button-negative button-block" ng-class="" ng-href="/extras/pubnub">PubNub</a>
-  <a class="button-main button-block" ng-class="" ng-href="/extras/pubnubd3">Pubnub & D3</a>
+  <div class="demos">
+    <a class="button-positive button-block" ng-class="" ng-href="/extras/d3">D3</a>
+    <a class="button-negative button-block" ng-class="" ng-href="/extras/pubnub">PubNub</a>
+    <a class="button-main button-block" ng-class="" ng-href="/extras/pubnubd3">Pubnub & D3</a>
+  </div>
 
 
 </div>

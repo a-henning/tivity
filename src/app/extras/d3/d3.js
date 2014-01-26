@@ -16,7 +16,7 @@ angular.module( 'tivity.d3', [
             views: {
                 "main": {
                     controller: 'D3Ctrl',
-                    templateUrl: 'd3/d3.tpl.html'
+                    templateUrl: 'extras/d3/d3.tpl.html'
                 }
             },
             data:{ pageTitle: 'd3 Data visualization library' }
