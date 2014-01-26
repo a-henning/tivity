@@ -82,8 +82,7 @@ module.exports = {
       'vendor/angular-google-maps/dist/angular-google-maps.js',
       'vendor/firebase/firebase.js',
       'vendor/angularfire/angularfire.min.js',
-      'vendor/firebase-simple-login/firebase-simple-login.js',
-      'vendor/ocLazyLoad/ocLazyLoad.min.js'
+      'vendor/firebase-simple-login/firebase-simple-login.js'
     ],
     css: [
       //'vendor/angular-ui-router-anim-in-out-master/css/anim-in-out.css'

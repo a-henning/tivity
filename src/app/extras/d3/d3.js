@@ -2,8 +2,7 @@
 angular.module( 'tivity.d3', [
         'ui.router.state',
         'footerBar',
-        'ajoslin.promise-tracker',
-        'nvd3ChartDirectives'
+        'ajoslin.promise-tracker'
     ])
 
 /**

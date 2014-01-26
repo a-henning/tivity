@@ -26,6 +26,7 @@ angular.module( 'tivity.extras', [
             data:{ pageTitle: 'Extras' }
         });
     })
+
     .config(['$ocLazyLoadProvider', function($ocLazyLoadProvider) {
         $ocLazyLoadProvider.config({
             asyncLoader: $script
@@ -35,6 +36,7 @@ angular.module( 'tivity.extras', [
     .controller( 'ExtrasCtrl', function ExtrasController( $scope, geolocation, promiseTracker, $ocLazyLoad ) {
         //Create / get our tracker with unique ID
         $scope.loadingTracker = promiseTracker('loadingTracker');
+
 
         $script('onDemand/pubnub.min.js', function() {
             $scope.pubnubStatus = "has loaded";
@@ -47,7 +49,6 @@ angular.module( 'tivity.extras', [
         $script('onDemand/nv.d3.min.js', function() {
             $scope.nvd3Status = "has loaded";
         });
-
 
 
         $script('onDemand/pubnub-crypto.min.js', function() {
