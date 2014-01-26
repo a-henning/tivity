@@ -1,5 +1,67 @@
 <div ng-controller="D3Ctrl" class="d3library">
-<h2 class="top"> D3 - Data Visualization Library & Angular <p>reusable directives</p></h2>
+  <h2 class="top">
+    <a class="button-prev" href="/extras">
+      < Previous
+    </a>
+    D3 - Data Visualization Library & Angular <p>reusable directives</p></h2>
 
+  <ul class="list">
+    <li class="list-divider">Angular D3 Scatter Chart with changeData method</li>
+    <li class="list-divider"></li>
+  </ul>
+  <nvd3-scatter-chart
+          data="scatterData"
+          id="scatterId"
+          width="{{dWidth}}"
+          height="{{dHeight}}"
+          yAxisTickFormat="yAxisTickFormatFunction()"
+          xAxisTickFormat="xAxisTickFormatFunction()"
+          noData="Loading data ... "
+          margin="{left:40, top:20, bottom:20, right:20}"
+          showDistY="true"
+          showDistX="true"
+          xPadding="0.1"
+          yPadding="0.1"
+          transitionDuration="1000"
+          interactive="true"
+          showLegend="true">
+    <svg></svg>
+  </nvd3-scatter-chart>
+  <a class="button-block button-positive" ng-click="changeData()">Change Data</a>
+
+  <ul class="list">
+    <li class="list-divider">Angular D3 Line Chart with polling data method</li>
+    <li class="list-divider"></li>
+  </ul>
+  <nvd3-cumulative-line-chart
+          data="chartData"
+          id="chartId"
+          width="{{dWidth}}"
+          height="{{dHeight}}"
+          interactive="true"
+
+          x="xCFunction()"
+          y="yCFunction()"
+
+          isArea="true"
+          yAxisTickFormat="yAxisTickFormatFunction()"
+          xAxisTickFormat="xAxisTickFormatFunction()"
+          tooltips="true"
+          tooltipContent="toolTipContentFunction()"
+          margin="{left:40, top:20, bottom:30, right:20}"
+          showLegend="false"
+          noData="Data is not here ;(">
+    <svg></svg>
+  </nvd3-cumulative-line-chart>
+
+
+  <!--options-->
+  <!--CUSTOM COLORS: color="colorFunction()"-->
+  <!--ZOOM: showControls="true"-->
+  <!--x="xFunction()"-->
+  <!--y="yFunction()"-->
+  <!--fisheye=100-->
+  <!--xPadding="0.5"-->
+  <!--yPadding="0.5"-->
 
 </div>
