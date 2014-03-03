@@ -22,7 +22,7 @@
   },
   "devDependencies": {},
   "resolutions": {
-    "angular": "1.2.10-build.2164+sha.8b395ff",
+    "angular": "~1.2.10",
     "angular-touch": "~1.2.8"
   }
 }

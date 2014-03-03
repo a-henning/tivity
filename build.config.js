@@ -66,7 +66,7 @@ module.exports = {
     js: [
       'vendor/angular/angular.min.js',
       'vendor/angular-animate/angular-animate.min.js',
-      'vendor/angular-promise-tracker/promise-tracker.min.js',
+      'vendor/angular-promise-tracker/promise-tracker.js',
       'strippedLibraries/ratchet.js',
       'strippedLibraries/script.min.js',
       'vendor/angular-ui-router/release/angular-ui-router.min.js',
