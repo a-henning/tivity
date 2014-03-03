@@ -97,13 +97,13 @@ $ bower install
 127.0.0.1       tivity.local
 ```
 
-...
+```
 $ sudo service apache2 restart
-...
+```
 
-...
+```
 $ sudo a2ensite tivity.local
-...
+```
 
 
 * now you can test the page in your browser, or if you have pow.cx you can quickly create a project-name.IP-ADRESS.xip.io link to see it on your device.
