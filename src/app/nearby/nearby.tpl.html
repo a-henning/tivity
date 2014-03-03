@@ -1,14 +1,16 @@
 <div ng-controller="NearbyCtrl" class="location-listing nearby">
-    Near: <input ng-model="near">
-    Radius: <input ng-model="radius">
+    <h1>Search</h1>
+    Near: <input ng-model="near" ng-change="exposedFoursquare()">
+    <br>
+    Radius: <input ng-model="radius" ng-change="exposedFoursquare()">
     <div class="my-super-awesome-loading-box" ng-show="loadingTracker.active()">
         <div class="circle"></div>
         <div class="circle1"></div>
     </div>
-    <h2 class="top">Listing places nearby {{near}}<button class="openSearch" ng-click="barState = !barState"><img src="assets/icons/icon-search.png"></button></h2>
+    <h2 class="top">Listing places nearby {{near}} within {{radius}} km radius<button class="openSearch" ng-click="barState = !barState"><img src="assets/icons/icon-search.png"></button></h2>
     <ul class="locations list">
         <li ng-repeat="location in locations" class="animate-repeat">
-            <div class="image {{ location.venue.picClass }}"><img src="{{ location.venue.photos.groups[0].thePhoto }}" alt=""/></div>
+            <div class="image {{ location.venue.picClass }}"><img src="{{ location.venue.photos.groups.thePhoto }}" alt=""/></div>
             <a href="/section/{{theLocationType}}/{{location.venue.id}}/{{location.venue.venueName}}">
                 <h2>{{ location.venue.name }}</h2>
                 <span class="distance">{{ location.venue.location.distance }}m</span>
