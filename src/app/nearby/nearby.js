@@ -22,13 +22,22 @@ angular.module( 'tivity.nearby', [
 /**
  * Nearby places listing controller.
  */
-.controller( 'NearbyCtrl', function NearbyCtrl( $scope, foursquare ) {
+.controller( 'NearbyCtrl', function NearbyCtrl( $scope, $timeout, foursquare ) {
     // Initial search values
     $scope.near = "Oradea";
     $scope.radius = 10;
 
     //With the location at hand, we're calling the foursquare service nearby function.
-    $scope.exposedFoursquare = function(){
+    $scope.exposedFoursquare = function() {
+        // set timeout
+        $timeout(this, 1000);
+
+        // check input
+        if ($scope.near.length < 4 || $scope.radius < 1) {
+            $scope.locations = [];
+            return;
+        }
+
         foursquare.getNearby($scope.near, $scope.radius).then(function(data) {
             // processing function for reading photos
             process(data);
@@ -38,6 +47,7 @@ angular.module( 'tivity.nearby', [
         });
     }
 
+    // call foursquare function with initial scope values
     $scope.exposedFoursquare();
 });
 
