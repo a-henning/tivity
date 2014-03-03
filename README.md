@@ -67,10 +67,11 @@ $ bower install
 
 * after you run `grunt watch`, grunt will make a build directory, setup a vhost to that with the following rules:
 
+/etc/apache2/sites-available/tivity.local
 ```
 <VirtualHost *:80>
-    ServerName tivity.localhost
-    ServerAlias tivity.localhost.*.xip.io
+    ServerName tivity.local
+    ServerAlias tivity.local.*.xip.io
     DocumentRoot "/your/path/tivity/build"
     ServerAdmin your-email@gmail.com
         <Directory "/your/path/tivity/build">
@@ -90,6 +91,21 @@ $ bower install
         </Directory>
 </VirtualHost>
 ```
+
+/etc/hosts
+```
+127.0.0.1       tivity.local
+```
+
+...
+$ sudo service apache2 restart
+...
+
+...
+$ sudo a2ensite tivity.local
+...
+
+
 * now you can test the page in your browser, or if you have pow.cx you can quickly create a project-name.IP-ADRESS.xip.io link to see it on your device.
 * if you don't have a local server and you just want to run the node production:
 - run `grunt compile`
