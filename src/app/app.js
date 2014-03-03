@@ -13,6 +13,7 @@ angular.module('tivity', [
   'tivity.settings',
   'tivity.extras',
   'tivity.changelog',
+  'tivity.nearby',
   'ui.router.state',
   'ui.route',
   'anim-in-out',
