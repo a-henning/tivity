@@ -7,7 +7,13 @@
         <div class="circle"></div>
         <div class="circle1"></div>
     </div>
-    <h2 class="top">Listing places nearby {{near}} within {{radius}} meters radius<button class="openSearch" ng-click="barState = !barState"><img src="assets/icons/icon-search.png"></button></h2>
+    <h2 class="top">
+        <button class="openSearch" ng-click="barState = !barState"><img src="assets/icons/icon-search.png"></button>
+        <div ng-switch="locations.length">
+            <div ng-switch-when="0">No results found</div>
+            <div ng-switch-default>Listing places nearby {{near}} within {{radius}} meter radius</div>
+        </div>
+    </h2>
     <ul class="locations list">
         <li ng-repeat="location in locations" class="animate-repeat">
             <div class="image {{ location.venue.picClass }}"><img src="{{ location.venue.photos.groups.thePhoto }}" alt=""/></div>
