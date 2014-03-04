@@ -3,7 +3,8 @@
  */
 angular.module( 'tivity.nearby', [
         'ui.router.state',
-        'foursquare'
+        'foursquare',
+        'geolocation'
 ])
 
 .config(function config( $stateProvider ) {
@@ -22,29 +23,47 @@ angular.module( 'tivity.nearby', [
 /**
  * Nearby places listing controller.
  */
-.controller( 'NearbyCtrl', function NearbyCtrl( $scope, $timeout, foursquare ) {
-    // Initial search values
-    $scope.near = "Oradea";
-    $scope.radius = 10;
+.controller( 'NearbyCtrl', function NearbyCtrl( $scope, $timeout, foursquare, geolocation ) {
+
+    // default radius of 500 meters
+    $scope.radius = 500;
 
     //With the location at hand, we're calling the foursquare service nearby function.
     $scope.exposedFoursquare = function() {
+
         // set timeout
         $timeout(this, 1000);
 
         // check input
-        if ($scope.near.length < 4 || $scope.radius < 1) {
-            $scope.locations = [];
-            return;
+        if ($scope.near === undefined || $scope.near === "") {
+            var coord = "";
+
+            // get latitude and longitude from geolocation
+            geolocation.getLocation().then(function(data) {
+
+                //When location data is ready, we populate the scope.
+                coord = data.coords.latitude + ',' + data.coords.longitude;
+
+                // get nearby locations using latitude, longitude and default radius of 100 meters
+                foursquare.getNearbyCoordinates(coord, $scope.radius).then(function(data) {
+
+                    // processing function for reading photos
+                    process(data);
+                    $scope.locations = data[0].response.groups[0].items;
+                    $scope.locationName = data[0].response.headerFullLocation;
+                });
+            });
+        } else if ($scope.near.length > 3) {
+
+            // get nearby locations using input values in scope
+            foursquare.getNearbyLocation($scope.near, $scope.radius).then(function(data) {
+
+                // processing function for reading photos
+                process(data);
+                $scope.locations = data[0].response.groups[0].items;
+                $scope.locationName = data[0].response.headerFullLocation;
+            });
         }
-
-        foursquare.getNearby($scope.near, $scope.radius).then(function(data) {
-            // processing function for reading photos
-            process(data);
-
-            $scope.locations = data[0].response.groups[0].items;
-            $scope.locationName = data[0].response.headerFullLocation;
-        });
     }
 
     // call foursquare function with initial scope values

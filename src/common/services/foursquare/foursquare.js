@@ -83,12 +83,29 @@ angular.module('foursquare', [])
             return aggregatedData;
           });
       },
-        getNearby: function (near, radius) {
+        getNearbyLocation: function (near, radius) {
             var cliendID = '0SSBDOJVOXRLEIVJIUVXXYRIQKW042B313MHXSVXIJB13EV5';
             var clientSecret = 'SGXRTG1ZHCP03C3B2UE3JGTIJQP4EC2YQ2CYKZZ5F5MYTPEJ';
 
             return $q.all([
                     $http.get('https://api.foursquare.com/v2/venues/explore?client_id=' + cliendID + '&client_secret=' + clientSecret + '&v=' + version + '&near=' + near + '&radius=' + radius + '&sortByDistance=1&venuePhotos=1',
+                        {
+                            tracker: 'loadingTracker'
+                        })
+                ]).then(function (results) {
+                var aggregatedData = [];
+                angular.forEach(results, function (result) {
+                    aggregatedData = aggregatedData.concat(result.data);
+                });
+                return aggregatedData;
+            });
+        },
+        getNearbyCoordinates: function (ll, radius) {
+            var cliendID = '0SSBDOJVOXRLEIVJIUVXXYRIQKW042B313MHXSVXIJB13EV5';
+            var clientSecret = 'SGXRTG1ZHCP03C3B2UE3JGTIJQP4EC2YQ2CYKZZ5F5MYTPEJ';
+
+            return $q.all([
+                    $http.get('https://api.foursquare.com/v2/venues/explore?client_id=' + cliendID + '&client_secret=' + clientSecret + '&v=' + version + '&ll=' + ll + '&radius=' + radius + '&sortByDistance=1&venuePhotos=1',
                         {
                             tracker: 'loadingTracker'
                         })
