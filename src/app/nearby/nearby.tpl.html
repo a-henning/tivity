@@ -2,7 +2,7 @@
     <h1>Search</h1>
     Near: <input ng-model="near" ng-change="exposedFoursquare()">
     <br>
-    Radius: <input ng-model="radius" ng-change="exposedFoursquare()">
+    Radius: <input type="range" min="0" max="20000" ng-model="radius" ng-change="exposedFoursquare()">
     <div class="my-super-awesome-loading-box" ng-show="loadingTracker.active()">
         <div class="circle"></div>
         <div class="circle1"></div>
