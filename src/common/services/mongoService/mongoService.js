@@ -102,7 +102,21 @@ angular.module('mongoService', [])
             });
             return aggregatedData;
           });
-      }
-
+      },
+        listCollectionQuery: function (collectionID, near, radius) {
+            return $q.all([
+                    $http.get('https://api.mongolab.com/api/1/databases/tivity/collections/' + collectionID + '?apiKey=SN7DF704FBSTjFq5rycwwMHeBluJK4dT',
+                        {
+                            params: {q: {"near": near, "radius": radius}},
+                            tracker: 'loadingTracker'
+                        })
+                ]).then(function (results) {
+                var aggregatedData = [];
+                angular.forEach(results, function (result) {
+                    aggregatedData = aggregatedData.concat(result.data);
+                });
+                return aggregatedData;
+            });
+        }
     };
   });

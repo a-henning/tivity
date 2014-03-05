@@ -4,7 +4,8 @@
 angular.module( 'tivity.nearby', [
         'ui.router.state',
         'foursquare',
-        'geolocation'
+        'geolocation',
+        'mongoService'
 ])
 
 .config(function config( $stateProvider ) {
@@ -23,7 +24,7 @@ angular.module( 'tivity.nearby', [
 /**
  * Nearby places listing controller.
  */
-.controller( 'NearbyCtrl', function NearbyCtrl( $scope, $timeout, foursquare, geolocation ) {
+.controller( 'NearbyCtrl', function NearbyCtrl( $scope, $q, $timeout, foursquare, geolocation, mongoService ) {
 
     // default radius of 500 meters
     $scope.radius = 500;
@@ -32,10 +33,11 @@ angular.module( 'tivity.nearby', [
     $scope.exposedFoursquare = function() {
 
         // set timeout
-        $timeout(this, 1000);
+        //$timeout(this, 1000);
 
         // check input
         if ($scope.near === undefined || $scope.near === "") {
+            console.log('First IF');
             var coord = "";
 
             // get latitude and longitude from geolocation
@@ -53,22 +55,49 @@ angular.module( 'tivity.nearby', [
                     $scope.locationName = data[0].response.headerFullLocation;
                 });
             });
+
         } else if ($scope.near.length > 3) {
+            console.log('Sdecond ELSE IF');
+            console.log($scope.near.length);
+            // check if parameters exist in mongoLab
+            mongoService.listCollectionQuery("foursquare", $scope.near, $scope.radius).then(function(mongoData) {
+                console.log("Mongo data length: " + mongoData.length + " , data: VVVV");
+                 console.log(mongoData.length);
 
-            // get nearby locations using input values in scope
-            foursquare.getNearbyLocation($scope.near, $scope.radius).then(function(data) {
+                if (mongoData.length === 0) {
+                    console.log('Data not present, persisting what we have so far');
+                    // get nearby locations using input values in scope
+                    foursquare.getNearbyLocation($scope.near, $scope.radius).then(function(fourSquareData) {
+                        console.log('foursquare nearby location');
+                        console.log(fourSquareData);
+                        // processing function for reading photos
+                        process(fourSquareData);
+                        $scope.locations = fourSquareData[0].response.groups[0].items;
 
-                // processing function for reading photos
-                process(data);
-                $scope.locations = data[0].response.groups[0].items;
-                $scope.locationName = data[0].response.headerFullLocation;
-            });
+                        // persist in mongoLab
+                        console.log("Persisting new mongo data");
+                        mongoService.createCollection("foursquare",
+                            {"near": $scope.near, "radius": $scope.radius, "data": fourSquareData}).then(function(data) {
+                                console.log("Collection created successfully");
+                                // new collection successfully created
+                                return;
+                            });
+                    });
+                } else {
+                    console.log("Reading mongo data that exists");
+                    console.log(mongoData[0].data[0]);
+                    $scope.locations = mongoData[0].data[0].response.groups[0].items;
+                }
+            }/*, function() {
+                console.log("Reading mongo data");
+                $scope.locations = mongoData.data[0].response.groups[0].items;
+            }*/);
         }
-    }
 
-    // call foursquare function with initial scope values
-    $scope.exposedFoursquare();
-});
+    }
+        // call foursquare function with initial scope values
+        $scope.exposedFoursquare();
+    });
 
 /**
  * Function for processing response data in order to receive image info.
