@@ -86,12 +86,10 @@ angular.module( 'tivity.nearby', [
                 } else {
                     console.log("Reading mongo data that exists");
                     console.log(mongoData[0].data[0]);
+                    process(mongoData[0].data);
                     $scope.locations = mongoData[0].data[0].response.groups[0].items;
                 }
-            }/*, function() {
-                console.log("Reading mongo data");
-                $scope.locations = mongoData.data[0].response.groups[0].items;
-            }*/);
+            });
         }
 
     }
